@@ -1,0 +1,123 @@
+.. _guide-getting-started:
+
+===============
+Getting started
+===============
+
+
+
+First of all: Integrate the Library
+===================================
+The gini vision is provided as a aar archive. You can integrate it in your gradle based project by adding it as
+dependency. In order to gain access to the aar file, you have to add the Gini Maven repository to your build script.
+
+.. code-block:: groovy
+
+    repositories {
+        maven {
+            credentials {
+                username project.hasProperty('giniRepoUser') ? giniRepoUser : 'invalidUser'
+                password project.hasProperty('giniRepoPassword') ? giniRepoPassword : 'invalidPassword'
+            }
+            url "https://repo.gini.net/nexus/content/repositories/releases"
+
+        }
+        ...
+    }
+
+    dependencies {
+        compile ('net.gini:ginivision-android-sdk:1.0.1@aar'){
+            transitive = true
+        }
+        ...
+    }
+
+In the example above we inject the repo credentials via project properties which can be provided in several ways (`See
+the gradle documentation <https://gradle.org/documentation/>`_). Please contact `Technical Support <mailto:technical-support@gini.net>`_ 
+if you don't have the credentials for the Gini repo.
+
+
+
+Required Permissions and Features
+=================================
+
+The Gini Vision library for Android needs access to the device's camera. Therefore your application
+needs to request permission to access the camera, which, in Android, is achieved by adding the following
+line to your application's manifest file. `See the Android
+documentation <http://developer.android.com/guide/topics/manifest/manifest-intro.html>`_.
+
+.. code-block:: xml
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+The Gini Vision library for Android also depends on some hardware features which the device must
+support. It is best practice to declare these required features in the manifest file as well, `as
+described in the Android documentation
+<http://developer.android.com/guide/topics/manifest/uses-feature-element.html>`_.
+
+The following is the full listing of all required features which you should add to your application's
+manifest file.
+
+.. code-block:: xml
+
+    <uses-feature android:name="android.hardware.sensor.accelerometer" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.flash" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+
+
+Use a Large Heap
+================
+
+Unfortunately, image processing is a memory intensive task. Because of that, you must request a
+larger heap size by `by setting the largeHeap attribute to "true"
+<http://developer.android.com/guide/topics/manifest/application-element.html#largeHeap>`_ in the
+manifest <application> tag. Otherwise it is likely that your application will crash due to an
+`OutOfMemoryException`.
+
+
+Example: A Complete Manifest File
+=================================
+
+Listed below is the example of a complete manifest file, declaring all required permissions and
+features.
+
+.. code-block:: xml
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="net.gini.android.visiontest" >
+
+        <uses-permission android:name="android.permission.CAMERA" />
+
+        <uses-feature android:name="android.hardware.camera" />
+        <uses-feature android:name="android.hardware.camera.autofocus" />
+
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.INTERNET" />
+
+        <application
+            android:allowBackup="true"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            android:largeHeap="true">
+            <activity
+                android:name=".StartActivity"
+                android:label="Gini Testing" >
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+            </activity>
+        </application>
+
+    </manifest>
+
+Next: Use the Scanner Activity
+==============================
+
+After you have integrated the Gini Vision library for Android successfully and your application
+requests all the necessary permissions, you are good to go. Learn next :ref:`How to Use the Scanner Activity
+to Scan Documents. <guide-using-the-scanner-activity>`.

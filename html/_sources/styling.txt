@@ -1,0 +1,52 @@
+===================================
+Styling the Image Capturing Screens
+===================================
+
+The Gini Android Vision library is built with the option to adopt the styling regarding the needs
+of your CI. You can set all styling options via Android's resource XML files.
+
+Listed below is an example file which would go into the application's `res/styles/style.xml`` file.
+
+.. code-block:: xml
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+        <color name="net.gini.android.vision.theme.actionBar.background">#009edc</color>
+        <color name="net.gini.android.vision.theme.actionBar.color">#ffffff</color>
+        <color name="net.gini.android.vision.theme.statusBar">#007eb0</color>
+    </resources>
+
+
+Customizable colors
+===================
+
+``net.gini.android.vision.theme.actionBar.background``
+    The background color of the action bar when the ``ScannerActivity`` is displayed.
+
+``net.gini.android.vision.theme.actionBar.color``
+    The color of the text on the the action bar when the ``ScannerActivity`` is displayed.
+
+``net.gini.android.vision.theme.statusBar``
+    The color of the status bar when the ``ScannerActivity`` is displayed.
+
+    .. note:: Please note that this option is ignored in Android versions lower than 5.0 (`Lollipop`).
+
+
+Debug Options
+=============
+
+Enabling the framemeter
+-----------------------
+
+The framemeter is displayed on the upper right corner of the scanner activity and displays how long
+the processing of one camera frame took. The lower the number, the faster Gini can process images
+on the device. Which basically means that lower numbers are better.
+
+.. code-block:: xml
+
+    <integer name="net.gini.android.vision.show_processing_average">0</integer>
+
+The value is an integer describing the framemeter's visibility `as described in the android
+documentation
+<http://developer.android.com/reference/android/view/View.html#attr_android:visibility>`_. Usually
+you will use ``0`` while debugging or testing and ``2`` in release builds.

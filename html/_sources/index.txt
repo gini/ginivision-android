@@ -1,0 +1,26 @@
+Gini Android Vision documentation
+=================================
+
+Introduction
+------------
+
+Gini provides an information extraction system for analyzing documents (e. g. invoices or
+contracts), specifically information such as the document sender or the amount to pay in an invoice.
+
+The Gini Vision for Android library provides functionality to capture documents with mobile phones.
+The captured images are automatically enhanced on the device and optimized so they provide both the
+best results when used with the Gini API and an optimized user experience.
+
+
+Table of contents
+-----------------
+
+.. toctree::
+   :maxdepth: 2
+
+   guides/getting-started
+   guides/using-the-scanneractivity
+   styling
+
+
+.. todolist::

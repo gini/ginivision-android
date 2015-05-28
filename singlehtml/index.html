@@ -1,0 +1,463 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Gini Vision SDK for Android v1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic,600italic|Source+Code+Pro|Roboto+Slab:400,700" rel="stylesheet" type="text/css" />
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'v1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+    <script type="text/javascript">
+        jQuery(function () {
+            SphinxRtdTheme.StickyNav.enable();
+        });
+    </script>
+  
+
+  
+    <link rel="top" title="None" href="index.html#document-index"/> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html#document-index" id="gini-logo">gini API</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-guides/getting-started">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/getting-started#first-of-all-integrate-the-library">First of all: Integrate the Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/getting-started#required-permissions-and-features">Required Permissions and Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/getting-started#use-a-large-heap">Use a Large Heap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/getting-started#example-a-complete-manifest-file">Example: A Complete Manifest File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/getting-started#next-use-the-scanner-activity">Next: Use the Scanner Activity</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-guides/using-the-scanneractivity">Using the Scanner Activity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/using-the-scanneractivity#starting-the-scanner-activity">Starting the Scanner Activity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-guides/using-the-scanneractivity#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/using-the-scanneractivity#getting-the-results-of-the-scanner">Getting the Results of the Scanner</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-guides/using-the-scanneractivity#bitmapfuture"><tt class="docutils literal"><span class="pre">BitmapFuture</span></tt></a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-guides/using-the-scanneractivity#id1">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/using-the-scanneractivity#full-example">Full Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-styling">Styling the Image Capturing Screens</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-styling#customizable-colors">Customizable colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-styling#debug-options">Debug Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-styling#enabling-the-framemeter">Enabling the framemeter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html#document-index">Gini Vision SDK for Android</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html#document-index">Docs</a> &raquo;</li>
+      
+    <li>Gini Vision SDK for Android v1 documentation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="gini-android-vision-documentation">
+<h1>Gini Android Vision documentation<a class="headerlink" href="#gini-android-vision-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Gini provides an information extraction system for analyzing documents (e. g. invoices or
+contracts), specifically information such as the document sender or the amount to pay in an invoice.</p>
+<p>The Gini Vision for Android library provides functionality to capture documents with mobile phones.
+The captured images are automatically enhanced on the device and optimized so they provide both the
+best results when used with the Gini API and an optimized user experience.</p>
+</div>
+<div class="section" id="table-of-contents">
+<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<span id="document-guides/getting-started"></span><div class="section" id="getting-started">
+<span id="guide-getting-started"></span><h3>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="first-of-all-integrate-the-library">
+<h4>First of all: Integrate the Library<a class="headerlink" href="#first-of-all-integrate-the-library" title="Permalink to this headline">¶</a></h4>
+<p>The gini vision is provided as a aar archive. You can integrate it in your gradle based project by adding it as
+dependency. In order to gain access to the aar file, you have to add the Gini Maven repository to your build script.</p>
+<div class="highlight-groovy"><div class="highlight"><pre><span class="n">repositories</span> <span class="o">{</span>
+    <span class="n">maven</span> <span class="o">{</span>
+        <span class="n">credentials</span> <span class="o">{</span>
+            <span class="n">username</span> <span class="n">project</span><span class="o">.</span><span class="na">hasProperty</span><span class="o">(</span><span class="s1">&#39;giniRepoUser&#39;</span><span class="o">)</span> <span class="o">?</span> <span class="n">giniRepoUser</span> <span class="o">:</span> <span class="s1">&#39;invalidUser&#39;</span>
+            <span class="n">password</span> <span class="n">project</span><span class="o">.</span><span class="na">hasProperty</span><span class="o">(</span><span class="s1">&#39;giniRepoPassword&#39;</span><span class="o">)</span> <span class="o">?</span> <span class="n">giniRepoPassword</span> <span class="o">:</span> <span class="s1">&#39;invalidPassword&#39;</span>
+        <span class="o">}</span>
+        <span class="n">url</span> <span class="s2">&quot;https://repo.gini.net/nexus/content/repositories/releases&quot;</span>
+
+    <span class="o">}</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+
+<span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="o">(</span><span class="s1">&#39;net.gini:ginivision-android-sdk:1.0.1@aar&#39;</span><span class="o">){</span>
+        <span class="n">transitive</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="o">}</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>In the example above we inject the repo credentials via project properties which can be provided in several ways (<a class="reference external" href="https://gradle.org/documentation/">See
+the gradle documentation</a>). Please contact <a class="reference external" href="mailto:technical-support&#37;&#52;&#48;gini&#46;net">Technical Support</a>
+if you don&#8217;t have the credentials for the Gini repo.</p>
+</div>
+<div class="section" id="required-permissions-and-features">
+<h4>Required Permissions and Features<a class="headerlink" href="#required-permissions-and-features" title="Permalink to this headline">¶</a></h4>
+<p>The Gini Vision library for Android needs access to the device&#8217;s camera. Therefore your application
+needs to request permission to access the camera, which, in Android, is achieved by adding the following
+line to your application&#8217;s manifest file. <a class="reference external" href="http://developer.android.com/guide/topics/manifest/manifest-intro.html">See the Android
+documentation</a>.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.CAMERA&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>The Gini Vision library for Android also depends on some hardware features which the device must
+support. It is best practice to declare these required features in the manifest file as well, <a class="reference external" href="http://developer.android.com/guide/topics/manifest/uses-feature-element.html">as
+described in the Android documentation</a>.</p>
+<p>The following is the full listing of all required features which you should add to your application&#8217;s
+manifest file.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;uses-feature</span> <span class="na">android:name=</span><span class="s">&quot;android.hardware.sensor.accelerometer&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;uses-feature</span> <span class="na">android:name=</span><span class="s">&quot;android.hardware.camera&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;uses-feature</span> <span class="na">android:name=</span><span class="s">&quot;android.hardware.camera.flash&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;uses-feature</span> <span class="na">android:name=</span><span class="s">&quot;android.hardware.camera.autofocus&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-a-large-heap">
+<h4>Use a Large Heap<a class="headerlink" href="#use-a-large-heap" title="Permalink to this headline">¶</a></h4>
+<p>Unfortunately, image processing is a memory intensive task. Because of that, you must request a
+larger heap size by <a class="reference external" href="http://developer.android.com/guide/topics/manifest/application-element.html#largeHeap">by setting the largeHeap attribute to &#8220;true&#8221;</a> in the
+manifest &lt;application&gt; tag. Otherwise it is likely that your application will crash due to an
+<cite>OutOfMemoryException</cite>.</p>
+</div>
+<div class="section" id="example-a-complete-manifest-file">
+<h4>Example: A Complete Manifest File<a class="headerlink" href="#example-a-complete-manifest-file" title="Permalink to this headline">¶</a></h4>
+<p>Listed below is the example of a complete manifest file, declaring all required permissions and
+features.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="na">package=</span><span class="s">&quot;net.gini.android.visiontest&quot;</span> <span class="nt">&gt;</span>
+
+    <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.CAMERA&quot;</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;uses-feature</span> <span class="na">android:name=</span><span class="s">&quot;android.hardware.camera&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;uses-feature</span> <span class="na">android:name=</span><span class="s">&quot;android.hardware.camera.autofocus&quot;</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.INTERNET&quot;</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;application</span>
+        <span class="na">android:allowBackup=</span><span class="s">&quot;true&quot;</span>
+        <span class="na">android:icon=</span><span class="s">&quot;@drawable/ic_launcher&quot;</span>
+        <span class="na">android:label=</span><span class="s">&quot;@string/app_name&quot;</span>
+        <span class="na">android:largeHeap=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;activity</span>
+            <span class="na">android:name=</span><span class="s">&quot;.StartActivity&quot;</span>
+            <span class="na">android:label=</span><span class="s">&quot;Gini Testing&quot;</span> <span class="nt">&gt;</span>
+            <span class="nt">&lt;intent-filter&gt;</span>
+                <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.MAIN&quot;</span> <span class="nt">/&gt;</span>
+
+                <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.LAUNCHER&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/intent-filter&gt;</span>
+        <span class="nt">&lt;/activity&gt;</span>
+    <span class="nt">&lt;/application&gt;</span>
+
+<span class="nt">&lt;/manifest&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="next-use-the-scanner-activity">
+<h4>Next: Use the Scanner Activity<a class="headerlink" href="#next-use-the-scanner-activity" title="Permalink to this headline">¶</a></h4>
+<p>After you have integrated the Gini Vision library for Android successfully and your application
+requests all the necessary permissions, you are good to go. Learn next <a class="reference internal" href="index.html#guide-using-the-scanner-activity"><em>How to Use the Scanner Activity
+to Scan Documents.</em></a>.</p>
+</div>
+</div>
+<span id="document-guides/using-the-scanneractivity"></span><div class="section" id="using-the-scanner-activity">
+<span id="guide-using-the-scanner-activity"></span><h3>Using the Scanner Activity<a class="headerlink" href="#using-the-scanner-activity" title="Permalink to this headline">¶</a></h3>
+<p>The Scanner Activity (<tt class="docutils literal"><span class="pre">net.gini.vision.android.ScannerActivity</span></tt>) is the main feature of the Gini
+Vision library for Android. Basically your application starts this activity and gets the cropped
+and enhanced image when the activity returns with results.</p>
+<div class="section" id="starting-the-scanner-activity">
+<h4>Starting the Scanner Activity<a class="headerlink" href="#starting-the-scanner-activity" title="Permalink to this headline">¶</a></h4>
+<p>You can put two extras in the intent which starts the activity. Both expect a boolean value.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_STORE_RECTIFIED</span></tt></dt>
+<dd>Whether the ScannerActivity should store and return the rectified document. Usually, you will
+always use this extra since it is the main feature of the Gini Vision library.</dd>
+<dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_STORE_ORIGINAL</span></tt></dt>
+<dd>Whether the ScannerActivity should store and return the original image. Please note that all
+images are held in the device&#8217;s memory, not in the storage. Because of that, you should use this
+feature only for tests or debugging since it increases memory usage significantly.</dd>
+</dl>
+<div class="section" id="example">
+<h5>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h5>
+<p>The following example starts the ScannerActivity and the ScannerActivity will both return the
+original image and the enhanced image.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">Intent</span> <span class="n">scanIntent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+<span class="n">scanIntent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_STORE_RECTIFIED</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+<span class="n">scanIntent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_STORE_ORIGINAL</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+<span class="n">startActivityForResult</span><span class="o">(</span><span class="n">scanIntent</span><span class="o">,</span> <span class="n">IMAGE_REQUEST</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Always start the activity with the <tt class="docutils literal"><span class="pre">startActivityForResult()</span></tt> method and not with the
+<tt class="docutils literal"><span class="pre">startActivity()</span></tt> method. Otherwise you won&#8217;t be able to obtain the captured documents.</p>
+</div>
+</div>
+</div>
+<div class="section" id="getting-the-results-of-the-scanner">
+<h4>Getting the Results of the Scanner<a class="headerlink" href="#getting-the-results-of-the-scanner" title="Permalink to this headline">¶</a></h4>
+<p>The ScannerActivity finishes automatically once the user has captured an image successfully.
+Afterwards, the Android system calls your activity&#8217;s <a class="reference external" href="http://developer.android.com/reference/android/app/Activity.html#onActivityResult(int,int,android.content.Intent)">onActivityResult</a>
+method.</p>
+<div class="section" id="bitmapfuture">
+<h5><tt class="docutils literal"><span class="pre">BitmapFuture</span></tt><a class="headerlink" href="#bitmapfuture" title="Permalink to this headline">¶</a></h5>
+<p>The ScannerActivity uses BitmapFuture (<tt class="docutils literal"><span class="pre">net.gini.android.vision.BitmapFuture</span></tt>) instances to pass
+bitmaps between activities. The BitmapFuture implements the conventional <a class="reference external" href="http://developer.android.com/reference/java/util/concurrent/Future.html">Future</a> interface. You can
+always use the <tt class="docutils literal"><span class="pre">get()</span></tt> method on a BitmapFuture directly; it does return immediately and returns
+a <a class="reference external" href="http://developer.android.com/reference/android/graphics/Bitmap.html">Bitmap</a>.
+Unfortunately, it is not possible to pass the result images directly in the result intent since
+<a class="reference external" href="http://developer.android.com/reference/android/os/TransactionTooLargeException.html">Android has some hard limitations on the size of transactions</a>.</p>
+<p>There are two extras in the result intent which is given to the method; both are BitmapFuture
+instances:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_RECTIFIED</span></tt></dt>
+<dd>A BitmapFuture that will get the rectified image of the document.</dd>
+<dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_ORIGINAL</span></tt></dt>
+<dd>A BitmapFuture that will get the original image without any enhancements. Only available
+when the activity was started with the <tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_STORE_ORIGINAL</span></tt> extra.</dd>
+</dl>
+</div>
+<div class="section" id="id1">
+<h5>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-java"><div class="highlight"><pre><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onActivityResult</span><span class="o">(</span><span class="kt">int</span> <span class="n">requestCode</span><span class="o">,</span> <span class="kt">int</span> <span class="n">resultCode</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">IMAGE_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">resultCode</span> <span class="o">==</span> <span class="n">RESULT_OK</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">final</span> <span class="n">Bundle</span> <span class="n">documentBundle</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getBundleExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT_BUNDLE</span><span class="o">);</span>
+        <span class="kd">final</span> <span class="n">BitmapFuture</span> <span class="n">documentFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT</span><span class="o">);</span>
+        <span class="kd">final</span> <span class="n">Bitmap</span> <span class="n">document</span> <span class="o">=</span> <span class="n">documentFuture</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+        <span class="c1">// Do something with the document.</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="full-example">
+<h4>Full Example<a class="headerlink" href="#full-example" title="Permalink to this headline">¶</a></h4>
+<p>Below is a full example of an activity which displays a button. When the user clicks on the button,
+the activity starts the document scanner. Once the user has successfully scanned a document, the
+ScannerActivity returns and the example activity can use the rectified bitmap of the document.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">package</span> <span class="nn">net.gini.android.visiontest</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">android.app.Activity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.content.Intent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.graphics.Bitmap</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">net.gini.android.vision.BitmapFuture</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">net.gini.android.vision.ScannerActivity</span><span class="o">;</span>
+
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleActivity</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
+
+    <span class="kd">protected</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">IMAGE_REQUEST</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_example</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onActivityResult</span><span class="o">(</span><span class="kt">int</span> <span class="n">requestCode</span><span class="o">,</span> <span class="kt">int</span> <span class="n">resultCode</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">IMAGE_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">resultCode</span> <span class="o">==</span> <span class="n">RESULT_OK</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">final</span> <span class="n">Bundle</span> <span class="n">documentBundle</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getBundleExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT_BUNDLE</span><span class="o">);</span>
+            <span class="kd">final</span> <span class="n">BitmapFuture</span> <span class="n">documentFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT</span><span class="o">);</span>
+            <span class="kd">final</span> <span class="n">Bitmap</span> <span class="n">document</span> <span class="o">=</span> <span class="n">documentFuture</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+            <span class="c1">// Do something with the document.</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+
+    <span class="cm">/**</span>
+<span class="cm">     * Callback which is called when the user clicked on a button. Starts the document scanner.</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Intent</span> <span class="n">scanIntent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        <span class="n">scanIntent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_STORE_RECTIFIED</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+        <span class="n">startActivityForResult</span><span class="o">(</span><span class="n">scanIntent</span><span class="o">,</span> <span class="n">IMAGE_REQUEST</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">The Android documentation on <a class="reference external" href="http://developer.android.com/training/basics/intents/result.html">Getting a result from an activity</a>.</p>
+</div>
+</div>
+</div>
+<span id="document-styling"></span><div class="section" id="styling-the-image-capturing-screens">
+<h3>Styling the Image Capturing Screens<a class="headerlink" href="#styling-the-image-capturing-screens" title="Permalink to this headline">¶</a></h3>
+<p>The Gini Android Vision library is built with the option to adopt the styling regarding the needs
+of your CI. You can set all styling options via Android&#8217;s resource XML files.</p>
+<p>Listed below is an example file which would go into the application&#8217;s <cite>res/styles/style.xml`</cite> file.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;resources&gt;</span>
+    <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.actionBar.background&quot;</span><span class="nt">&gt;</span>#009edc<span class="nt">&lt;/color&gt;</span>
+    <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.actionBar.color&quot;</span><span class="nt">&gt;</span>#ffffff<span class="nt">&lt;/color&gt;</span>
+    <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.statusBar&quot;</span><span class="nt">&gt;</span>#007eb0<span class="nt">&lt;/color&gt;</span>
+<span class="nt">&lt;/resources&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="customizable-colors">
+<h4>Customizable colors<a class="headerlink" href="#customizable-colors" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">net.gini.android.vision.theme.actionBar.background</span></tt></dt>
+<dd>The background color of the action bar when the <tt class="docutils literal"><span class="pre">ScannerActivity</span></tt> is displayed.</dd>
+<dt><tt class="docutils literal"><span class="pre">net.gini.android.vision.theme.actionBar.color</span></tt></dt>
+<dd>The color of the text on the the action bar when the <tt class="docutils literal"><span class="pre">ScannerActivity</span></tt> is displayed.</dd>
+<dt><tt class="docutils literal"><span class="pre">net.gini.android.vision.theme.statusBar</span></tt></dt>
+<dd><p class="first">The color of the status bar when the <tt class="docutils literal"><span class="pre">ScannerActivity</span></tt> is displayed.</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Please note that this option is ignored in Android versions lower than 5.0 (<cite>Lollipop</cite>).</p>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="debug-options">
+<h4>Debug Options<a class="headerlink" href="#debug-options" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="enabling-the-framemeter">
+<h5>Enabling the framemeter<a class="headerlink" href="#enabling-the-framemeter" title="Permalink to this headline">¶</a></h5>
+<p>The framemeter is displayed on the upper right corner of the scanner activity and displays how long
+the processing of one camera frame took. The lower the number, the faster Gini can process images
+on the device. Which basically means that lower numbers are better.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;integer</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.show_processing_average&quot;</span><span class="nt">&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
+</pre></div>
+</div>
+<p>The value is an integer describing the framemeter&#8217;s visibility <a class="reference external" href="http://developer.android.com/reference/android/view/View.html#attr_android:visibility">as described in the android
+documentation</a>. Usually
+you will use <tt class="docutils literal"><span class="pre">0</span></tt> while debugging or testing and <tt class="docutils literal"><span class="pre">2</span></tt> in release builds.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-19408970-13', 'gini.net');
+      ga('send', 'pageview');
+  </script>
+  
+</body>
+</html>
