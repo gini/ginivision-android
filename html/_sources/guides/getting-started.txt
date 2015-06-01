@@ -115,6 +115,25 @@ features.
 
     </manifest>
 
+
+Check whether the device supports all Gini Vision requirements
+==============================================================
+
+The Gini Vision library for Android provides a helper method that you
+can use in your application's ``Activity`` to check whether the device
+supports all requirements:
+
+.. code-block:: java
+
+   import static net.gini.android.vision.Helpers.fitsGiniVisionRequirements;
+
+   // Somewhere in your activity
+
+   if (!fitsGiniVisionRequirements(this)) {
+       // Some action here (e.g. show a message, don't show some button etc.)
+   }
+
+
 Next: Use the Scanner Activity
 ==============================
 

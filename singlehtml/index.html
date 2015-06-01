@@ -84,6 +84,7 @@
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/getting-started#required-permissions-and-features">Required Permissions and Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/getting-started#use-a-large-heap">Use a Large Heap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/getting-started#example-a-complete-manifest-file">Example: A Complete Manifest File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/getting-started#check-whether-the-device-supports-all-gini-vision-requirements">Check whether the device supports all Gini Vision requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/getting-started#next-use-the-scanner-activity">Next: Use the Scanner Activity</a></li>
 </ul>
 </li>
@@ -248,6 +249,21 @@ features.</p>
     <span class="nt">&lt;/application&gt;</span>
 
 <span class="nt">&lt;/manifest&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-whether-the-device-supports-all-gini-vision-requirements">
+<h4>Check whether the device supports all Gini Vision requirements<a class="headerlink" href="#check-whether-the-device-supports-all-gini-vision-requirements" title="Permalink to this headline">¶</a></h4>
+<p>The Gini Vision library for Android provides a helper method that you
+can use in your application&#8217;s <tt class="docutils literal"><span class="pre">Activity</span></tt> to check whether the device
+supports all requirements:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">static</span> <span class="n">net</span><span class="o">.</span><span class="na">gini</span><span class="o">.</span><span class="na">android</span><span class="o">.</span><span class="na">vision</span><span class="o">.</span><span class="na">Helpers</span><span class="o">.</span><span class="na">fitsGiniVisionRequirements</span><span class="o">;</span>
+
+<span class="c1">// Somewhere in your activity</span>
+
+<span class="k">if</span> <span class="o">(!</span><span class="n">fitsGiniVisionRequirements</span><span class="o">(</span><span class="k">this</span><span class="o">))</span> <span class="o">{</span>
+    <span class="c1">// Some action here (e.g. show a message, don&#39;t show some button etc.)</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 </div>
