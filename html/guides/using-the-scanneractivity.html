@@ -97,7 +97,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#getting-the-results-of-the-scanner">Getting the Results of the Scanner</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#bitmapfuture"><tt class="docutils literal"><span class="pre">BitmapFuture</span></tt></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scanner-activity-results-example">Example</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#full-example">Full Example</a></li>
@@ -183,9 +183,25 @@ original image and the enhanced image.</p>
 </div>
 <div class="section" id="getting-the-results-of-the-scanner">
 <h2>Getting the Results of the Scanner<a class="headerlink" href="#getting-the-results-of-the-scanner" title="Permalink to this headline">¶</a></h2>
-<p>The ScannerActivity finishes automatically once the user has captured an image successfully.
-Afterwards, the Android system calls your activity&#8217;s <a class="reference external" href="http://developer.android.com/reference/android/app/Activity.html#onActivityResult(int,int,android.content.Intent)">onActivityResult</a>
-method.</p>
+<p>The ScannerActivity finishes automatically once the user has captured
+an image successfully.  Afterwards, the Android system calls your
+activity&#8217;s <a class="reference external" href="http://developer.android.com/reference/android/app/Activity.html#onActivityResult(int,int,android.content.Intent)">onActivityResult</a> method. <cite>responseCode</cite> and the
+Intent <cite>data</cite> will be the values that your derived <tt class="docutils literal"><span class="pre">UploadActivity</span></tt> set.</p>
+<p>If taking the picture was not successful due to some user interaction
+(e.g. the application user pressed the back button), <cite>responseCode</cite>
+will be <tt class="docutils literal"><span class="pre">Activity.RESULT_CANCELED</span></tt>.</p>
+<p>If some error happened during the picture taking, <cite>responseCode</cite> will
+be <tt class="docutils literal"><span class="pre">ScannerActivity.RESULT_ERROR</span></tt>. The result intent has an extra
+<tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_ERROR</span></tt> that contains an error
+enumeration. See <a class="reference internal" href="#scanner-activity-results-example"><em>the example</em></a>
+for details how to extract the error enumeration. The following errors
+are possible:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">LOW_MEMORY</span></tt></dt>
+<dd>There was not enough memory available to process the photo.</dd>
+<dt><tt class="docutils literal"><span class="pre">NO_CAMERA</span></tt></dt>
+<dd>The Gini Vision library was unable to connect to the camera service.</dd>
+</dl>
 <div class="section" id="bitmapfuture">
 <h3><tt class="docutils literal"><span class="pre">BitmapFuture</span></tt><a class="headerlink" href="#bitmapfuture" title="Permalink to this headline">¶</a></h3>
 <p>The ScannerActivity uses BitmapFuture (<tt class="docutils literal"><span class="pre">net.gini.android.vision.BitmapFuture</span></tt>) instances to pass
@@ -203,9 +219,15 @@ instances:</p>
 <dd>A BitmapFuture that will get the original image without any enhancements. Only available
 when the activity was started with the <tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_STORE_ORIGINAL</span></tt> extra.</dd>
 </dl>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">It is important that your application always extracts the
+<cite>BitmapFuture</cite> instances out of the result intent. Otherwise,
+memory leaks are possible.</p>
 </div>
-<div class="section" id="id1">
-<h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="scanner-activity-results-example">
+<span id="id1"></span><h3>Example<a class="headerlink" href="#scanner-activity-results-example" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-java"><div class="highlight"><pre><span class="nd">@Override</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onActivityResult</span><span class="o">(</span><span class="kt">int</span> <span class="n">requestCode</span><span class="o">,</span> <span class="kt">int</span> <span class="n">resultCode</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">IMAGE_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">resultCode</span> <span class="o">==</span> <span class="n">RESULT_OK</span><span class="o">)</span> <span class="o">{</span>
@@ -213,6 +235,10 @@ when the activity was started with the <tt class="docutils literal"><span class=
         <span class="kd">final</span> <span class="n">BitmapFuture</span> <span class="n">documentFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT</span><span class="o">);</span>
         <span class="kd">final</span> <span class="n">Bitmap</span> <span class="n">document</span> <span class="o">=</span> <span class="n">documentFuture</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
         <span class="c1">// Do something with the document.</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">IMAGE_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">resultCode</span> <span class="o">==</span> <span class="n">ScannerActivty</span><span class="o">.</span><span class="na">RESULT_ERROR</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Unfortunately, some error has happened</span>
+        <span class="kd">final</span> <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">Error</span> <span class="n">error</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getParcelableExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_ERROR</span><span class="o">);</span>
+        <span class="c1">// We can now do something with the error here</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></div>
@@ -252,6 +278,10 @@ ScannerActivity returns and the example activity can use the rectified bitmap of
             <span class="kd">final</span> <span class="n">BitmapFuture</span> <span class="n">documentFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT</span><span class="o">);</span>
             <span class="kd">final</span> <span class="n">Bitmap</span> <span class="n">document</span> <span class="o">=</span> <span class="n">documentFuture</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
             <span class="c1">// Do something with the document.</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">IMAGE_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">resultCode</span> <span class="o">==</span> <span class="n">ScannerActivty</span><span class="o">.</span><span class="na">RESULT_ERROR</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// Unfortunately, some error has happened</span>
+            <span class="kd">final</span> <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">Error</span> <span class="n">error</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getParcelableExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_ERROR</span><span class="o">);</span>
+            <span class="c1">// We can now do something with the error here</span>
         <span class="o">}</span>
     <span class="o">}</span>
 
@@ -262,6 +292,9 @@ ScannerActivity returns and the example activity can use the rectified bitmap of
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">Intent</span> <span class="n">scanIntent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
         <span class="n">scanIntent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_STORE_RECTIFIED</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+        <span class="c1">// MyUploadActivity is your Activity that implements the upload or processing logic.</span>
+        <span class="c1">// It needs to be derived from Gini Vision library&#39;s UploadActivity.</span>
+        <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">setUploadActivityExtra</span><span class="o">(</span><span class="n">scanIntent</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span> <span class="n">MyUploadActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
         <span class="n">startActivityForResult</span><span class="o">(</span><span class="n">scanIntent</span><span class="o">,</span> <span class="n">IMAGE_REQUEST</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>

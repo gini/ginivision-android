@@ -9,7 +9,7 @@ Vision library for Android. Basically your application starts this activity and 
 and enhanced image when the activity returns with results.
 
 Starting the Scanner Activity
-============================
+=============================
 
 You can put two extras in the intent which starts the activity. Both expect a boolean value.
 
@@ -44,10 +44,29 @@ original image and the enhanced image.
 Getting the Results of the Scanner
 ==================================
 
-The ScannerActivity finishes automatically once the user has captured an image successfully.
-Afterwards, the Android system calls your activity's `onActivityResult
-<http://developer.android.com/reference/android/app/Activity.html#onActivityResult(int, int, android.content.Intent)>`_
-method.
+The ScannerActivity finishes automatically once the user has captured
+an image successfully.  Afterwards, the Android system calls your
+activity's `onActivityResult
+<http://developer.android.com/reference/android/app/Activity.html#onActivityResult(int,
+int, android.content.Intent)>`_ method. `responseCode` and the
+Intent `data` will be the values that your derived ``UploadActivity`` set.
+
+If taking the picture was not successful due to some user interaction
+(e.g. the application user pressed the back button), `responseCode`
+will be ``Activity.RESULT_CANCELED``.
+
+If some error happened during the picture taking, `responseCode` will
+be ``ScannerActivity.RESULT_ERROR``. The result intent has an extra
+``ScannerActivity.EXTRA_ERROR`` that contains an error
+enumeration. See :ref:`the example <scanner-activity-results-example>`
+for details how to extract the error enumeration. The following errors
+are possible:
+
+``LOW_MEMORY``
+   There was not enough memory available to process the photo.
+
+``NO_CAMERA``
+   The Gini Vision library was unable to connect to the camera service.
 
 
 ``BitmapFuture``
@@ -72,6 +91,14 @@ instances:
     A BitmapFuture that will get the original image without any enhancements. Only available
     when the activity was started with the ``ScannerActivity.EXTRA_STORE_ORIGINAL`` extra.
 
+.. warning::
+
+   It is important that your application always extracts the
+   `BitmapFuture` instances out of the result intent. Otherwise,
+   memory leaks are possible.
+
+
+.. _scanner-activity-results-example:
 
 Example
 -------
@@ -85,6 +112,10 @@ Example
                 final BitmapFuture documentFuture = documentBundle.getParcelable(ScannerActivity.EXTRA_DOCUMENT);
                 final Bitmap document = documentFuture.get();
                 // Do something with the document.
+            } else if (requestCode == IMAGE_REQUEST && resultCode == ScannerActivty.RESULT_ERROR) {
+                // Unfortunately, some error has happened
+	        final ScannerActivity.Error error = data.getParcelableExtra(ScannerActivity.EXTRA_ERROR);
+	        // We can now do something with the error here
             }
         }
 
@@ -127,6 +158,10 @@ ScannerActivity returns and the example activity can use the rectified bitmap of
                 final BitmapFuture documentFuture = documentBundle.getParcelable(ScannerActivity.EXTRA_DOCUMENT);
                 final Bitmap document = documentFuture.get();
                 // Do something with the document.
+            } else if (requestCode == IMAGE_REQUEST && resultCode == ScannerActivty.RESULT_ERROR) {
+                // Unfortunately, some error has happened
+	        final ScannerActivity.Error error = data.getParcelableExtra(ScannerActivity.EXTRA_ERROR);
+	        // We can now do something with the error here
             }
         }
 
@@ -137,6 +172,9 @@ ScannerActivity returns and the example activity can use the rectified bitmap of
         public void onClick(View view) {
             Intent scanIntent = new Intent(this, ScannerActivity.class);
             scanIntent.putExtra(ScannerActivity.EXTRA_STORE_RECTIFIED, true);
+	    // MyUploadActivity is your Activity that implements the upload or processing logic.
+	    // It needs to be derived from Gini Vision library's UploadActivity.
+	    ScannerActivity.setUploadActivityExtra(scanIntent, this, MyUploadActivity.class);
             startActivityForResult(scanIntent, IMAGE_REQUEST);
         }
     }
