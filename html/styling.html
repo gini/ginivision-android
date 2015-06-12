@@ -100,10 +100,24 @@
 <li class="toctree-l3"><a class="reference internal" href="guides/using-the-scanneractivity.html#scanner-activity-results-example">Example</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="guides/using-the-scanneractivity.html#upload-the-document-to-gini-using-the-gini-api-sdk">Upload the Document to Gini using the Gini API SDK</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guides/using-the-scanneractivity.html#full-example">Full Example</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Styling the Image Capturing Screens</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#screen-resources">Screen Resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#camera-screen">Camera Screen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#help-screen-1">Help Screen #1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#help-screen-2">Help Screen #2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#help-screen-3">Help Screen #3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#help-screen-4">Help Screen #4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shutter-screen">Shutter Screen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#processing-screen">Processing Screen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-of-all-image-files">List of all image files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-of-all-animations">List of all animations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-of-all-text-ressources">List of all text ressources</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#customizable-colors">Customizable colors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#debug-options">Debug Options</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#enabling-the-framemeter">Enabling the framemeter</a></li>
@@ -150,15 +164,90 @@
   <div class="section" id="styling-the-image-capturing-screens">
 <h1>Styling the Image Capturing Screens<a class="headerlink" href="#styling-the-image-capturing-screens" title="Permalink to this headline">¶</a></h1>
 <p>The Gini Android Vision library is built with the option to adopt the styling regarding the needs
-of your CI. You can set all styling options via Android&#8217;s resource XML files.</p>
-<p>Listed below is an example file which would go into the application&#8217;s <cite>res/styles/style.xml`</cite> file.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-<span class="nt">&lt;resources&gt;</span>
-    <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.actionBar.background&quot;</span><span class="nt">&gt;</span>#009edc<span class="nt">&lt;/color&gt;</span>
-    <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.actionBar.color&quot;</span><span class="nt">&gt;</span>#ffffff<span class="nt">&lt;/color&gt;</span>
-    <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.statusBar&quot;</span><span class="nt">&gt;</span>#007eb0<span class="nt">&lt;/color&gt;</span>
-<span class="nt">&lt;/resources&gt;</span>
-</pre></div>
+of your CI. Therefore the UI ressources used by the Gini Android Vision library can be replaced or customized.</p>
+<div class="section" id="screen-resources">
+<h2>Screen Resources<a class="headerlink" href="#screen-resources" title="Permalink to this headline">¶</a></h2>
+<p>You can replace the images used by the sdk simply by adding images with the same name to the drawables folder
+(and resolution dependent subfolders) of your app. The used texts can be replaced by adding a string resources
+with the same key in the <tt class="docutils literal"><span class="pre">values/strings.xml</span></tt> file of your app. The following screen images will show which
+image and which text ressources are used on which screen. The color scheme is as follows: <tt class="docutils literal"><span class="pre">red</span></tt>- images,
+<tt class="docutils literal"><span class="pre">yellow</span></tt>- animations <tt class="docutils literal"><span class="pre">blue</span></tt>- texts.</p>
+<div class="section" id="camera-screen">
+<h3>Camera Screen<a class="headerlink" href="#camera-screen" title="Permalink to this headline">¶</a></h3>
+<img alt="_images/android_camera-screen.png" src="_images/android_camera-screen.png" />
+<img alt="_images/android_camera-screen_remittance.png" src="_images/android_camera-screen_remittance.png" />
+<img alt="_images/android_camera-screen_closer-message.png" src="_images/android_camera-screen_closer-message.png" />
+<img alt="_images/android_camera-screen_still-message.png" src="_images/android_camera-screen_still-message.png" />
+</div>
+<div class="section" id="help-screen-1">
+<h3>Help Screen #1<a class="headerlink" href="#help-screen-1" title="Permalink to this headline">¶</a></h3>
+<img alt="_images/android_help-screen_1.png" src="_images/android_help-screen_1.png" />
+</div>
+<div class="section" id="help-screen-2">
+<h3>Help Screen #2<a class="headerlink" href="#help-screen-2" title="Permalink to this headline">¶</a></h3>
+<img alt="_images/android_help-screen_2.png" src="_images/android_help-screen_2.png" />
+</div>
+<div class="section" id="help-screen-3">
+<h3>Help Screen #3<a class="headerlink" href="#help-screen-3" title="Permalink to this headline">¶</a></h3>
+<img alt="_images/android_help-screen_3.png" src="_images/android_help-screen_3.png" />
+</div>
+<div class="section" id="help-screen-4">
+<h3>Help Screen #4<a class="headerlink" href="#help-screen-4" title="Permalink to this headline">¶</a></h3>
+<img alt="_images/android_help-screen_4.png" src="_images/android_help-screen_4.png" />
+</div>
+<div class="section" id="shutter-screen">
+<h3>Shutter Screen<a class="headerlink" href="#shutter-screen" title="Permalink to this headline">¶</a></h3>
+<img alt="_images/android_shutter-screen.png" src="_images/android_shutter-screen.png" />
+</div>
+<div class="section" id="processing-screen">
+<h3>Processing Screen<a class="headerlink" href="#processing-screen" title="Permalink to this headline">¶</a></h3>
+<p>The processing screen contains an animation which is defined in <tt class="docutils literal"><span class="pre">drawables/processing_screen_1.xml</span></tt>.</p>
+<img alt="_images/android_processing-screen.png" src="_images/android_processing-screen.png" />
+</div>
+<div class="section" id="list-of-all-image-files">
+<h3>List of all image files<a class="headerlink" href="#list-of-all-image-files" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>corners.png</li>
+<li>help_screen_1.png</li>
+<li>help_screen_2_falsch.png</li>
+<li>help_screen_2_richtig.png</li>
+<li>help_screen_3_falsch.png</li>
+<li>help_screen_3_richtig.png</li>
+<li>help_screen_4_falsch.png</li>
+<li>help_screen_4_richtig.png</li>
+<li>icon_action_help.png</li>
+<li>message_closer.png</li>
+<li>message_still.png</li>
+<li>processing_screen_11.png</li>
+<li>remittance_corners.png</li>
+<li>shutter_bottom.png</li>
+<li>shutter_middle.png</li>
+<li>shutter_top.png</li>
+</ul>
+</div>
+<div class="section" id="list-of-all-animations">
+<h3>List of all animations<a class="headerlink" href="#list-of-all-animations" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>processing_screen_1.xml</li>
+</ul>
+</div>
+<div class="section" id="list-of-all-text-ressources">
+<h3>List of all text ressources<a class="headerlink" href="#list-of-all-text-ressources" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>title_activity_scanner</li>
+<li>action_settings</li>
+<li>net.gini.android.vision.title_activity_choice</li>
+<li>action_help</li>
+<li>title_activity_help</li>
+<li>action_back</li>
+<li>action_forward</li>
+<li>help_fragment_title</li>
+<li>help_fragment_1_text</li>
+<li>help_fragment_2_text</li>
+<li>help_fragment_3_text</li>
+<li>help_fragment_4_text</li>
+</ul>
+</div>
 </div>
 <div class="section" id="customizable-colors">
 <h2>Customizable colors<a class="headerlink" href="#customizable-colors" title="Permalink to this headline">¶</a></h2>
@@ -175,6 +264,15 @@ of your CI. You can set all styling options via Android&#8217;s resource XML fil
 </div>
 </dd>
 </dl>
+<p>Listed below is an example file which would go into the application&#8217;s <cite>res/styles/style.xml`</cite> file.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;resources&gt;</span>
+    <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.actionBar.background&quot;</span><span class="nt">&gt;</span>#009edc<span class="nt">&lt;/color&gt;</span>
+    <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.actionBar.color&quot;</span><span class="nt">&gt;</span>#ffffff<span class="nt">&lt;/color&gt;</span>
+    <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.statusBar&quot;</span><span class="nt">&gt;</span>#007eb0<span class="nt">&lt;/color&gt;</span>
+<span class="nt">&lt;/resources&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="debug-options">
 <h2>Debug Options<a class="headerlink" href="#debug-options" title="Permalink to this headline">¶</a></h2>

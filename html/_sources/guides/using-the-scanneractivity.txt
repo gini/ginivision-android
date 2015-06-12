@@ -11,29 +11,49 @@ and enhanced image when the activity returns with results.
 Starting the Scanner Activity
 =============================
 
-You can put two extras in the intent which starts the activity. Both expect a boolean value.
+The ``Intent`` which triggers the scanner activity must be parameterized. There are two mandatory parameters:
+
+``ScannerActivity.EXTRA_UPLOAD_ACTIVITY`` 
+        The ``UploadActitvity`` must be set which is called after the document has been captured.
+        This class must extend the ``net.gini.android.vision.UploadActivity`` and implement the 
+        ``uploadDocument(..)`` method. There is a static helper method
+        ``ScannerActivity.setUploadActivityExtra`` in order to make setting the activity more convenient.
+
+``ScannerActivity.EXTRA_DOCTYPE_BUNDLE``
+        The desired document type must be selected by the user and must be provided as 
+        ``net.gini.android.vision.DocumenType`` instance. Furthermore, the document type parameter must
+        be wrapped in a bundle using the key ``ScannerActivity.EXTRA_DOCTYPE``
+        
+You can also put two optional extras in the intent. Both expect a boolean value.
 
 ``ScannerActivity.EXTRA_STORE_RECTIFIED``
-    Whether the ScannerActivity should store and return the rectified document. Usually, you will
-    always use this extra since it is the main feature of the Gini Vision library.
+        Whether the ScannerActivity should store and return the rectified document. Usually, you will
+        always use this extra since it is the main feature of the Gini Vision library.
 
 ``ScannerActivity.EXTRA_STORE_ORIGINAL``
-    Whether the ScannerActivity should store and return the original image. Please note that all
-    images are held in the device's memory, not in the storage. Because of that, you should use this
-    feature only for tests or debugging since it increases memory usage significantly.
+        Whether the ScannerActivity should store and return the original image. Please note that all
+        images are held in the device's memory, not in the storage. Because of that, you should use this
+        feature only for tests or debugging since it increases memory usage significantly.
 
 
 Example
 -------
 
 The following example starts the ScannerActivity and the ScannerActivity will both return the
-original image and the enhanced image.
+original image and the enhanced image. The ``MyUploadActivity`` is a class implemented by the App.
 
 .. code-block:: java
 
-            Intent scanIntent = new Intent(this, ScannerActivity.class);
-            scanIntent.putExtra(ScannerActivity.EXTRA_STORE_RECTIFIED, true);
+            final Intent scanIntent = new Intent(this, CaptureActivity.class);
             scanIntent.putExtra(ScannerActivity.EXTRA_STORE_ORIGINAL, true);
+            scanIntent.putExtra(ScannerActivity.EXTRA_STORE_RECTIFIED, true);
+
+            final DocumentType documentType =  // user has selected the document type already
+            final Bundle docTypeBundle = new Bundle();
+            docTypeBundle.putParcelable(ScannerActivity.EXTRA_DOCTYPE, documentType); 
+            scanIntent.putExtra(ScannerActivity.EXTRA_DOCTYPE_BUNDLE, docTypeBundle);
+
+            ScannerActivity.setUploadActivityExtra(scanIntent, this, MyUploadActivity.class);
             startActivityForResult(scanIntent, IMAGE_REQUEST);
 
 .. note:: Always start the activity with the ``startActivityForResult()`` method and not with the
@@ -107,19 +127,115 @@ Example
 
         @Override
         public void onActivityResult(int requestCode, int resultCode, Intent data) {
-            if (requestCode == IMAGE_REQUEST && resultCode == RESULT_OK) {
-                final Bundle documentBundle = data.getBundleExtra(ScannerActivity.EXTRA_DOCUMENT_BUNDLE);
-                final BitmapFuture documentFuture = documentBundle.getParcelable(ScannerActivity.EXTRA_DOCUMENT);
-                final Bitmap document = documentFuture.get();
-                // Do something with the document.
-            } else if (requestCode == IMAGE_REQUEST && resultCode == ScannerActivty.RESULT_ERROR) {
-                // Unfortunately, some error has happened
-	        final ScannerActivity.Error error = data.getParcelableExtra(ScannerActivity.EXTRA_ERROR);
-	        // We can now do something with the error here
+            Bundle documentBundle;
+            BitmapFuture originalFuture = null;
+            
+            // we always try to get the document to prevent memory leaks
+            if (requestCode == IMAGE_REQUEST && data != null) {
+                documentBundle = data.getBundleExtra(ScannerActivity.EXTRA_DOCUMENT_BUNDLE);
+                if (documentBundle != null) {
+                    originalFuture = documentBundle.getParcelable(CaptureActivity.EXTRA_ORIGINAL);
+                }
             }
+
+            if (requestCode == IMAGE_REQUEST && resultCode == RESULT_OK) {
+                // everything ok, do something with the document
+            } else if (requestCode == IMAGE_REQUEST && resultCode == ScannerActivity.RESULT_ERROR) {
+                final ScannerActivity.Error error = data.getParcelableExtra(ScannerActivity.EXTRA_ERROR);
+                // unfortunately there was an error we must handle 
+            }
+         }
+
+
+Upload the Document to Gini using the Gini API SDK
+==================================================
+First of all, we have to include the Gini API SDK as dependency in the ``build.gradle``.
+
+.. code-block:: groovy
+
+    dependencies {
+        ...
+        compile ('net.gini:gini-android-sdk:1.0.5@aar'){
+            transitive = true
+        } 
+        ...
+
+The Gini SDK provides a ``Gini`` class which acts as a facade to the whole functionality of the Gini API. 
+The App must create a single instance of this class and hold it for their complete life cyle.
+
+
+Finally, the ``Gini`` instance is used in the ``uploadDocument(..)`` method of the ``MyUploadActivity`` which extends
+``net.gini.android.vision.UploadActivity`` to upload the captured document. The example below shows a possible implementation
+which puts the result extractions into an new intent for further processing. 
+
+.. code-block:: java
+
+     public void uploadDocument(final Bitmap document) {
+            final Intent intent = getIntent();
+            final Bundle documentTypeBundle = intent.getBundleExtra(EXTRA_DOCUMENT_TYPE_BUNDLE);
+            final DocumentType documentType = documentTypeBundle.getParcelable(EXTRA_DOCUMENT_TYPE);
+            documentTaskManager.createDocument(document, null, documentType.getApiDocTypeHint(), 50)
+                    .onSuccessTask(new Continuation<Document, Task<Document>>() {
+                        @Override
+                        public Task<Document> then(Task<Document> task) throws Exception {
+                            final Document document = task.getResult();
+                            documentId = document.getId();
+                            return documentTaskManager.pollDocument(document);
+                        }
+                    })
+                    .onSuccessTask(new Continuation<Document, Task<Map<String, SpecificExtraction>>>() {
+                        @Override
+                        public Task<Map<String, SpecificExtraction>> then(Task<Document> task) throws Exception {
+                            return documentTaskManager.getExtractions(task.getResult());
+                        }
+                    })
+                    .onSuccess(new Continuation<Map<String, SpecificExtraction>, Object>() {
+                        @Override
+                        public Object then(Task<Map<String, SpecificExtraction>> task) throws Exception {
+                            final Map<String, SpecificExtraction> extractions = task.getResult();
+                            final Bundle extractionsBundle = new Bundle();
+                            for (Map.Entry<String, SpecificExtraction> entry : extractions.entrySet()) {
+                                extractionsBundle.putParcelable(entry.getKey(), entry.getValue());
+                            }
+                            final Intent result = new Intent();
+                            result.putExtra(EXTRA_DOCUMENT, documentId);
+                            result.putExtra(EXTRA_EXTRACTIONS, extractionsBundle);
+                            setResult(RESULT_OK, result);
+                            return null;
+                        }
+                    })
+                    .continueWith(new Continuation<Object, Object>() {
+                        @Override
+                        public Object then(Task<Object> task) throws Exception {
+                            if (task.isFaulted()) {
+                                //noinspection ThrowableResultOfMethodCallIgnored
+                                final Exception exception = task.getError();
+                                // We could inspect the exception here -- should always be a subclass of a
+                                // com.android.volley.VolleyError. For example:
+                                // * AuthFailureError: Client credentials or access token was wrong
+                                // * ConnectError, TimeoutError: can be caused by a flaky connection
+                                // * NoConnectionError: (Likely) no Internet connection available
+                                LOG.debug("Upload failed:", exception);
+                                // Signal to parent activity that the uploading failed
+                                final Intent resultIntent = new Intent();
+                                resultIntent.putExtra(EXTRA_ERROR_STRING, exception.toString());
+                                setResult(RESULT_UPLOAD_ERROR, resultIntent);
+                            }
+                            LOG.debug("done");
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    finish();
+                                }
+                            });
+                            return null;
+                        }
+                    });
         }
 
-
+.. seealso::
+    
+    `The Gini SDK integration guide for Android. <https://github.com/gini/gini-sdk-android/wiki/Integration-Guide>`_
 
 Full Example
 ============
@@ -153,15 +269,22 @@ ScannerActivity returns and the example activity can use the rectified bitmap of
 
         @Override
         public void onActivityResult(int requestCode, int resultCode, Intent data) {
+            Bundle documentBundle;
+            BitmapFuture originalFuture = null;
+            
+            // we always try to get the document to prevent memory leaks
+            if (requestCode == IMAGE_REQUEST && data != null) {
+                documentBundle = data.getBundleExtra(ScannerActivity.EXTRA_DOCUMENT_BUNDLE);
+                if (documentBundle != null) {
+                    originalFuture = documentBundle.getParcelable(CaptureActivity.EXTRA_ORIGINAL);
+                }
+            }
+
             if (requestCode == IMAGE_REQUEST && resultCode == RESULT_OK) {
-                final Bundle documentBundle = data.getBundleExtra(ScannerActivity.EXTRA_DOCUMENT_BUNDLE);
-                final BitmapFuture documentFuture = documentBundle.getParcelable(ScannerActivity.EXTRA_DOCUMENT);
-                final Bitmap document = documentFuture.get();
-                // Do something with the document.
-            } else if (requestCode == IMAGE_REQUEST && resultCode == ScannerActivty.RESULT_ERROR) {
-                // Unfortunately, some error has happened
-	        final ScannerActivity.Error error = data.getParcelableExtra(ScannerActivity.EXTRA_ERROR);
-	        // We can now do something with the error here
+                // everything ok, do something with the document
+            } else if (requestCode == IMAGE_REQUEST && resultCode == ScannerActivity.RESULT_ERROR) {
+                final ScannerActivity.Error error = data.getParcelableExtra(ScannerActivity.EXTRA_ERROR);
+                // unfortunately there was an error we must handle 
             }
         }
 
@@ -172,9 +295,9 @@ ScannerActivity returns and the example activity can use the rectified bitmap of
         public void onClick(View view) {
             Intent scanIntent = new Intent(this, ScannerActivity.class);
             scanIntent.putExtra(ScannerActivity.EXTRA_STORE_RECTIFIED, true);
-	    // MyUploadActivity is your Activity that implements the upload or processing logic.
-	    // It needs to be derived from Gini Vision library's UploadActivity.
-	    ScannerActivity.setUploadActivityExtra(scanIntent, this, MyUploadActivity.class);
+   	        // MyUploadActivity is your Activity that implements the upload or processing logic.
+	        // It needs to be derived from Gini Vision library's UploadActivity.
+            ScannerActivity.setUploadActivityExtra(scanIntent, this, MyUploadActivity.class);
             startActivityForResult(scanIntent, IMAGE_REQUEST);
         }
     }
