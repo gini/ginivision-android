@@ -2,17 +2,17 @@
 Styling the Image Capturing Screens
 ===================================
 
-The Gini Android Vision library is built with the option to adopt the styling regarding the needs
-of your CI. Therefore the UI ressources used by the Gini Android Vision library can be replaced or customized. 
+The Gini Android Vision library is built with the option to adopt the styling appropriate to the requirements of your
+CI. Therefore the UI ressources used by the Gini Android Vision library can be replaced or customized.
 
 Screen Resources
 ================
 
-You can replace the images used by the sdk simply by adding images with the same name to the drawables folder
-(and resolution dependent subfolders) of your app. The used texts can be replaced by adding a string resources 
-with the same key in the ``values/strings.xml`` file of your app. The following screen images will show which 
-image and which text ressources are used on which screen. The color scheme is as follows: ``red``- images,
-``yellow``- animations ``blue``- texts.
+You can replace the images used by the SDK simply by adding images with the same name to the drawables folder (and
+resolution dependent subfolders) of your app. The text to be displayed can be replaced by adding string resources with
+the same keys in the ``values/strings.xml`` file of your app. The following screen images will show which image and
+which text ressources are used on which screen. The color scheme is as follows: ``red``- images, ``yellow``- animations
+``blue``- texts.
 
 Camera Screen
 -------------
@@ -42,11 +42,6 @@ Help Screen #4
 
 .. image:: /images/android_help-screen_4.png
 
-Shutter Screen
---------------
-
-.. image:: /images/android_shutter-screen.png
-
 Processing Screen
 -----------------
 
@@ -55,7 +50,7 @@ The processing screen contains an animation which is defined in ``drawables/proc
 .. image:: /images/android_processing-screen.png
 
 List of all image files
-----------------------------
+-----------------------
 
 * corners.png
 * help_screen_1.png
@@ -70,9 +65,6 @@ List of all image files
 * message_still.png
 * processing_screen_11.png
 * remittance_corners.png
-* shutter_bottom.png
-* shutter_middle.png
-* shutter_top.png
 
 List of all animations
 ----------------------
@@ -94,7 +86,6 @@ List of all text ressources
 * help_fragment_3_text
 * help_fragment_4_text
 
-
 Customizable colors
 ===================
 
@@ -109,6 +100,9 @@ Customizable colors
 
     .. note:: Please note that this option is ignored in Android versions lower than 5.0 (`Lollipop`).
 
+``net.gini.android.vision.theme.outlineColor``
+    The color of the document outline shown in the ``ScannerActivity``'s viewfinder.
+
 Listed below is an example file which would go into the application's `res/styles/style.xml`` file.
 
 .. code-block:: xml
@@ -118,6 +112,7 @@ Listed below is an example file which would go into the application's `res/style
         <color name="net.gini.android.vision.theme.actionBar.background">#009edc</color>
         <color name="net.gini.android.vision.theme.actionBar.color">#ffffff</color>
         <color name="net.gini.android.vision.theme.statusBar">#007eb0</color>
+        <color name="net.gini.android.vision.theme.outlineColor">#1ae2ae</color>
     </resources>
 
 Debug Options
@@ -126,15 +121,14 @@ Debug Options
 Enabling the framemeter
 -----------------------
 
-The framemeter is displayed on the upper right corner of the scanner activity and displays how long
-the processing of one camera frame took. The lower the number, the faster Gini can process images
-on the device. Which basically means that lower numbers are better.
+The framemeter is displayed on the upper right corner of the scanner activity and displays how long it takes to process
+one camera frame. The lower the number, the faster Gini can process images on the device. Which basically means that
+lower numbers are better.
 
 .. code-block:: xml
 
     <integer name="net.gini.android.vision.show_processing_average">0</integer>
 
-The value is an integer describing the framemeter's visibility `as described in the android
-documentation
-<http://developer.android.com/reference/android/view/View.html#attr_android:visibility>`_. Usually
-you will use ``0`` while debugging or testing and ``2`` in release builds.
+The value is an integer describing the framemeter's visibility
+`as described in the android documentation <http://developer.android.com/reference/android/view/View.html#attr_android:visibility>`_.
+Usually you will use ``0`` while debugging or testing and ``2`` in release builds.
