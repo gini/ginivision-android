@@ -103,6 +103,12 @@ Customizable colors
 ``net.gini.android.vision.theme.outlineColor``
     The color of the document outline shown in the ``ScannerActivity``'s viewfinder.
 
+``net.gini.android.vision.theme.backgroundColor``
+    The background color for the root views of all activities except the ``Help Activity``.
+
+``net.gini.android.vision.theme.helpBackgroundColor``
+    The background color for the ``HelpActivity``'s root view.
+
 Listed below is an example file which would go into the application's `res/styles/style.xml`` file.
 
 .. code-block:: xml
@@ -113,6 +119,8 @@ Listed below is an example file which would go into the application's `res/style
         <color name="net.gini.android.vision.theme.actionBar.color">#ffffff</color>
         <color name="net.gini.android.vision.theme.statusBar">#007eb0</color>
         <color name="net.gini.android.vision.theme.outlineColor">#1ae2ae</color>
+        <color name="net.gini.android.vision.theme.backgroundColor">#ffffff</color>
+        <color name="net.gini.android.vision.theme.helpBackgroundColor">#ffffff</color>
     </resources>
 
 Debug Options

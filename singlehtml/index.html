@@ -190,7 +190,7 @@ dependency. In order to gain access to the aar file, you have to add the Gini Ma
 <span class="o">}</span>
 
 <span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">compile</span> <span class="o">(</span><span class="s1">&#39;net.gini:ginivision-android-sdk:1.0.131@aar&#39;</span><span class="o">){</span>
+    <span class="n">compile</span> <span class="o">(</span><span class="s1">&#39;net.gini:ginivision-android-sdk:1.0.135@aar&#39;</span><span class="o">){</span>
         <span class="n">transitive</span> <span class="o">=</span> <span class="kc">true</span>
     <span class="o">}</span>
     <span class="o">...</span>
@@ -655,6 +655,10 @@ which text ressources are used on which screen. The color scheme is as follows: 
 </dd>
 <dt><tt class="docutils literal"><span class="pre">net.gini.android.vision.theme.outlineColor</span></tt></dt>
 <dd>The color of the document outline shown in the <tt class="docutils literal"><span class="pre">ScannerActivity</span></tt>&#8216;s viewfinder.</dd>
+<dt><tt class="docutils literal"><span class="pre">net.gini.android.vision.theme.backgroundColor</span></tt></dt>
+<dd>The background color for the root views of all activities except the <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">Activity</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">net.gini.android.vision.theme.helpBackgroundColor</span></tt></dt>
+<dd>The background color for the <tt class="docutils literal"><span class="pre">HelpActivity</span></tt>&#8216;s root view.</dd>
 </dl>
 <p>Listed below is an example file which would go into the application&#8217;s <cite>res/styles/style.xml`</cite> file.</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
@@ -663,6 +667,8 @@ which text ressources are used on which screen. The color scheme is as follows: 
     <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.actionBar.color&quot;</span><span class="nt">&gt;</span>#ffffff<span class="nt">&lt;/color&gt;</span>
     <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.statusBar&quot;</span><span class="nt">&gt;</span>#007eb0<span class="nt">&lt;/color&gt;</span>
     <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.outlineColor&quot;</span><span class="nt">&gt;</span>#1ae2ae<span class="nt">&lt;/color&gt;</span>
+    <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.backgroundColor&quot;</span><span class="nt">&gt;</span>#ffffff<span class="nt">&lt;/color&gt;</span>
+    <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.helpBackgroundColor&quot;</span><span class="nt">&gt;</span>#ffffff<span class="nt">&lt;/color&gt;</span>
 <span class="nt">&lt;/resources&gt;</span>
 </pre></div>
 </div>
