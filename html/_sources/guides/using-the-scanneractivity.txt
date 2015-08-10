@@ -44,7 +44,7 @@ enhanced image. The ``MyUploadActivity`` is a class implemented by your app.
 
 .. code-block:: java
 
-            final Intent scanIntent = new Intent(this, CaptureActivity.class);
+            final Intent scanIntent = new Intent(this, ScannerActivity.class);
             scanIntent.putExtra(ScannerActivity.EXTRA_STORE_ORIGINAL, true);
             scanIntent.putExtra(ScannerActivity.EXTRA_STORE_RECTIFIED, true);
 
@@ -127,7 +127,7 @@ Example
             if (requestCode == IMAGE_REQUEST && data != null) {
                 documentBundle = data.getBundleExtra(ScannerActivity.EXTRA_DOCUMENT_BUNDLE);
                 if (documentBundle != null) {
-                    originalFuture = documentBundle.getParcelable(CaptureActivity.EXTRA_ORIGINAL);
+                    originalFuture = documentBundle.getParcelable(ScannerActivity.EXTRA_ORIGINAL);
                 }
             }
 
@@ -269,7 +269,7 @@ activity can use the rectified bitmap of the document.
             if (requestCode == IMAGE_REQUEST && data != null) {
                 documentBundle = data.getBundleExtra(ScannerActivity.EXTRA_DOCUMENT_BUNDLE);
                 if (documentBundle != null) {
-                    originalFuture = documentBundle.getParcelable(CaptureActivity.EXTRA_ORIGINAL);
+                    originalFuture = documentBundle.getParcelable(ScannerActivity.EXTRA_ORIGINAL);
                 }
             }
 
