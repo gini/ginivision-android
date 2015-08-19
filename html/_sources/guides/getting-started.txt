@@ -128,6 +128,10 @@ check whether the device supports all requirements:
        // Some action here (e.g. show a message, don't show some button etc.)
    }
 
+.. warning::
+
+    `fitsGiniVisionRequirements()` uses `Camera.open()` which may take a long time to complete on some devices. You should call this method from a worker thread 
+    to avoid blocking the main application UI thread.
 
 Next: Use the Scanner Activity
 ==============================

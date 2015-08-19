@@ -116,6 +116,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/styling#customizable-colors">Customizable colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/styling#customizable-fonts">Customizable fonts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/styling#debug-options">Debug Options</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="index.html#document-guides/styling#enabling-the-framemeter">Enabling the framemeter</a></li>
 </ul>
@@ -275,6 +276,11 @@ check whether the device supports all requirements:</p>
     <span class="c1">// Some action here (e.g. show a message, don&#39;t show some button etc.)</span>
 <span class="o">}</span>
 </pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><cite>fitsGiniVisionRequirements()</cite> uses <cite>Camera.open()</cite> which may take a long time to complete on some devices. You should call this method from a worker thread
+to avoid blocking the main application UI thread.</p>
 </div>
 </div>
 <div class="section" id="next-use-the-scanner-activity">
@@ -670,6 +676,25 @@ which text ressources are used on which screen. The color scheme is as follows: 
     <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.backgroundColor&quot;</span><span class="nt">&gt;</span>#ffffff<span class="nt">&lt;/color&gt;</span>
     <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.helpBackgroundColor&quot;</span><span class="nt">&gt;</span>#ffffff<span class="nt">&lt;/color&gt;</span>
 <span class="nt">&lt;/resources&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="customizable-fonts">
+<h4>Customizable fonts<a class="headerlink" href="#customizable-fonts" title="Permalink to this headline">¶</a></h4>
+<p>You can change the font used in the help screens. System and custom fonts are supported. To use a custom font place the font file in the <cite>assets/fonts</cite>
+directory of your project.</p>
+<p>The following <cite>&lt;string&gt;</cite> resource sets the font:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">net.gini.android.vision.theme.helpTextFont</span></tt></dt>
+<dd>The system font name as used in <cite>android:fontFamily</cite> attributes or the custom font file name including extension.</dd>
+</dl>
+<p>This can be put into the same <cite>res/styles/style.xml</cite> file used for customizing the colors.</p>
+<p>Below is an example with a system font:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.helpTextFont&quot;</span><span class="nt">&gt;</span>sans-serif-light<span class="nt">&lt;/string&gt;</span>
+</pre></div>
+</div>
+<p>The following example shows how to use a custom font, called <cite>Cave-Story.ttf</cite> which was placed into the <cite>assets/fonts</cite> directory:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.helpTextFont&quot;</span><span class="nt">&gt;</span>Cave-Story.ttf<span class="nt">&lt;/string&gt;</span>
 </pre></div>
 </div>
 </div>

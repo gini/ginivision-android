@@ -118,6 +118,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="styling.html#customizable-colors">Customizable colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="styling.html#customizable-fonts">Customizable fonts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="styling.html#debug-options">Debug Options</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="styling.html#enabling-the-framemeter">Enabling the framemeter</a></li>
 </ul>
@@ -264,6 +265,11 @@ check whether the device supports all requirements:</p>
     <span class="c1">// Some action here (e.g. show a message, don&#39;t show some button etc.)</span>
 <span class="o">}</span>
 </pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><cite>fitsGiniVisionRequirements()</cite> uses <cite>Camera.open()</cite> which may take a long time to complete on some devices. You should call this method from a worker thread
+to avoid blocking the main application UI thread.</p>
 </div>
 </div>
 <div class="section" id="next-use-the-scanner-activity">

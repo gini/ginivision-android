@@ -123,6 +123,32 @@ Listed below is an example file which would go into the application's `res/style
         <color name="net.gini.android.vision.theme.helpBackgroundColor">#ffffff</color>
     </resources>
 
+Customizable fonts
+==================
+
+You can change the font used in the help screens. System and custom fonts are supported. To use a custom font place the font file in the `assets/fonts`
+directory of your project.
+
+The following `<string>` resource sets the font:
+
+``net.gini.android.vision.theme.helpTextFont``
+    The system font name as used in `android:fontFamily` attributes or the custom font file name including extension.
+
+This can be put into the same `res/styles/style.xml` file used for customizing the colors.
+
+Below is an example with a system font:
+
+.. code-block:: xml
+
+    <string name="net.gini.android.vision.theme.helpTextFont">sans-serif-light</string>
+
+The following example shows how to use a custom font, called `Cave-Story.ttf` which was placed into the `assets/fonts` directory:
+
+.. code-block:: xml
+
+    <string name="net.gini.android.vision.theme.helpTextFont">Cave-Story.ttf</string>
+
+
 Debug Options
 =============
 
