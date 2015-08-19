@@ -246,7 +246,7 @@ pass the result images directly in the result intent since
 <a class="reference external" href="http://developer.android.com/reference/android/os/TransactionTooLargeException.html">Android has some hard limitations on the size of transactions</a>.</p>
 <p>There are two extras in the result intent which is given to the method; both are BitmapFuture instances:</p>
 <dl class="docutils">
-<dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_RECTIFIED</span></tt></dt>
+<dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_DOCUMENT</span></tt></dt>
 <dd>A BitmapFuture that will get the rectified image of the document.</dd>
 <dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_ORIGINAL</span></tt></dt>
 <dd>A BitmapFuture that will get the original image without any enhancements. Only available when the activity was
@@ -265,12 +265,14 @@ memory leaks are possible.</p>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onActivityResult</span><span class="o">(</span><span class="kt">int</span> <span class="n">requestCode</span><span class="o">,</span> <span class="kt">int</span> <span class="n">resultCode</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">Bundle</span> <span class="n">documentBundle</span><span class="o">;</span>
     <span class="n">BitmapFuture</span> <span class="n">originalFuture</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="n">BitmapFuture</span> <span class="n">rectifiedFuture</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
 
     <span class="c1">// we always try to get the document to prevent memory leaks</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">IMAGE_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">data</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">documentBundle</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getBundleExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT_BUNDLE</span><span class="o">);</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">documentBundle</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">originalFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_ORIGINAL</span><span class="o">);</span>
+            <span class="n">rectifiedFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">CaptureActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT</span><span class="o">);</span>
         <span class="o">}</span>
     <span class="o">}</span>
 

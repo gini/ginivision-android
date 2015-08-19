@@ -97,7 +97,7 @@ pass the result images directly in the result intent since
 
 There are two extras in the result intent which is given to the method; both are BitmapFuture instances:
 
-``ScannerActivity.EXTRA_RECTIFIED``
+``ScannerActivity.EXTRA_DOCUMENT``
     A BitmapFuture that will get the rectified image of the document.
 
 ``ScannerActivity.EXTRA_ORIGINAL``
@@ -122,12 +122,14 @@ Example
         public void onActivityResult(int requestCode, int resultCode, Intent data) {
             Bundle documentBundle;
             BitmapFuture originalFuture = null;
+            BitmapFuture rectifiedFuture = null;
             
             // we always try to get the document to prevent memory leaks
             if (requestCode == IMAGE_REQUEST && data != null) {
                 documentBundle = data.getBundleExtra(ScannerActivity.EXTRA_DOCUMENT_BUNDLE);
                 if (documentBundle != null) {
                     originalFuture = documentBundle.getParcelable(ScannerActivity.EXTRA_ORIGINAL);
+                    rectifiedFuture = documentBundle.getParcelable(CaptureActivity.EXTRA_DOCUMENT);
                 }
             }
 

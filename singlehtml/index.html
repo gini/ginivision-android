@@ -194,7 +194,7 @@ dependency. In order to gain access to the aar file, you have to add the Gini Ma
 <span class="o">}</span>
 
 <span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">compile</span> <span class="o">(</span><span class="s1">&#39;net.gini:ginivision-android-sdk:1.0.148@aar&#39;</span><span class="o">){</span>
+    <span class="n">compile</span> <span class="o">(</span><span class="s1">&#39;net.gini:ginivision-android-sdk:1.0.150@aar&#39;</span><span class="o">){</span>
         <span class="n">transitive</span> <span class="o">=</span> <span class="kc">true</span>
     <span class="o">}</span>
     <span class="o">...</span>
@@ -209,7 +209,7 @@ dependency. In order to gain access to the aar file, you have to add the Gini Ma
 <p>The default aar archive uses <cite>android.app.Activity</cite> as the base class for activities. If you use the <cite>v7 Support Library</cite> and
 require activities extending <cite>android.support.v7.app.AppCompatActivity</cite> you can use the compatibility build <cite>ginivision-android-sdk-compat</cite>.</p>
 <div class="highlight-groovy"><div class="highlight"><pre><span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">compile</span> <span class="o">(</span><span class="s1">&#39;net.gini:ginivision-android-sdk-compat:1.0.148@aar&#39;</span><span class="o">){</span>
+    <span class="n">compile</span> <span class="o">(</span><span class="s1">&#39;net.gini:ginivision-android-sdk-compat:1.0.150@aar&#39;</span><span class="o">){</span>
         <span class="n">transitive</span> <span class="o">=</span> <span class="kc">true</span>
     <span class="o">}</span>
     <span class="o">...</span>
@@ -388,7 +388,7 @@ pass the result images directly in the result intent since
 <a class="reference external" href="http://developer.android.com/reference/android/os/TransactionTooLargeException.html">Android has some hard limitations on the size of transactions</a>.</p>
 <p>There are two extras in the result intent which is given to the method; both are BitmapFuture instances:</p>
 <dl class="docutils">
-<dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_RECTIFIED</span></tt></dt>
+<dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_DOCUMENT</span></tt></dt>
 <dd>A BitmapFuture that will get the rectified image of the document.</dd>
 <dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_ORIGINAL</span></tt></dt>
 <dd>A BitmapFuture that will get the original image without any enhancements. Only available when the activity was
@@ -407,12 +407,14 @@ memory leaks are possible.</p>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onActivityResult</span><span class="o">(</span><span class="kt">int</span> <span class="n">requestCode</span><span class="o">,</span> <span class="kt">int</span> <span class="n">resultCode</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">Bundle</span> <span class="n">documentBundle</span><span class="o">;</span>
     <span class="n">BitmapFuture</span> <span class="n">originalFuture</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="n">BitmapFuture</span> <span class="n">rectifiedFuture</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
 
     <span class="c1">// we always try to get the document to prevent memory leaks</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">IMAGE_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">data</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">documentBundle</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getBundleExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT_BUNDLE</span><span class="o">);</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">documentBundle</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">originalFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_ORIGINAL</span><span class="o">);</span>
+            <span class="n">rectifiedFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">CaptureActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT</span><span class="o">);</span>
         <span class="o">}</span>
     <span class="o">}</span>
 
