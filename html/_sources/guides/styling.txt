@@ -80,6 +80,7 @@ List of all text ressources
 * title_activity_help
 * action_back
 * action_forward
+* action_help_close
 * help_fragment_title
 * help_fragment_1_text
 * help_fragment_2_text

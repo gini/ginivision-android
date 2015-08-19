@@ -36,7 +36,20 @@ In the example above we inject the repo credentials via project properties which
 (`See the gradle documentation <https://gradle.org/documentation/>`_). Please contact
 `Technical Support <mailto:technical-support@gini.net>`_ if you don't have the credentials for the Gini repo.
 
+v7 Support Library
+------------------
 
+The default aar archive uses `android.app.Activity` as the base class for activities. If you use the `v7 Support Library` and
+require activities extending `android.support.v7.app.AppCompatActivity` you can use the compatibility build `ginivision-android-sdk-compat`.
+
+.. code-block:: groovy
+
+    dependencies {
+        compile ('net.gini:ginivision-android-sdk-compat:1.0.135@aar'){
+            transitive = true
+        }
+        ...
+    }
 
 Required Permissions and Features
 =================================

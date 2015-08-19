@@ -80,7 +80,10 @@
         
             <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-guides/getting-started">Getting started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/getting-started#first-of-all-integrate-the-library">First of all: Integrate the Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/getting-started#first-of-all-integrate-the-library">First of all: Integrate the Library</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-guides/getting-started#v7-support-library">v7 Support Library</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/getting-started#required-permissions-and-features">Required Permissions and Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/getting-started#use-a-large-heap">Use a Large Heap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/getting-started#example-a-complete-manifest-file">Example: A Complete Manifest File</a></li>
@@ -201,6 +204,19 @@ dependency. In order to gain access to the aar file, you have to add the Gini Ma
 <p>In the example above we inject the repo credentials via project properties which can be provided in several ways
 (<a class="reference external" href="https://gradle.org/documentation/">See the gradle documentation</a>). Please contact
 <a class="reference external" href="mailto:technical-support&#37;&#52;&#48;gini&#46;net">Technical Support</a> if you don&#8217;t have the credentials for the Gini repo.</p>
+<div class="section" id="v7-support-library">
+<h5>v7 Support Library<a class="headerlink" href="#v7-support-library" title="Permalink to this headline">¶</a></h5>
+<p>The default aar archive uses <cite>android.app.Activity</cite> as the base class for activities. If you use the <cite>v7 Support Library</cite> and
+require activities extending <cite>android.support.v7.app.AppCompatActivity</cite> you can use the compatibility build <cite>ginivision-android-sdk-compat</cite>.</p>
+<div class="highlight-groovy"><div class="highlight"><pre><span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="o">(</span><span class="s1">&#39;net.gini:ginivision-android-sdk-compat:1.0.135@aar&#39;</span><span class="o">){</span>
+        <span class="n">transitive</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="o">}</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="required-permissions-and-features">
 <h4>Required Permissions and Features<a class="headerlink" href="#required-permissions-and-features" title="Permalink to this headline">¶</a></h4>
@@ -637,6 +653,7 @@ which text ressources are used on which screen. The color scheme is as follows: 
 <li>title_activity_help</li>
 <li>action_back</li>
 <li>action_forward</li>
+<li>action_help_close</li>
 <li>help_fragment_title</li>
 <li>help_fragment_1_text</li>
 <li>help_fragment_2_text</li>
