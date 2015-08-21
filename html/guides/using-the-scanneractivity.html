@@ -122,6 +122,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="styling.html#customizable-colors">Customizable colors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="styling.html#customizable-fonts">Customizable fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="styling.html#customizable-actionbar-menus">Customizable ActionBar Menus</a></li>
 <li class="toctree-l2"><a class="reference internal" href="styling.html#debug-options">Debug Options</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="styling.html#enabling-the-framemeter">Enabling the framemeter</a></li>
 </ul>
@@ -178,6 +179,11 @@ returns with results.</p>
 must extend the <tt class="docutils literal"><span class="pre">net.gini.android.vision.UploadActivity</span></tt> and implement the <tt class="docutils literal"><span class="pre">uploadDocument(..)</span></tt> method.
 There is a static helper method <tt class="docutils literal"><span class="pre">ScannerActivity.setUploadActivityExtra</span></tt> in order to make setting the
 activity more convenient.</dd>
+<dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_HELP_ACTIVITY</span></tt></dt>
+<dd>Set an Activity used for showing help messages to the user. You can also subclass the <tt class="docutils literal"><span class="pre">net.gini.android.vision.help.HelpActivity</span></tt>,
+if you want to customize the default help.
+There is a static helper method <tt class="docutils literal"><span class="pre">ScannerActivity.setHelpActivityExtra</span></tt> in order to make setting the
+activity more convenient.</dd>
 <dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_DOCTYPE_BUNDLE</span></tt></dt>
 <dd>The desired document type must be selected by the user and must be provided as
 <tt class="docutils literal"><span class="pre">net.gini.android.vision.DocumentType</span></tt> instance. Furthermore, the document type parameter must be wrapped in
@@ -196,7 +202,7 @@ debugging since it increases memory usage significantly.</dd>
 <div class="section" id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <p>The following example starts the ScannerActivity and the ScannerActivity will return both the original image and the
-enhanced image. The <tt class="docutils literal"><span class="pre">MyUploadActivity</span></tt> is a class implemented by your app.</p>
+enhanced image. The <tt class="docutils literal"><span class="pre">MyUploadActivity</span></tt> and the optional <tt class="docutils literal"><span class="pre">MyHelpActivity</span></tt> are classes implemented by your app.</p>
 <div class="highlight-java"><div class="highlight"><pre><span class="kd">final</span> <span class="n">Intent</span> <span class="n">scanIntent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
 <span class="n">scanIntent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_STORE_ORIGINAL</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
 <span class="n">scanIntent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_STORE_RECTIFIED</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
@@ -207,6 +213,8 @@ enhanced image. The <tt class="docutils literal"><span class="pre">MyUploadActiv
 <span class="n">scanIntent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_DOCTYPE_BUNDLE</span><span class="o">,</span> <span class="n">docTypeBundle</span><span class="o">);</span>
 
 <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">setUploadActivityExtra</span><span class="o">(</span><span class="n">scanIntent</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span> <span class="n">MyUploadActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+<span class="c1">// Optional: if you have a custom MyHelpActivity</span>
+<span class="n">ScannerActivity</span><span class="o">.</span><span class="na">setHelpActivityExtra</span><span class="o">(</span><span class="n">scanIntent</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span> <span class="n">MyHelpActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
 <span class="n">startActivityForResult</span><span class="o">(</span><span class="n">scanIntent</span><span class="o">,</span> <span class="n">IMAGE_REQUEST</span><span class="o">);</span>
 </pre></div>
 </div>
@@ -429,6 +437,8 @@ activity can use the rectified bitmap of the document.</p>
             <span class="c1">// MyUploadActivity is your Activity that implements the upload or processing logic.</span>
             <span class="c1">// It needs to be derived from Gini Vision library&#39;s UploadActivity.</span>
         <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">setUploadActivityExtra</span><span class="o">(</span><span class="n">scanIntent</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span> <span class="n">MyUploadActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        <span class="c1">// Optional: if you have a custom MyHelpActivity</span>
+        <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">setUploadActivityExtra</span><span class="o">(</span><span class="n">scanIntent</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span> <span class="n">MyHelpActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
         <span class="n">startActivityForResult</span><span class="o">(</span><span class="n">scanIntent</span><span class="o">,</span> <span class="n">IMAGE_REQUEST</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>

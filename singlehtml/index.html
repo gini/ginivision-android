@@ -120,6 +120,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/styling#customizable-colors">Customizable colors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/styling#customizable-fonts">Customizable fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/styling#customizable-actionbar-menus">Customizable ActionBar Menus</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/styling#debug-options">Debug Options</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="index.html#document-guides/styling#enabling-the-framemeter">Enabling the framemeter</a></li>
 </ul>
@@ -320,6 +321,11 @@ returns with results.</p>
 must extend the <tt class="docutils literal"><span class="pre">net.gini.android.vision.UploadActivity</span></tt> and implement the <tt class="docutils literal"><span class="pre">uploadDocument(..)</span></tt> method.
 There is a static helper method <tt class="docutils literal"><span class="pre">ScannerActivity.setUploadActivityExtra</span></tt> in order to make setting the
 activity more convenient.</dd>
+<dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_HELP_ACTIVITY</span></tt></dt>
+<dd>Set an Activity used for showing help messages to the user. You can also subclass the <tt class="docutils literal"><span class="pre">net.gini.android.vision.help.HelpActivity</span></tt>,
+if you want to customize the default help.
+There is a static helper method <tt class="docutils literal"><span class="pre">ScannerActivity.setHelpActivityExtra</span></tt> in order to make setting the
+activity more convenient.</dd>
 <dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_DOCTYPE_BUNDLE</span></tt></dt>
 <dd>The desired document type must be selected by the user and must be provided as
 <tt class="docutils literal"><span class="pre">net.gini.android.vision.DocumentType</span></tt> instance. Furthermore, the document type parameter must be wrapped in
@@ -338,7 +344,7 @@ debugging since it increases memory usage significantly.</dd>
 <div class="section" id="example">
 <h5>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h5>
 <p>The following example starts the ScannerActivity and the ScannerActivity will return both the original image and the
-enhanced image. The <tt class="docutils literal"><span class="pre">MyUploadActivity</span></tt> is a class implemented by your app.</p>
+enhanced image. The <tt class="docutils literal"><span class="pre">MyUploadActivity</span></tt> and the optional <tt class="docutils literal"><span class="pre">MyHelpActivity</span></tt> are classes implemented by your app.</p>
 <div class="highlight-java"><div class="highlight"><pre><span class="kd">final</span> <span class="n">Intent</span> <span class="n">scanIntent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
 <span class="n">scanIntent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_STORE_ORIGINAL</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
 <span class="n">scanIntent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_STORE_RECTIFIED</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
@@ -349,6 +355,8 @@ enhanced image. The <tt class="docutils literal"><span class="pre">MyUploadActiv
 <span class="n">scanIntent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_DOCTYPE_BUNDLE</span><span class="o">,</span> <span class="n">docTypeBundle</span><span class="o">);</span>
 
 <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">setUploadActivityExtra</span><span class="o">(</span><span class="n">scanIntent</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span> <span class="n">MyUploadActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+<span class="c1">// Optional: if you have a custom MyHelpActivity</span>
+<span class="n">ScannerActivity</span><span class="o">.</span><span class="na">setHelpActivityExtra</span><span class="o">(</span><span class="n">scanIntent</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span> <span class="n">MyHelpActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
 <span class="n">startActivityForResult</span><span class="o">(</span><span class="n">scanIntent</span><span class="o">,</span> <span class="n">IMAGE_REQUEST</span><span class="o">);</span>
 </pre></div>
 </div>
@@ -571,6 +579,8 @@ activity can use the rectified bitmap of the document.</p>
             <span class="c1">// MyUploadActivity is your Activity that implements the upload or processing logic.</span>
             <span class="c1">// It needs to be derived from Gini Vision library&#39;s UploadActivity.</span>
         <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">setUploadActivityExtra</span><span class="o">(</span><span class="n">scanIntent</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span> <span class="n">MyUploadActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        <span class="c1">// Optional: if you have a custom MyHelpActivity</span>
+        <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">setUploadActivityExtra</span><span class="o">(</span><span class="n">scanIntent</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span> <span class="n">MyHelpActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
         <span class="n">startActivityForResult</span><span class="o">(</span><span class="n">scanIntent</span><span class="o">,</span> <span class="n">IMAGE_REQUEST</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -702,20 +712,31 @@ which text ressources are used on which screen. The color scheme is as follows: 
 <h4>Customizable fonts<a class="headerlink" href="#customizable-fonts" title="Permalink to this headline">¶</a></h4>
 <p>You can change the font used in the help screens. System and custom fonts are supported. To use a custom font place the font file in the <cite>assets/fonts</cite>
 directory of your project.</p>
-<p>The following <cite>&lt;string&gt;</cite> resource sets the font:</p>
+<p>The following <tt class="docutils literal"><span class="pre">&lt;string&gt;</span></tt> resource sets the font:</p>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">net.gini.android.vision.theme.helpTextFont</span></tt></dt>
-<dd>The system font name as used in <cite>android:fontFamily</cite> attributes or the custom font file name including extension.</dd>
+<dd>The system font name as used in <tt class="docutils literal"><span class="pre">android:fontFamily</span></tt> attributes or the custom font file name including extension.</dd>
 </dl>
-<p>This can be put into the same <cite>res/styles/style.xml</cite> file used for customizing the colors.</p>
+<p>This can be put into the same <tt class="docutils literal"><span class="pre">res/styles/style.xml</span></tt> file used for customizing the colors.</p>
 <p>Below is an example with a system font:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.helpTextFont&quot;</span><span class="nt">&gt;</span>sans-serif-light<span class="nt">&lt;/string&gt;</span>
 </pre></div>
 </div>
-<p>The following example shows how to use a custom font, called <cite>Cave-Story.ttf</cite> which was placed into the <cite>assets/fonts</cite> directory:</p>
+<p>The following example shows how to use a custom font, called <tt class="docutils literal"><span class="pre">Cave-Story.ttf</span></tt> which was placed into the <tt class="docutils literal"><span class="pre">assets/fonts</span></tt> directory:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.helpTextFont&quot;</span><span class="nt">&gt;</span>Cave-Story.ttf<span class="nt">&lt;/string&gt;</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="customizable-actionbar-menus">
+<h4>Customizable ActionBar Menus<a class="headerlink" href="#customizable-actionbar-menus" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">res/menu/menu_scanner.xml</span></tt></dt>
+<dd>Contains the ActionBar menu items for the <tt class="docutils literal"><span class="pre">ScannerActivity</span></tt>. You can override it to remove the help button. Subclassing the <tt class="docutils literal"><span class="pre">ScannerActivity</span></tt>
+is not possible and you should not add new menu items, because you can&#8217;t add selection handlers.</dd>
+<dt><tt class="docutils literal"><span class="pre">res/menu/menu_help.xml</span></tt></dt>
+<dd>Contains the ActionBar menu items for the <tt class="docutils literal"><span class="pre">HelpActivity</span></tt>. You can override it to remove the close button or, if you subclass the <tt class="docutils literal"><span class="pre">HelpActivity</span></tt>, add
+new items and selection handlers in your subclass.</dd>
+</dl>
 </div>
 <div class="section" id="debug-options">
 <h4>Debug Options<a class="headerlink" href="#debug-options" title="Permalink to this headline">¶</a></h4>

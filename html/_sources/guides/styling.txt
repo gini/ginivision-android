@@ -130,12 +130,12 @@ Customizable fonts
 You can change the font used in the help screens. System and custom fonts are supported. To use a custom font place the font file in the `assets/fonts`
 directory of your project.
 
-The following `<string>` resource sets the font:
+The following ``<string>`` resource sets the font:
 
 ``net.gini.android.vision.theme.helpTextFont``
-    The system font name as used in `android:fontFamily` attributes or the custom font file name including extension.
+    The system font name as used in ``android:fontFamily`` attributes or the custom font file name including extension.
 
-This can be put into the same `res/styles/style.xml` file used for customizing the colors.
+This can be put into the same ``res/styles/style.xml`` file used for customizing the colors.
 
 Below is an example with a system font:
 
@@ -143,11 +143,22 @@ Below is an example with a system font:
 
     <string name="net.gini.android.vision.theme.helpTextFont">sans-serif-light</string>
 
-The following example shows how to use a custom font, called `Cave-Story.ttf` which was placed into the `assets/fonts` directory:
+The following example shows how to use a custom font, called ``Cave-Story.ttf`` which was placed into the ``assets/fonts`` directory:
 
 .. code-block:: xml
 
     <string name="net.gini.android.vision.theme.helpTextFont">Cave-Story.ttf</string>
+
+Customizable ActionBar Menus
+============================
+
+``res/menu/menu_scanner.xml``
+    Contains the ActionBar menu items for the ``ScannerActivity``. You can override it to remove the help button. Subclassing the ``ScannerActivity``
+    is not possible and you should not add new menu items, because you can't add selection handlers.
+
+``res/menu/menu_help.xml``
+    Contains the ActionBar menu items for the ``HelpActivity``. You can override it to remove the close button or, if you subclass the ``HelpActivity``, add
+    new items and selection handlers in your subclass.
 
 
 Debug Options

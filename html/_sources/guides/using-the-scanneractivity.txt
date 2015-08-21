@@ -19,6 +19,12 @@ The ``Intent`` which triggers the scanner activity must be parameterized. There 
         There is a static helper method ``ScannerActivity.setUploadActivityExtra`` in order to make setting the
         activity more convenient.
 
+``ScannerActivity.EXTRA_HELP_ACTIVITY``
+        Set an Activity used for showing help messages to the user. You can also subclass the ``net.gini.android.vision.help.HelpActivity``,
+        if you want to customize the default help.
+        There is a static helper method ``ScannerActivity.setHelpActivityExtra`` in order to make setting the
+        activity more convenient.
+
 ``ScannerActivity.EXTRA_DOCTYPE_BUNDLE``
         The desired document type must be selected by the user and must be provided as
         ``net.gini.android.vision.DocumentType`` instance. Furthermore, the document type parameter must be wrapped in
@@ -40,7 +46,7 @@ Example
 -------
 
 The following example starts the ScannerActivity and the ScannerActivity will return both the original image and the
-enhanced image. The ``MyUploadActivity`` is a class implemented by your app.
+enhanced image. The ``MyUploadActivity`` and the optional ``MyHelpActivity`` are classes implemented by your app.
 
 .. code-block:: java
 
@@ -54,6 +60,8 @@ enhanced image. The ``MyUploadActivity`` is a class implemented by your app.
             scanIntent.putExtra(ScannerActivity.EXTRA_DOCTYPE_BUNDLE, docTypeBundle);
 
             ScannerActivity.setUploadActivityExtra(scanIntent, this, MyUploadActivity.class);
+            // Optional: if you have a custom MyHelpActivity
+            ScannerActivity.setHelpActivityExtra(scanIntent, this, MyHelpActivity.class);
             startActivityForResult(scanIntent, IMAGE_REQUEST);
 
 .. note:: Always start the activity with the ``startActivityForResult()`` method and not with the
@@ -293,6 +301,8 @@ activity can use the rectified bitmap of the document.
    	        // MyUploadActivity is your Activity that implements the upload or processing logic.
 	        // It needs to be derived from Gini Vision library's UploadActivity.
             ScannerActivity.setUploadActivityExtra(scanIntent, this, MyUploadActivity.class);
+            // Optional: if you have a custom MyHelpActivity
+            ScannerActivity.setUploadActivityExtra(scanIntent, this, MyHelpActivity.class);
             startActivityForResult(scanIntent, IMAGE_REQUEST);
         }
     }
