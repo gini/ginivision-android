@@ -20,6 +20,7 @@ Camera Screen
 .. image:: /images/android_camera-screen.png
 .. image:: /images/android_camera-screen_remittance.png
 .. image:: /images/android_camera-screen_closer-message.png
+.. image:: /images/android_camera-screen_perspective-message.png
 .. image:: /images/android_camera-screen_still-message.png
 
 Help Screen #1
@@ -62,6 +63,7 @@ List of all image files
 * help_screen_4_richtig.png
 * icon_action_help.png
 * message_closer.png
+* message_perspective.png
 * message_still.png
 * processing_screen_11.png
 * remittance_corners.png
