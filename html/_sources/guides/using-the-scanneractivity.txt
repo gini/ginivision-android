@@ -158,7 +158,7 @@ First of all, we have to include the Gini API SDK as dependency in the ``build.g
 
     dependencies {
         ...
-        compile ('net.gini:gini-android-sdk:1.1.33@aar'){
+        compile ('net.gini:gini-android-sdk:1.1.40@aar'){
             transitive = true
         } 
         ...
