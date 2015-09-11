@@ -76,6 +76,9 @@ List of all text ressources
 ---------------------------
 
 * title_activity_scanner
+* title_activity_scanner_invoice
+* title_activity_scanner_remittance
+* title_activity_scanner_integrated_remittance
 * action_settings
 * net.gini.android.vision.title_activity_choice
 * action_help
@@ -129,13 +132,17 @@ Listed below is an example file which would go into the application's `res/style
 Customizable fonts
 ==================
 
-You can change the font used in the help screens. System and custom fonts are supported. To use a custom font place the font file in the `assets/fonts`
+You can change the fonts used in several places. System and custom fonts are supported. To use a custom font place the font file in the `assets/fonts`
 directory of your project.
 
-The following ``<string>`` resource sets the font:
+The following ``<string>`` resources set the fonts:
 
 ``net.gini.android.vision.theme.helpTextFont``
-    The system font name as used in ``android:fontFamily`` attributes or the custom font file name including extension.
+    Sets the font used for the help texts. The system font name as used in ``android:fontFamily`` attributes or the custom font file name including extension.
+``net.gini.android.vision.theme.captureHeadingFont``
+    Sets the font used for the heading in the CaptureActivity. The system font name as used in ``android:fontFamily`` attributes or the custom font file name including extension.
+``net.gini.android.vision.theme.actionBarFont``
+    Sets the font used in the ActionBars. The system font name as used in ``android:fontFamily`` attributes or the custom font file name including extension.
 
 This can be put into the same ``res/styles/style.xml`` file used for customizing the colors.
 
@@ -162,6 +169,29 @@ Customizable ActionBar Menus
     Contains the ActionBar menu items for the ``HelpActivity``. You can override it to remove the close button or, if you subclass the ``HelpActivity``, add
     new items and selection handlers in your subclass.
 
+Customizable Dimensions
+=======================
+
+``action_bar_title_size``
+    Size of the action bar's title. Used only if a custom font is also set for the action bar's title.
+``document_outline_width``
+    Width of the document outline in the ScannerActivity's camera viewfinder.
+``help_text_size``
+    Size of the help text font.
+``help_pager_title_strip_font_size``
+    Size of the title strip text in the HelpActivity.
+``capture_heading_text_size``
+    Size of the heading text in the CaptureActivity.
+
+Listed below is an example file which would go into the application's `res/values/dimens.xml`` file.
+
+.. code-block:: xml
+
+    <dimen name="help_text_size">20sp</dimen>
+    <dimen name="help_pager_title_strip_font_size">16sp</dimen>
+    <dimen name="capture_heading_text_size">22sp</dimen>
+    <dimen name="action_bar_title_size">18sp</dimen>
+    <dimen name="document_outline_width">2dp</dimen>
 
 Debug Options
 =============

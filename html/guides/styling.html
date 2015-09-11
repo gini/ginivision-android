@@ -123,6 +123,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#customizable-colors">Customizable colors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#customizable-fonts">Customizable fonts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#customizable-actionbar-menus">Customizable ActionBar Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#customizable-dimensions">Customizable Dimensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#debug-options">Debug Options</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#enabling-the-framemeter">Enabling the framemeter</a></li>
 </ul>
@@ -234,6 +235,9 @@ which text ressources are used on which screen. The color scheme is as follows: 
 <h3>List of all text ressources<a class="headerlink" href="#list-of-all-text-ressources" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>title_activity_scanner</li>
+<li>title_activity_scanner_invoice</li>
+<li>title_activity_scanner_remittance</li>
+<li>title_activity_scanner_integrated_remittance</li>
 <li>action_settings</li>
 <li>net.gini.android.vision.title_activity_choice</li>
 <li>action_help</li>
@@ -285,12 +289,16 @@ which text ressources are used on which screen. The color scheme is as follows: 
 </div>
 <div class="section" id="customizable-fonts">
 <h2>Customizable fonts<a class="headerlink" href="#customizable-fonts" title="Permalink to this headline">¶</a></h2>
-<p>You can change the font used in the help screens. System and custom fonts are supported. To use a custom font place the font file in the <cite>assets/fonts</cite>
+<p>You can change the fonts used in several places. System and custom fonts are supported. To use a custom font place the font file in the <cite>assets/fonts</cite>
 directory of your project.</p>
-<p>The following <tt class="docutils literal"><span class="pre">&lt;string&gt;</span></tt> resource sets the font:</p>
+<p>The following <tt class="docutils literal"><span class="pre">&lt;string&gt;</span></tt> resources set the fonts:</p>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">net.gini.android.vision.theme.helpTextFont</span></tt></dt>
-<dd>The system font name as used in <tt class="docutils literal"><span class="pre">android:fontFamily</span></tt> attributes or the custom font file name including extension.</dd>
+<dd>Sets the font used for the help texts. The system font name as used in <tt class="docutils literal"><span class="pre">android:fontFamily</span></tt> attributes or the custom font file name including extension.</dd>
+<dt><tt class="docutils literal"><span class="pre">net.gini.android.vision.theme.captureHeadingFont</span></tt></dt>
+<dd>Sets the font used for the heading in the CaptureActivity. The system font name as used in <tt class="docutils literal"><span class="pre">android:fontFamily</span></tt> attributes or the custom font file name including extension.</dd>
+<dt><tt class="docutils literal"><span class="pre">net.gini.android.vision.theme.actionBarFont</span></tt></dt>
+<dd>Sets the font used in the ActionBars. The system font name as used in <tt class="docutils literal"><span class="pre">android:fontFamily</span></tt> attributes or the custom font file name including extension.</dd>
 </dl>
 <p>This can be put into the same <tt class="docutils literal"><span class="pre">res/styles/style.xml</span></tt> file used for customizing the colors.</p>
 <p>Below is an example with a system font:</p>
@@ -312,6 +320,29 @@ is not possible and you should not add new menu items, because you can&#8217;t a
 <dd>Contains the ActionBar menu items for the <tt class="docutils literal"><span class="pre">HelpActivity</span></tt>. You can override it to remove the close button or, if you subclass the <tt class="docutils literal"><span class="pre">HelpActivity</span></tt>, add
 new items and selection handlers in your subclass.</dd>
 </dl>
+</div>
+<div class="section" id="customizable-dimensions">
+<h2>Customizable Dimensions<a class="headerlink" href="#customizable-dimensions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">action_bar_title_size</span></tt></dt>
+<dd>Size of the action bar&#8217;s title. Used only if a custom font is also set for the action bar&#8217;s title.</dd>
+<dt><tt class="docutils literal"><span class="pre">document_outline_width</span></tt></dt>
+<dd>Width of the document outline in the ScannerActivity&#8217;s camera viewfinder.</dd>
+<dt><tt class="docutils literal"><span class="pre">help_text_size</span></tt></dt>
+<dd>Size of the help text font.</dd>
+<dt><tt class="docutils literal"><span class="pre">help_pager_title_strip_font_size</span></tt></dt>
+<dd>Size of the title strip text in the HelpActivity.</dd>
+<dt><tt class="docutils literal"><span class="pre">capture_heading_text_size</span></tt></dt>
+<dd>Size of the heading text in the CaptureActivity.</dd>
+</dl>
+<p>Listed below is an example file which would go into the application&#8217;s <cite>res/values/dimens.xml`</cite> file.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;dimen</span> <span class="na">name=</span><span class="s">&quot;help_text_size&quot;</span><span class="nt">&gt;</span>20sp<span class="nt">&lt;/dimen&gt;</span>
+<span class="nt">&lt;dimen</span> <span class="na">name=</span><span class="s">&quot;help_pager_title_strip_font_size&quot;</span><span class="nt">&gt;</span>16sp<span class="nt">&lt;/dimen&gt;</span>
+<span class="nt">&lt;dimen</span> <span class="na">name=</span><span class="s">&quot;capture_heading_text_size&quot;</span><span class="nt">&gt;</span>22sp<span class="nt">&lt;/dimen&gt;</span>
+<span class="nt">&lt;dimen</span> <span class="na">name=</span><span class="s">&quot;action_bar_title_size&quot;</span><span class="nt">&gt;</span>18sp<span class="nt">&lt;/dimen&gt;</span>
+<span class="nt">&lt;dimen</span> <span class="na">name=</span><span class="s">&quot;document_outline_width&quot;</span><span class="nt">&gt;</span>2dp<span class="nt">&lt;/dimen&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="debug-options">
 <h2>Debug Options<a class="headerlink" href="#debug-options" title="Permalink to this headline">¶</a></h2>
