@@ -1,0 +1,160 @@
+=========
+Changelog
+=========
+
+1.0.170 (2015-09-23)
+====================
+
+Features
+--------
+
+-  Changelog is public in the documentation.
+
+Bugfixes
+--------
+
+-  Memory check reliability improved.
+-  Images in the help screens dynamically scaled to fit the screen.
+-  Fixed a camera related crash when quickly opening/closing the ScannerActivity.
+-  UploadActivity label is optional again.
+
+1.0.162 (2015-09-11)
+====================
+
+Features
+--------
+
+-  Camera viewfinder is centered.
+-  ActionBar title font and size customizable.
+-  Dynamic ScannerActivity title based on the provided DocumentType.
+-  UploadActivity start/stop animation methods can be overridden.
+-  Document outline width customizable.
+-  CaptureActivity heading font and size customizable.
+-  HelpActivity pager title strip text size customizable.
+
+1.0.158 (2015-09-09)
+====================
+
+Bugfixes
+--------
+
+-  Camera is closed independently of the scannerlib image processing and
+   therefore is closed quicker after exiting the ScannerActivity
+-  Upload activity is not started when the back button is pressed at the
+   right time after a picture was taken.
+
+1.0.156 (2015-08-28)
+====================
+
+Features
+--------
+
+-  Perspective message, if the phone is held at a too high angle
+   relative to the document
+-  Stricter border tolerance (document edges must be nearer to the
+   camera view finder edges)
+
+Bugfix
+------
+
+-  Continuous focus mode removed, caused unexpected behaviours
+
+1.0.153 (2015-08-21)
+====================
+
+Features
+--------
+
+-  Custom activity can be set for the help, can also be a HelpActivity
+   subclass.
+
+1.0.150 (2015-08-19)
+====================
+
+Bugfix
+------
+
+-  Crash fixed when focusing requested and camera not yet ready.
+
+1.0.147 (2015-08-18)
+====================
+
+Features
+--------
+
+-  Continuous auto-focus with an auto-focus cycle before taking a
+   picture, if not in focus.
+-  v7 Support Library can be used when using the
+   compatRelease/compatDebug library configuration.
+
+Bugfix
+------
+
+-  Flash is not started when the onboarding is shown on launch in the
+   ScannerActivity.
+
+1.0.139 (2015-08-17)
+====================
+
+Features
+--------
+
+-  Help text font can be customized to use a system font or a custom
+   font.
+
+1.0.137 (2015-08-12)
+====================
+
+Bugfix
+------
+
+-  Memory leak related to the upload animation which happened on some
+   devices (Samsung, Sony) fixed.
+
+1.0.136 (2015-08-11)
+====================
+
+Fix
+---
+
+-  Removed the unused shutter images.
+
+1.0.135 (2015-08-07)
+====================
+
+Features
+--------
+
+-  Customizable background colors for the activities.
+
+Bugfixes
+--------
+
+-  Accelerometer handling sensitivity was too high, reverted it to
+   version 1.0.131 sensitivity.
+
+1.0.132 (2015-08-05)
+====================
+
+Features
+--------
+
+-  Accelerometer handling improved.
+
+Bugfixes
+--------
+
+-  White overlay shutter is removed, if document was not good enough
+   after taking a picture.
+
+1.0.131 (2015-08-04)
+====================
+
+Features
+--------
+
+-  Configurable outline for camera overlay.
+-  Help screen can be shown the first time the ginivision library is
+   launched during an application run.
+-  Shutter animation like on iOS: animate a white overlay view from 0 to
+   0.8 alpha in 300ms.

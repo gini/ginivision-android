@@ -132,6 +132,66 @@
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/logging#configuration">Configuration</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-changelog">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id1">1.0.170 (2015-09-23)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#features">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#bugfixes">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id2">1.0.162 (2015-09-11)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id3">Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id4">1.0.158 (2015-09-09)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id5">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id6">1.0.156 (2015-08-28)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id7">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#bugfix">Bugfix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id8">1.0.153 (2015-08-21)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id9">Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id10">1.0.150 (2015-08-19)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id11">Bugfix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id12">1.0.147 (2015-08-18)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id13">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id14">Bugfix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id15">1.0.139 (2015-08-17)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id16">Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id17">1.0.137 (2015-08-12)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id18">Bugfix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id19">1.0.136 (2015-08-11)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#fix">Fix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id20">1.0.135 (2015-08-07)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id21">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id22">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id23">1.0.132 (2015-08-05)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id24">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id25">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id26">1.0.131 (2015-08-04)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id27">Features</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         
@@ -196,7 +256,7 @@ dependency. In order to gain access to the aar file, you have to add the Gini Ma
 <span class="o">}</span>
 
 <span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">compile</span> <span class="o">(</span><span class="s1">&#39;net.gini:ginivision-android-sdk:1.0.162@aar&#39;</span><span class="o">){</span>
+    <span class="n">compile</span> <span class="o">(</span><span class="s1">&#39;net.gini:ginivision-android-sdk:1.0.170@aar&#39;</span><span class="o">){</span>
         <span class="n">transitive</span> <span class="o">=</span> <span class="kc">true</span>
     <span class="o">}</span>
     <span class="o">...</span>
@@ -211,7 +271,7 @@ dependency. In order to gain access to the aar file, you have to add the Gini Ma
 <p>The default aar archive uses <cite>android.app.Activity</cite> as the base class for activities. If you use the <cite>v7 Support Library</cite> and
 require activities extending <cite>android.support.v7.app.AppCompatActivity</cite> you can use the compatibility build <cite>ginivision-android-sdk-compat</cite>.</p>
 <div class="highlight-groovy"><div class="highlight"><pre><span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">compile</span> <span class="o">(</span><span class="s1">&#39;net.gini:ginivision-android-sdk-compat:1.0.162@aar&#39;</span><span class="o">){</span>
+    <span class="n">compile</span> <span class="o">(</span><span class="s1">&#39;net.gini:ginivision-android-sdk-compat:1.0.170@aar&#39;</span><span class="o">){</span>
         <span class="n">transitive</span> <span class="o">=</span> <span class="kc">true</span>
     <span class="o">}</span>
     <span class="o">...</span>
@@ -823,6 +883,184 @@ frameworks (e.g. java.util.logging, logback, log4j) allowing the end user to plu
 <span class="kd">final</span> <span class="n">ch</span><span class="o">.</span><span class="na">qos</span><span class="o">.</span><span class="na">logback</span><span class="o">.</span><span class="na">classic</span><span class="o">.</span><span class="na">Logger</span> <span class="n">root</span> <span class="o">=</span> <span class="o">(</span><span class="n">ch</span><span class="o">.</span><span class="na">qos</span><span class="o">.</span><span class="na">logback</span><span class="o">.</span><span class="na">classic</span><span class="o">.</span><span class="na">Logger</span><span class="o">)</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">Logger</span><span class="o">.</span><span class="na">ROOT_LOGGER_NAME</span><span class="o">);</span>
 <span class="n">root</span><span class="o">.</span><span class="na">addAppender</span><span class="o">(</span><span class="n">logcatAppender</span><span class="o">);</span>
 </pre></div>
+</div>
+</div>
+</div>
+<span id="document-changelog"></span><div class="section" id="changelog">
+<h3>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h4>1.0.170 (2015-09-23)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="features">
+<h5>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Changelog is public in the documentation.</li>
+</ul>
+</div>
+<div class="section" id="bugfixes">
+<h5>Bugfixes<a class="headerlink" href="#bugfixes" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Memory check reliability improved.</li>
+<li>Images in the help screens dynamically scaled to fit the screen.</li>
+<li>Fixed a camera related crash when quickly opening/closing the ScannerActivity.</li>
+<li>UploadActivity label is optional again.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id2">
+<h4>1.0.162 (2015-09-11)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h5>Features<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Camera viewfinder is centered.</li>
+<li>ActionBar title font and size customizable.</li>
+<li>Dynamic ScannerActivity title based on the provided DocumentType.</li>
+<li>UploadActivity start/stop animation methods can be overridden.</li>
+<li>Document outline width customizable.</li>
+<li>CaptureActivity heading font and size customizable.</li>
+<li>HelpActivity pager title strip text size customizable.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>1.0.158 (2015-09-09)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id5">
+<h5>Bugfixes<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Camera is closed independently of the scannerlib image processing and
+therefore is closed quicker after exiting the ScannerActivity</li>
+<li>Upload activity is not started when the back button is pressed at the
+right time after a picture was taken.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id6">
+<h4>1.0.156 (2015-08-28)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id7">
+<h5>Features<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Perspective message, if the phone is held at a too high angle
+relative to the document</li>
+<li>Stricter border tolerance (document edges must be nearer to the
+camera view finder edges)</li>
+</ul>
+</div>
+<div class="section" id="bugfix">
+<h5>Bugfix<a class="headerlink" href="#bugfix" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Continuous focus mode removed, caused unexpected behaviours</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id8">
+<h4>1.0.153 (2015-08-21)<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id9">
+<h5>Features<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Custom activity can be set for the help, can also be a HelpActivity
+subclass.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id10">
+<h4>1.0.150 (2015-08-19)<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id11">
+<h5>Bugfix<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Crash fixed when focusing requested and camera not yet ready.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id12">
+<h4>1.0.147 (2015-08-18)<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id13">
+<h5>Features<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Continuous auto-focus with an auto-focus cycle before taking a
+picture, if not in focus.</li>
+<li>v7 Support Library can be used when using the
+compatRelease/compatDebug library configuration.</li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h5>Bugfix<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Flash is not started when the onboarding is shown on launch in the
+ScannerActivity.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id15">
+<h4>1.0.139 (2015-08-17)<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id16">
+<h5>Features<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Help text font can be customized to use a system font or a custom
+font.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id17">
+<h4>1.0.137 (2015-08-12)<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id18">
+<h5>Bugfix<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Memory leak related to the upload animation which happened on some
+devices (Samsung, Sony) fixed.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id19">
+<h4>1.0.136 (2015-08-11)<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="fix">
+<h5>Fix<a class="headerlink" href="#fix" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Removed the unused shutter images.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id20">
+<h4>1.0.135 (2015-08-07)<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id21">
+<h5>Features<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Customizable background colors for the activities.</li>
+</ul>
+</div>
+<div class="section" id="id22">
+<h5>Bugfixes<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Accelerometer handling sensitivity was too high, reverted it to
+version 1.0.131 sensitivity.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id23">
+<h4>1.0.132 (2015-08-05)<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id24">
+<h5>Features<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Accelerometer handling improved.</li>
+</ul>
+</div>
+<div class="section" id="id25">
+<h5>Bugfixes<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>White overlay shutter is removed, if document was not good enough
+after taking a picture.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id26">
+<h4>1.0.131 (2015-08-04)<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id27">
+<h5>Features<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Configurable outline for camera overlay.</li>
+<li>Help screen can be shown the first time the ginivision library is
+launched during an application run.</li>
+<li>Shutter animation like on iOS: animate a white overlay view from 0 to
+0.8 alpha in 300ms.</li>
+</ul>
 </div>
 </div>
 </div>
