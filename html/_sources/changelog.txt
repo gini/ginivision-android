@@ -2,6 +2,15 @@
 Changelog
 =========
 
+1.0.182 (2015-10-15)
+====================
+
+Features
+--------
+-  Back button can be enabled in the ActionBar.
+-  Title can be centered in the ActionBar.
+-  Dot page indicator can be enabled for the help screens.
+
 1.0.170 (2015-09-23)
 ====================
 
