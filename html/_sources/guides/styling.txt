@@ -169,6 +169,100 @@ Customizable ActionBar Menus
     Contains the ActionBar menu items for the ``HelpActivity``. You can override it to remove the close button or, if you subclass the ``HelpActivity``, add
     new items and selection handlers in your subclass.
 
+ActionBar back button
+=====================
+
+The ActionBar Home button can be set to act as a back button (similar to iOS). To enable it set the  ``net.gini.android.vision.home_as_back_button`` boolean resource to ``true`` and create a drawable named ``back_button`` (image or XML).
+
+In addition, if you use the standard version, you must set the ``back_button`` drawable in your ``styles.xml`` as the ``homeAsUpIndicator``. 
+
+.. code-block:: xml
+
+    <style name="net.example.theme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:homeAsUpIndicator">@drawable/back_button</item>
+    </style>
+
+It is also advisable to remove the home icon from the ActionBar by setting the ``displayOptions`` for the ActionBar's style to ``disableHome``.
+
+An example style configuring the ``homeAsUpIndicator`` and the ``displayOptions``:
+
+.. code-block:: xml
+
+    <style name="net.example.theme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/net.example.theme.ActionBar</item>
+        <item name="android:homeAsUpIndicator">@drawable/back_button</item> <!-- Not needed for compat -->
+    </style>
+    <style name="net.example.theme.ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:displayOptions">disableHome</item>
+    </style>
+
+Enable the back button:
+
+.. code-block:: xml
+    
+    <bool name="net.gini.android.vision.home_as_back_button">true</bool>
+
+Example ``back_button.xml`` drawable which displays a png called ``back_icon`` moved 20dp to the left:
+
+.. code-block:: xml
+
+    <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:left="-20dp">
+            <bitmap android:src="@drawable/back_icon"
+                    android:gravity="center" />
+        </item>
+    </layer-list>
+
+Centering the ActionBar title
+=============================
+
+By setting the ``net.gini.android.vision.center_activity_title`` boolean resource to ``true`` the titles in the ActionBars will be centered. A custom view is used to accomplish this with a layout named ``action_bar_center_title.xml``. You can create your own layout if you need to fine tune the positioning of the title. The only requirement is that it contains a ``TextView`` with the id ``title_centered``.
+
+Enable the title centering:
+
+.. code-block:: xml
+    
+    <bool name="net.gini.android.vision.center_activity_title">true</bool>
+
+Custom ``action_bar_center_title.xml`` layout that moves the title 24dp to the left:
+
+.. code-block:: xml
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical"
+                  android:clipChildren="false">
+        <TextView
+            android:paddingLeft="-24dp"
+            android:id="@+id/title_centered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/net.gini.android.vision.theme.actionBar.color"/> <!-- Using the color from the theme -->
+    </RelativeLayout>
+
+Dot page indicator in the help
+=============================
+
+By setting the ``net.gini.android.vision.help_dot_page_indicator`` boolean resource to ``true`` the dot page indicator can be enabled which replaces the text page indicators.
+
+You can configure the bottom margin, the padding between the dots and the width/height of the dots with the following dimension resources:
+
+.. code-block:: xml
+
+    <dimen name="net.gini.android.vision.theme.help_page_indicators_bottom_margin">15dp</dimen>
+    <dimen name="net.gini.android.vision.theme.help_page_indicator_padding">8dp</dimen>
+    <dimen name="net.gini.android.vision.theme.help_page_indicator_width">6dp</dimen>
+    <dimen name="net.gini.android.vision.theme.help_page_indicator_height">6dp</dimen>
+
+The default and active dot colors can be configured with the following color resources:
+
+.. code-block:: xml
+
+    <color name="net.gini.android.vision.theme.help_page_indicator_color_default">#999999</color>
+    <color name="net.gini.android.vision.theme.help_page_indicator_color_active">#000000</color>
+
 Customizable Dimensions
 =======================
 

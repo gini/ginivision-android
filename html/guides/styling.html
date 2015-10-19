@@ -123,6 +123,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#customizable-colors">Customizable colors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#customizable-fonts">Customizable fonts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#customizable-actionbar-menus">Customizable ActionBar Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#actionbar-back-button">ActionBar back button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#centering-the-actionbar-title">Centering the ActionBar title</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dot-page-indicator-in-the-help">Dot page indicator in the help</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#customizable-dimensions">Customizable Dimensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#debug-options">Debug Options</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#enabling-the-framemeter">Enabling the framemeter</a></li>
@@ -384,6 +387,80 @@ is not possible and you should not add new menu items, because you can&#8217;t a
 <dd>Contains the ActionBar menu items for the <tt class="docutils literal"><span class="pre">HelpActivity</span></tt>. You can override it to remove the close button or, if you subclass the <tt class="docutils literal"><span class="pre">HelpActivity</span></tt>, add
 new items and selection handlers in your subclass.</dd>
 </dl>
+</div>
+<div class="section" id="actionbar-back-button">
+<h2>ActionBar back button<a class="headerlink" href="#actionbar-back-button" title="Permalink to this headline">¶</a></h2>
+<p>The ActionBar Home button can be set to act as a back button (similar to iOS). To enable it set the  <tt class="docutils literal"><span class="pre">net.gini.android.vision.home_as_back_button</span></tt> boolean resource to <tt class="docutils literal"><span class="pre">true</span></tt> and create a drawable named <tt class="docutils literal"><span class="pre">back_button</span></tt> (image or XML).</p>
+<p>In addition, if you use the standard version, you must set the <tt class="docutils literal"><span class="pre">back_button</span></tt> drawable in your <tt class="docutils literal"><span class="pre">styles.xml</span></tt> as the <tt class="docutils literal"><span class="pre">homeAsUpIndicator</span></tt>.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">&quot;net.example.theme&quot;</span> <span class="na">parent=</span><span class="s">&quot;@android:style/Theme.Holo.Light&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;android:homeAsUpIndicator&quot;</span><span class="nt">&gt;</span>@drawable/back_button<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/style&gt;</span>
+</pre></div>
+</div>
+<p>It is also advisable to remove the home icon from the ActionBar by setting the <tt class="docutils literal"><span class="pre">displayOptions</span></tt> for the ActionBar&#8217;s style to <tt class="docutils literal"><span class="pre">disableHome</span></tt>.</p>
+<p>An example style configuring the <tt class="docutils literal"><span class="pre">homeAsUpIndicator</span></tt> and the <tt class="docutils literal"><span class="pre">displayOptions</span></tt>:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">&quot;net.example.theme&quot;</span> <span class="na">parent=</span><span class="s">&quot;@android:style/Theme.Holo.Light&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;android:actionBarStyle&quot;</span><span class="nt">&gt;</span>@style/net.example.theme.ActionBar<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;android:homeAsUpIndicator&quot;</span><span class="nt">&gt;</span>@drawable/back_button<span class="nt">&lt;/item&gt;</span> <span class="c">&lt;!-- Not needed for compat --&gt;</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">&quot;net.example.theme.ActionBar&quot;</span> <span class="na">parent=</span><span class="s">&quot;@android:style/Widget.Holo.Light.ActionBar&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;android:displayOptions&quot;</span><span class="nt">&gt;</span>disableHome<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/style&gt;</span>
+</pre></div>
+</div>
+<p>Enable the back button:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;bool</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.home_as_back_button&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/bool&gt;</span>
+</pre></div>
+</div>
+<p>Example <tt class="docutils literal"><span class="pre">back_button.xml</span></tt> drawable which displays a png called <tt class="docutils literal"><span class="pre">back_icon</span></tt> moved 20dp to the left:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;layer-list</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">android:left=</span><span class="s">&quot;-20dp&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;bitmap</span> <span class="na">android:src=</span><span class="s">&quot;@drawable/back_icon&quot;</span>
+                <span class="na">android:gravity=</span><span class="s">&quot;center&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/layer-list&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="centering-the-actionbar-title">
+<h2>Centering the ActionBar title<a class="headerlink" href="#centering-the-actionbar-title" title="Permalink to this headline">¶</a></h2>
+<p>By setting the <tt class="docutils literal"><span class="pre">net.gini.android.vision.center_activity_title</span></tt> boolean resource to <tt class="docutils literal"><span class="pre">true</span></tt> the titles in the ActionBars will be centered. A custom view is used to accomplish this with a layout named <tt class="docutils literal"><span class="pre">action_bar_center_title.xml</span></tt>. You can create your own layout if you need to fine tune the positioning of the title. The only requirement is that it contains a <tt class="docutils literal"><span class="pre">TextView</span></tt> with the id <tt class="docutils literal"><span class="pre">title_centered</span></tt>.</p>
+<p>Enable the title centering:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;bool</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.center_activity_title&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/bool&gt;</span>
+</pre></div>
+</div>
+<p>Custom <tt class="docutils literal"><span class="pre">action_bar_center_title.xml</span></tt> layout that moves the title 24dp to the left:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;RelativeLayout</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+              <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+              <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
+              <span class="na">android:orientation=</span><span class="s">&quot;vertical&quot;</span>
+              <span class="na">android:clipChildren=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;TextView</span>
+        <span class="na">android:paddingLeft=</span><span class="s">&quot;-24dp&quot;</span>
+        <span class="na">android:id=</span><span class="s">&quot;@+id/title_centered&quot;</span>
+        <span class="na">android:layout_width=</span><span class="s">&quot;wrap_content&quot;</span>
+        <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+        <span class="na">android:layout_centerInParent=</span><span class="s">&quot;true&quot;</span>
+        <span class="na">android:textColor=</span><span class="s">&quot;@color/net.gini.android.vision.theme.actionBar.color&quot;</span><span class="nt">/&gt;</span> <span class="c">&lt;!-- Using the color from the theme --&gt;</span>
+<span class="nt">&lt;/RelativeLayout&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dot-page-indicator-in-the-help">
+<h2>Dot page indicator in the help<a class="headerlink" href="#dot-page-indicator-in-the-help" title="Permalink to this headline">¶</a></h2>
+<p>By setting the <tt class="docutils literal"><span class="pre">net.gini.android.vision.help_dot_page_indicator</span></tt> boolean resource to <tt class="docutils literal"><span class="pre">true</span></tt> the dot page indicator can be enabled which replaces the text page indicators.</p>
+<p>You can configure the bottom margin, the padding between the dots and the width/height of the dots with the following dimension resources:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;dimen</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.help_page_indicators_bottom_margin&quot;</span><span class="nt">&gt;</span>15dp<span class="nt">&lt;/dimen&gt;</span>
+<span class="nt">&lt;dimen</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.help_page_indicator_padding&quot;</span><span class="nt">&gt;</span>8dp<span class="nt">&lt;/dimen&gt;</span>
+<span class="nt">&lt;dimen</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.help_page_indicator_width&quot;</span><span class="nt">&gt;</span>6dp<span class="nt">&lt;/dimen&gt;</span>
+<span class="nt">&lt;dimen</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.help_page_indicator_height&quot;</span><span class="nt">&gt;</span>6dp<span class="nt">&lt;/dimen&gt;</span>
+</pre></div>
+</div>
+<p>The default and active dot colors can be configured with the following color resources:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.help_page_indicator_color_default&quot;</span><span class="nt">&gt;</span>#999999<span class="nt">&lt;/color&gt;</span>
+<span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.help_page_indicator_color_active&quot;</span><span class="nt">&gt;</span>#000000<span class="nt">&lt;/color&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="customizable-dimensions">
 <h2>Customizable Dimensions<a class="headerlink" href="#customizable-dimensions" title="Permalink to this headline">¶</a></h2>
