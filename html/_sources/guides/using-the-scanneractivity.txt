@@ -158,7 +158,7 @@ First of all, we have to include the Gini API SDK as dependency in the ``build.g
 
     dependencies {
         ...
-        compile ('net.gini:gini-android-sdk:1.1.40@aar'){
+        compile ('net.gini:gini-android-sdk:1.1.44@aar'){
             transitive = true
         } 
         ...
@@ -175,8 +175,8 @@ implementation which puts the result extractions into a new intent for further p
 
      public void uploadDocument(final Bitmap document) {
             final Intent intent = getIntent();
-            final Bundle documentTypeBundle = intent.getBundleExtra(EXTRA_DOCUMENT_TYPE_BUNDLE);
-            final DocumentType documentType = documentTypeBundle.getParcelable(EXTRA_DOCUMENT_TYPE);
+            final Bundle documentTypeBundle = intent.getBundleExtra(EXTRA_DOCTYPE_BUNDLE);
+            final DocumentType documentType = documentTypeBundle.getParcelable(EXTRA_DOCTYPE);
             documentTaskManager.createDocument(document, null, documentType.getApiDocTypeHint(), 50)
                     .onSuccessTask(new Continuation<Document, Task<Document>>() {
                         @Override
@@ -286,7 +286,7 @@ activity can use the rectified bitmap of the document.
             if (requestCode == IMAGE_REQUEST && resultCode == RESULT_OK) {
                 // everything ok, do something with the document
             } else if (requestCode == IMAGE_REQUEST && resultCode == ScannerActivity.RESULT_ERROR) {
-                final ScannerActivity.Error error = data.getParcelableExtra(ScannerActivity.EXTRA_ERROR);
+                final ScannerActivityDelegate.Error error = data.getParcelableExtra(ScannerActivity.EXTRA_ERROR);
                 // unfortunately there was an error we must handle 
             }
         }

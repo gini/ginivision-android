@@ -368,7 +368,7 @@ memory leaks are possible.</p>
 <p>First of all, we have to include the Gini API SDK as dependency in the <tt class="docutils literal"><span class="pre">build.gradle</span></tt>.</p>
 <div class="highlight-groovy"><div class="highlight"><pre><span class="n">dependencies</span> <span class="o">{</span>
     <span class="o">...</span>
-    <span class="n">compile</span> <span class="o">(</span><span class="s1">&#39;net.gini:gini-android-sdk:1.1.40@aar&#39;</span><span class="o">){</span>
+    <span class="n">compile</span> <span class="o">(</span><span class="s1">&#39;net.gini:gini-android-sdk:1.1.44@aar&#39;</span><span class="o">){</span>
         <span class="n">transitive</span> <span class="o">=</span> <span class="kc">true</span>
     <span class="o">}</span>
     <span class="o">...</span>
@@ -381,8 +381,8 @@ create a single instance of this class and hold it for its complete life cyle.</
 implementation which puts the result extractions into a new intent for further processing.</p>
 <div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">uploadDocument</span><span class="o">(</span><span class="kd">final</span> <span class="n">Bitmap</span> <span class="n">document</span><span class="o">)</span> <span class="o">{</span>
        <span class="kd">final</span> <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="n">getIntent</span><span class="o">();</span>
-       <span class="kd">final</span> <span class="n">Bundle</span> <span class="n">documentTypeBundle</span> <span class="o">=</span> <span class="n">intent</span><span class="o">.</span><span class="na">getBundleExtra</span><span class="o">(</span><span class="n">EXTRA_DOCUMENT_TYPE_BUNDLE</span><span class="o">);</span>
-       <span class="kd">final</span> <span class="n">DocumentType</span> <span class="n">documentType</span> <span class="o">=</span> <span class="n">documentTypeBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">EXTRA_DOCUMENT_TYPE</span><span class="o">);</span>
+       <span class="kd">final</span> <span class="n">Bundle</span> <span class="n">documentTypeBundle</span> <span class="o">=</span> <span class="n">intent</span><span class="o">.</span><span class="na">getBundleExtra</span><span class="o">(</span><span class="n">EXTRA_DOCTYPE_BUNDLE</span><span class="o">);</span>
+       <span class="kd">final</span> <span class="n">DocumentType</span> <span class="n">documentType</span> <span class="o">=</span> <span class="n">documentTypeBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">EXTRA_DOCTYPE</span><span class="o">);</span>
        <span class="n">documentTaskManager</span><span class="o">.</span><span class="na">createDocument</span><span class="o">(</span><span class="n">document</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="n">documentType</span><span class="o">.</span><span class="na">getApiDocTypeHint</span><span class="o">(),</span> <span class="mi">50</span><span class="o">)</span>
                <span class="o">.</span><span class="na">onSuccessTask</span><span class="o">(</span><span class="k">new</span> <span class="n">Continuation</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">,</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">&gt;&gt;()</span> <span class="o">{</span>
                    <span class="nd">@Override</span>
@@ -490,7 +490,7 @@ activity can use the rectified bitmap of the document.</p>
         <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">IMAGE_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">resultCode</span> <span class="o">==</span> <span class="n">RESULT_OK</span><span class="o">)</span> <span class="o">{</span>
             <span class="c1">// everything ok, do something with the document</span>
         <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">IMAGE_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">resultCode</span> <span class="o">==</span> <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">RESULT_ERROR</span><span class="o">)</span> <span class="o">{</span>
-            <span class="kd">final</span> <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">Error</span> <span class="n">error</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getParcelableExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_ERROR</span><span class="o">);</span>
+            <span class="kd">final</span> <span class="n">ScannerActivityDelegate</span><span class="o">.</span><span class="na">Error</span> <span class="n">error</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getParcelableExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_ERROR</span><span class="o">);</span>
             <span class="c1">// unfortunately there was an error we must handle</span>
         <span class="o">}</span>
     <span class="o">}</span>
