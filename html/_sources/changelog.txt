@@ -2,11 +2,20 @@
 Changelog
 =========
 
+{{version_and_date}}
+
+Bugfixes
+--------
+
+- Scanner dynamic titles used only if set. No need to set all the scanner titles, if a static custom title is required.
+- Missing doctype extra crash fixed. If no doctype extra, invoice doctype is assumed.
+
 1.0.182 (2015-10-15)
 ====================
 
 Features
 --------
+
 -  Back button can be enabled in the ActionBar.
 -  Title can be centered in the ActionBar.
 -  Dot page indicator can be enabled for the help screens.
