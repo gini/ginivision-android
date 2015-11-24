@@ -385,15 +385,8 @@ memory leaks are possible.</p>
 </div>
 <div class="section" id="upload-the-document-to-gini-using-the-gini-api-sdk">
 <h2>Upload the Document to Gini using the Gini API SDK<a class="headerlink" href="#upload-the-document-to-gini-using-the-gini-api-sdk" title="Permalink to this headline">¶</a></h2>
-<p>First of all, we have to include the Gini API SDK as dependency in the <tt class="docutils literal"><span class="pre">build.gradle</span></tt>.</p>
-<div class="highlight-groovy"><div class="highlight"><pre><span class="n">dependencies</span> <span class="o">{</span>
-    <span class="o">...</span>
-    <span class="n">compile</span> <span class="o">(</span><span class="s1">&#39;net.gini:gini-android-sdk:1.1.44@aar&#39;</span><span class="o">){</span>
-        <span class="n">transitive</span> <span class="o">=</span> <span class="kc">true</span>
-    <span class="o">}</span>
-    <span class="o">...</span>
-</pre></div>
-</div>
+<p>First of all, we have to include the Gini API SDK as dependency in the <tt class="docutils literal"><span class="pre">build.gradle</span></tt>. Check out the Gini SDK Android
+documentation&#8217;s <a class="reference external" href="http://developer.gini.net/gini-sdk-android/guides/getting-started.html">Getting Started</a> section for details.</p>
 <p>The Gini SDK provides a <tt class="docutils literal"><span class="pre">Gini</span></tt> class which acts as a facade to the whole functionality of the Gini API. Your app must
 create a single instance of this class and hold it for its complete life cyle.</p>
 <p>Finally, the <tt class="docutils literal"><span class="pre">Gini</span></tt> instance is used in the <tt class="docutils literal"><span class="pre">uploadDocument(..)</span></tt> method of the <tt class="docutils literal"><span class="pre">MyUploadActivity</span></tt> which extends

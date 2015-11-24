@@ -157,16 +157,9 @@ Example
 
 Upload the Document to Gini using the Gini API SDK
 ==================================================
-First of all, we have to include the Gini API SDK as dependency in the ``build.gradle``.
 
-.. code-block:: groovy
-
-    dependencies {
-        ...
-        compile ('net.gini:gini-android-sdk:1.1.44@aar'){
-            transitive = true
-        } 
-        ...
+First of all, we have to include the Gini API SDK as dependency in the ``build.gradle``. Check out the Gini SDK Android 
+documentation's `Getting Started <http://developer.gini.net/gini-sdk-android/guides/getting-started.html>`_ section for details.
 
 The Gini SDK provides a ``Gini`` class which acts as a facade to the whole functionality of the Gini API. Your app must
 create a single instance of this class and hold it for its complete life cyle.
