@@ -2,6 +2,15 @@
 Changelog
 =========
 
+1.0.194 (2015-11-24)
+====================
+
+Features
+--------
+
+- Taking of screenshots can be prevented by setting the ``EXTRA_SET_WINDOW_FLAG_SECURE`` to ``true`` for the ``ScannerActivity`` or ``CaptureActivity``.
+  ``HelpActivity`` and ``UploadActivity`` will also prevent taking of screenshots.
+
 1.0.190 (2015-11-13)
 ====================
 

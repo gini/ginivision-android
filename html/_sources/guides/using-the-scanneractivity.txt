@@ -11,7 +11,7 @@ returns with results.
 Starting the Scanner Activity
 =============================
 
-The ``Intent`` which triggers the scanner activity must be parameterized. There are two mandatory parameters:
+The ``Intent`` which triggers the scanner activity must be parameterized. There are three mandatory parameters:
 
 ``ScannerActivity.EXTRA_UPLOAD_ACTIVITY``
         The ``UploadActitvity`` must be set which is called after the document has been captured. This class
@@ -30,7 +30,7 @@ The ``Intent`` which triggers the scanner activity must be parameterized. There 
         ``net.gini.android.vision.DocumentType`` instance. Furthermore, the document type parameter must be wrapped in
         a bundle using the key ``ScannerActivity.EXTRA_DOCTYPE``
 
-You can also put two optional extras in the intent. Both expect a boolean value.
+You can also put three optional extras in the intent. All expect a boolean value.
 
 ``ScannerActivity.EXTRA_SHOW_HELP``
         Whether the ``ScannerActivity`` should show the ``HelpActivity`` the first time it is launched during an
@@ -40,6 +40,11 @@ You can also put two optional extras in the intent. Both expect a boolean value.
         Whether the ScannerActivity should store and return the original image. Please note that all images are
         held in the device's memory, not in the storage. Because of that, you should use this feature only for tests or
         debugging since it increases memory usage significantly.
+
+``ScannerActivity.EXTRA_SET_WINDOW_FLAG_SECURE``
+        Whether the ScannerActivity sets the secure flag on the window to prevent taking of screenshots. All activities started
+        by the ScannerActivity (HelpActivity and UploadActivity) will also set this flag so you don't need to set
+        the flag in your UploadActivity subclass.
 
 
 Example
