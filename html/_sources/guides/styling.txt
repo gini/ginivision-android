@@ -243,7 +243,7 @@ Custom ``action_bar_center_title.xml`` layout that moves the title 24dp to the l
     </RelativeLayout>
 
 Dot page indicator in the help
-=============================
+==============================
 
 By setting the ``net.gini.android.vision.help_dot_page_indicator`` boolean resource to ``true`` the dot page indicator can be enabled which replaces the text page indicators.
 

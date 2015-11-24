@@ -203,6 +203,14 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-license">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-license#licenses-and-acknowledgements-for-incorporated-software">Licenses and Acknowledgements for Incorporated Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-license#opencv">OpenCV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-license#slf4j">SLF4J</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         
@@ -933,7 +941,7 @@ Usually you will use <tt class="docutils literal"><span class="pre">0</span></tt
 </div>
 </div>
 <span id="document-guides/logging"></span><div class="section" id="logging">
-<h3>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h3>
+<span id="guide-logging"></span><h3>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h3>
 <p>The logging facility of the Gini Vision library for Android is based on <a class="reference external" href="http://www.slf4J.org">SLF4j</a>.
 The Simple Logging Facade for Java (SLF4J) serves as a simple facade or abstraction for various logging
 frameworks (e.g. java.util.logging, logback, log4j) allowing the end user to plug in the desired logging framework at <em>deployment</em> time. This gives the App Developer the freedom of choice. If no SLF4J binding is found on the classpath, then SLF4J will default to a <em>no-operation</em> implementation.</p>
@@ -1168,6 +1176,94 @@ launched during an application run.</li>
 <li>Shutter animation like on iOS: animate a white overlay view from 0 to
 0.8 alpha in 300ms.</li>
 </ul>
+</div>
+</div>
+</div>
+<span id="document-license"></span><div class="section" id="license">
+<h3>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h3>
+<p>The Gini Android Vision Library is licensed under a Private License and also
+integrates several third party libraries. Always make sure to ship all license
+notices and permissions with your application:</p>
+<div class="highlight-python"><div class="highlight"><pre>Copyright (c) 2014-2015, Gini GmbH
+All rights reserved.
+
+The Gini Vision Library is licensed through Gini GmbH (&quot;Gini&quot;) and may not be
+used, altered or copied in any way without explicit permission by Gini. The
+terms of usage are defined in a separate usage agreement between Gini and the
+licensee, where the licensee can gain access to a non-exclusive,
+non-transferable usage right which is restricted for the time of a contractual
+relationship between Gini and the licensee.
+</pre></div>
+</div>
+<div class="section" id="licenses-and-acknowledgements-for-incorporated-software">
+<h4>Licenses and Acknowledgements for Incorporated Software<a class="headerlink" href="#licenses-and-acknowledgements-for-incorporated-software" title="Permalink to this headline">¶</a></h4>
+<p>This library makes use of the following third party libraries:</p>
+<div class="section" id="opencv">
+<h5>OpenCV<a class="headerlink" href="#opencv" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-python"><div class="highlight"><pre>                          License Agreement
+               For Open Source Computer Vision Library
+                       (3-clause BSD License)
+
+Copyright (C) 2000-2015, Intel Corporation, all rights reserved.
+Copyright (C) 2009-2011, Willow Garage Inc., all rights reserved.
+Copyright (C) 2009-2015, NVIDIA Corporation, all rights reserved.
+Copyright (C) 2010-2013, Advanced Micro Devices, Inc., all rights reserved.
+Copyright (C) 2015, OpenCV Foundation, all rights reserved.
+Copyright (C) 2015, Itseez Inc., all rights reserved.
+Third party copyrights are property of their respective owners.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+  * Redistributions of source code must retain the above copyright notice,
+    this list of conditions and the following disclaimer.
+
+  * Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+
+  * Neither the names of the copyright holders nor the names of the contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+
+This software is provided by the copyright holders and contributors &quot;as is&quot; and
+any express or implied warranties, including, but not limited to, the implied
+warranties of merchantability and fitness for a particular purpose are disclaimed.
+In no event shall copyright holders or contributors be liable for any direct,
+indirect, incidental, special, exemplary, or consequential damages
+(including, but not limited to, procurement of substitute goods or services;
+loss of use, data, or profits; or business interruption) however caused
+and on any theory of liability, whether in contract, strict liability,
+or tort (including negligence or otherwise) arising in any way out of
+the use of this software, even if advised of the possibility of such damage.
+</pre></div>
+</div>
+</div>
+<div class="section" id="slf4j">
+<h5>SLF4J<a class="headerlink" href="#slf4j" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-python"><div class="highlight"><pre>Copyright (c) 2004-2014 QOS.ch
+All rights reserved.
+
+Permission is hereby granted, free  of charge, to any person obtaining
+a  copy  of this  software  and  associated  documentation files  (the
+&quot;Software&quot;), to  deal in  the Software without  restriction, including
+without limitation  the rights to  use, copy, modify,  merge, publish,
+distribute,  sublicense, and/or sell  copies of  the Software,  and to
+permit persons to whom the Software  is furnished to do so, subject to
+the following conditions:
+
+The  above  copyright  notice  and  this permission  notice  shall  be
+included in all copies or substantial portions of the Software.
+
+THE  SOFTWARE IS  PROVIDED  &quot;AS  IS&quot;, WITHOUT  WARRANTY  OF ANY  KIND,
+EXPRESS OR  IMPLIED, INCLUDING  BUT NOT LIMITED  TO THE  WARRANTIES OF
+MERCHANTABILITY,    FITNESS    FOR    A   PARTICULAR    PURPOSE    AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE,  ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</pre></div>
+</div>
 </div>
 </div>
 </div>

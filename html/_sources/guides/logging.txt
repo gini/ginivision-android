@@ -1,4 +1,4 @@
-.. _guide-logging
+.. _guide-logging:
 
 =======
 Logging
