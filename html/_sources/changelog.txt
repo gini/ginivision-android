@@ -2,6 +2,15 @@
 Changelog
 =========
 
+1.0.197 (2015-11-25)
+====================
+
+Bugfix
+------
+
+- Broken public API fixed. ScannerActivity.Error works again.
+
+
 1.0.194 (2015-11-24)
 ====================
 
