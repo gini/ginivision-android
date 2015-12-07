@@ -305,6 +305,53 @@ manifest file.
 <div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.CAMERA&quot;</span> <span class="nt">/&gt;</span>
 </pre></div>
 </div>
+<p>With Android 6.0 (Marshmallow) comes a new permission handling system. Apps targeting Android SDK 23 or higher need to
+request each permission listed in the manifest from the user at run time.
+<a class="reference external" href="http://developer.android.com/training/permissions/requesting.html">See Requesting Permissions at Run Time</a>.</p>
+<p>The Gini Vision Library does not request the camera permission; we leave it up to you to request it. This way you can
+show a custom explanation and request the permission where it&#8217;s best suited for your app.</p>
+<p>The only requirement is, that you must request the camera permission before launching Gini Vision:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">requestCameraPermission</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">ContextCompat</span><span class="o">.</span><span class="na">checkSelfPermission</span><span class="o">(</span><span class="k">this</span><span class="o">,</span>
+            <span class="n">Manifest</span><span class="o">.</span><span class="na">permission</span><span class="o">.</span><span class="na">CAMERA</span><span class="o">)</span>
+            <span class="o">!=</span> <span class="n">PackageManager</span><span class="o">.</span><span class="na">PERMISSION_GRANTED</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">ActivityCompat</span><span class="o">.</span><span class="na">shouldShowRequestPermissionRationale</span><span class="o">(</span><span class="n">thisActivity</span><span class="o">,</span>
+                <span class="n">Manifest</span><span class="o">.</span><span class="na">permission</span><span class="o">.</span><span class="na">CAMERA</span><span class="o">))</span> <span class="o">{</span>
+            <span class="c1">// Show an exlpanation to the user *asynchronously* -- don&#39;t block</span>
+            <span class="c1">// this thread waiting for the user&#39;s response! After the user</span>
+            <span class="c1">// sees the explanation, try again to request the permission.</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="c1">// No explanation needed, we can request the permission.</span>
+            <span class="n">ActivityCompat</span><span class="o">.</span><span class="na">requestPermissions</span><span class="o">(</span><span class="k">this</span><span class="o">,</span>
+                <span class="k">new</span> <span class="n">String</span><span class="o">[]{</span><span class="n">Manifest</span><span class="o">.</span><span class="na">permission</span><span class="o">.</span><span class="na">CAMERA</span><span class="o">},</span>
+                <span class="n">PERMISSION_REQUEST_CAMERA</span><span class="o">);</span>
+
+            <span class="c1">// PERMISSION_REQUEST_CAMERA is an</span>
+            <span class="c1">// app-defined int constant. The callback method gets the</span>
+            <span class="c1">// result of the request.</span>
+        <span class="o">}</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="n">startGiniVision</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRequestPermissionsResult</span><span class="o">(</span><span class="kt">int</span> <span class="n">requestCode</span><span class="o">,</span>
+                                       <span class="n">String</span> <span class="n">permissions</span><span class="o">[],</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">grantResults</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">switch</span> <span class="o">(</span><span class="n">requestCode</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="n">PERMISSION_REQUEST_CAMERA</span><span class="o">:</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">grantResults</span><span class="o">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">0</span>
+                    <span class="o">&amp;&amp;</span> <span class="n">grantResults</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">==</span> <span class="n">PackageManager</span><span class="o">.</span><span class="na">PERMISSION_GRANTED</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">startGiniVision</span><span class="o">();</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="c1">// Request not granted</span>
+            <span class="o">}</span>
+            <span class="k">break</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
 <p>The Gini Vision library for Android also depends on some hardware features which the device must support. It is best
 practice to declare these required features in the manifest file as well,
 <a class="reference external" href="http://developer.android.com/guide/topics/manifest/uses-feature-element.html">as described in the Android documentation</a>.</p>
