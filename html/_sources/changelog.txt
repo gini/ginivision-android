@@ -2,6 +2,14 @@
 Changelog
 =========
 
+1.0.200 (2015-12-07)
+====================
+
+Bugfix
+------
+
+- Camera orientation setting fixed for devices with reverse-landscape camera sensor orientation (like the Nexus 5X).
+
 1.0.197 (2015-11-25)
 ====================
 
