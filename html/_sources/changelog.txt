@@ -2,6 +2,15 @@
 Changelog
 =========
 
+1.0.204 (2015-12-09)
+====================
+
+Bugfixes
+--------
+
+- Uploaded image orientation set correctly on devices which set the rotation in the EXIF header.
+- Picture shown in the upload screen scaled down to half its original size to prevent exceeding the max texture size on devices with high MP cameras.
+
 1.0.200 (2015-12-07)
 ====================
 
