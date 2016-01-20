@@ -115,6 +115,10 @@ Customizable colors
 ``net.gini.android.vision.theme.helpBackgroundColor``
     The background color for the ``HelpActivity``'s root view.
 
+``net.gini.android.vision.theme.colorAccent``
+    The accent color for UI widgets on Android 5.0 and newer or when using the compatibility build `ginivision-android-sdk-compat`.
+    If you use the activity indicator in the ``UploadActivity`` (see `Activity indicator during upload`_), it sets the color of the indicator on Android 5.0 or newer.
+
 Listed below is an example file which would go into the application's `res/styles/style.xml`` file.
 
 .. code-block:: xml
@@ -127,6 +131,7 @@ Listed below is an example file which would go into the application's `res/style
         <color name="net.gini.android.vision.theme.outlineColor">#1ae2ae</color>
         <color name="net.gini.android.vision.theme.backgroundColor">#ffffff</color>
         <color name="net.gini.android.vision.theme.helpBackgroundColor">#ffffff</color>
+        <color name="net.gini.android.vision.theme.colorAccent">#009edc</color>
     </resources>
 
 Customizable fonts
@@ -262,6 +267,14 @@ The default and active dot colors can be configured with the following color res
 
     <color name="net.gini.android.vision.theme.help_page_indicator_color_default">#999999</color>
     <color name="net.gini.android.vision.theme.help_page_indicator_color_active">#000000</color>
+
+Activity indicator during upload
+================================
+
+By setting the ``net.gini.android.vision.upload_activity_indicator`` boolean resource to ``true`` the animation is
+disabled and replaced with a native indeterminate ``ProgressBar`` in the ``UploadActivity``.
+
+The color of the ``ProgressBar`` on Android 5.0 or newer is set by the ``net.gini.android.vision.theme.colorAccent`` color resource.
 
 Customizable Dimensions
 =======================

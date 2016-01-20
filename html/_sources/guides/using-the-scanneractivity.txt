@@ -30,7 +30,7 @@ The ``Intent`` which triggers the scanner activity must be parameterized. There 
         ``net.gini.android.vision.DocumentType`` instance. Furthermore, the document type parameter must be wrapped in
         a bundle using the key ``ScannerActivity.EXTRA_DOCTYPE``
 
-You can also put three optional extras in the intent. All expect a boolean value.
+You can also put optional extras in the intent. All expect a boolean value.
 
 ``ScannerActivity.EXTRA_SHOW_HELP``
         Whether the ``ScannerActivity`` should show the ``HelpActivity`` the first time it is launched during an
@@ -45,6 +45,11 @@ You can also put three optional extras in the intent. All expect a boolean value
         Whether the ScannerActivity sets the secure flag on the window to prevent taking of screenshots. All activities started
         by the ScannerActivity (HelpActivity and UploadActivity) will also set this flag so you don't need to set
         the flag in your UploadActivity subclass.
+
+``ScannerActivity.EXTRA_CREATE_JPEG_DOCUMENT_WITH_METADATA``
+        Whether the ScannerAcitivity creates a jpeg with some exif tags from the rectified and cropped document. The jpeg
+        is already compressed to allow the best extraction with the smallest possible upload size. The exif tags contained
+        in the jpeg are listed at `Jpeg Exif Tags`_.
 
 
 Example
@@ -123,6 +128,20 @@ There are two extras in the result intent which is given to the method; both are
    `BitmapFuture` instances out of the result intent. Otherwise,
    memory leaks are possible.
 
+``JpegFuture``
+--------------
+
+Like the ``BitmapFuture``, but instead of a ``Bitmap`` it contains a jpeg byte array. If the ``ScannerActivity.EXTRA_CREATE_JPEG_DOCUMENT_WITH_METADATA`` is set to ``true`` the jpeg will be returned using this object.
+
+The extra containing the ``JpegFuture`` in the result intent:
+
+``ScannerActivity.EXTRA_DOCUMENT_JPEG``
+    A ``JpegFuture`` that will get the rectified jpeg image of the document. Will be set only if ``ScannerActivity.EXTRA_CREATE_JPEG_DOCUMENT_WITH_METADATA`` was ``true``.
+
+.. warning::
+
+   It is important that your application always extracts the
+   `JpegFuture` instances out of the result intent, if jpeg documents were enabled. Otherwise, memory leaks are possible.
 
 .. _scanner-activity-results-example:
 
@@ -131,28 +150,56 @@ Example
 
 .. code-block:: java
 
-        @Override
-        public void onActivityResult(int requestCode, int resultCode, Intent data) {
-            Bundle documentBundle;
-            BitmapFuture originalFuture = null;
-            BitmapFuture rectifiedFuture = null;
-            
-            // we always try to get the document to prevent memory leaks
-            if (requestCode == IMAGE_REQUEST && data != null) {
-                documentBundle = data.getBundleExtra(ScannerActivity.EXTRA_DOCUMENT_BUNDLE);
-                if (documentBundle != null) {
-                    originalFuture = documentBundle.getParcelable(ScannerActivity.EXTRA_ORIGINAL);
-                    rectifiedFuture = documentBundle.getParcelable(CaptureActivity.EXTRA_DOCUMENT);
-                }
-            }
+      @Override
+      public void onActivityResult(int requestCode, int resultCode, Intent data) {
+          Bundle documentBundle;
+          BitmapFuture originalFuture = null;
+          BitmapFuture rectifiedFuture = null;
+          BitmapFuture jpegFuture = null;
 
-            if (requestCode == IMAGE_REQUEST && resultCode == RESULT_OK) {
-                // everything ok, do something with the document
-            } else if (requestCode == IMAGE_REQUEST && resultCode == ScannerActivity.RESULT_ERROR) {
-                final ScannerActivity.Error error = data.getParcelableExtra(ScannerActivity.EXTRA_ERROR);
-                // unfortunately there was an error we must handle 
-            }
-         }
+          // we always try to get the document to prevent memory leaks
+          if (requestCode == IMAGE_REQUEST && data != null) {
+              documentBundle = data.getBundleExtra(ScannerActivity.EXTRA_DOCUMENT_BUNDLE);
+              if (documentBundle != null) {
+                  originalFuture = documentBundle.getParcelable(ScannerActivity.EXTRA_ORIGINAL);
+                  rectifiedFuture = documentBundle.getParcelable(CaptureActivity.EXTRA_DOCUMENT);
+                  jpegFuture = documentBundle.getParcelable(CaptureActivity.EXTRA_DOCUMENT_JPEG); // use only if ScannerActivity.EXTRA_CREATE_JPEG_DOCUMENT_WITH_METADATA was true
+              }
+          }
+
+          if (requestCode == IMAGE_REQUEST && resultCode == RESULT_OK) {
+              // everything ok, do something with the document
+          } else if (requestCode == IMAGE_REQUEST && resultCode == ScannerActivity.RESULT_ERROR) {
+              final ScannerActivity.Error error = data.getParcelableExtra(ScannerActivity.EXTRA_ERROR);
+              // unfortunately there was an error we must handle
+          }
+       }
+
+Jpeg Exif Tags
+--------------
+
+In order to improve our service we would like to receive a few exif tags about the circumstances in which the document was photographed.
+
+Only the following exif tags are kept in the jpeg file. No personal, geographical or otherwise sensitive information is kept.
+
+``Make``
+    The manufacturer of the device.
+``Model``
+    The model name or model number of the device.
+``ISO``
+    The ISO Speed and ISO Latitude of the camera as specified in ISO 12232.
+``Exposure Time``
+    Exposure time, given in seconds.
+``Aperture``
+    The lens aperture. The unit is the APEX value.
+``Flash``
+    Status of flash when the image was shot.
+``Compressed Bits Per Pixel``
+    The compression mode used for a compressed image is indicated in unit bits per pixel.
+``OS Version``
+    Android OS version.
+``GiniVision Version``
+    GiniVision SDK version.
 
 
 Upload the Document to Gini using the Gini API SDK
@@ -162,77 +209,110 @@ First of all, we have to include the Gini API SDK as dependency in the ``build.g
 documentation's `Getting Started <http://developer.gini.net/gini-sdk-android/guides/getting-started.html>`_ section for details.
 
 The Gini SDK provides a ``Gini`` class which acts as a facade to the whole functionality of the Gini API. Your app must
-create a single instance of this class and hold it for its complete life cyle.
+create a single instance of this class and hold it for its complete lifecycle.
 
 
-Finally, the ``Gini`` instance is used in the ``uploadDocument(..)`` method of the ``MyUploadActivity`` which extends
+Finally, the ``Gini`` instance is used in the ``uploadDocument(Bitmap, byte[])`` method of the ``MyUploadActivity`` which extends
 ``net.gini.android.vision.UploadActivity`` to upload the captured document. The example below shows a possible
 implementation which puts the result extractions into a new intent for further processing.
 
 .. code-block:: java
 
-     public void uploadDocument(final Bitmap document) {
-            final Intent intent = getIntent();
-            final Bundle documentTypeBundle = intent.getBundleExtra(EXTRA_DOCTYPE_BUNDLE);
-            final DocumentType documentType = documentTypeBundle.getParcelable(EXTRA_DOCTYPE);
-            documentTaskManager.createDocument(document, null, documentType.getApiDocTypeHint(), 50)
-                    .onSuccessTask(new Continuation<Document, Task<Document>>() {
-                        @Override
-                        public Task<Document> then(Task<Document> task) throws Exception {
-                            final Document document = task.getResult();
-                            documentId = document.getId();
-                            return documentTaskManager.pollDocument(document);
-                        }
-                    })
-                    .onSuccessTask(new Continuation<Document, Task<Map<String, SpecificExtraction>>>() {
-                        @Override
-                        public Task<Map<String, SpecificExtraction>> then(Task<Document> task) throws Exception {
-                            return documentTaskManager.getExtractions(task.getResult());
-                        }
-                    })
-                    .onSuccess(new Continuation<Map<String, SpecificExtraction>, Object>() {
-                        @Override
-                        public Object then(Task<Map<String, SpecificExtraction>> task) throws Exception {
-                            final Map<String, SpecificExtraction> extractions = task.getResult();
-                            final Bundle extractionsBundle = new Bundle();
-                            for (Map.Entry<String, SpecificExtraction> entry : extractions.entrySet()) {
-                                extractionsBundle.putParcelable(entry.getKey(), entry.getValue());
-                            }
-                            final Intent result = new Intent();
-                            result.putExtra(EXTRA_DOCUMENT, documentId);
-                            result.putExtra(EXTRA_EXTRACTIONS, extractionsBundle);
-                            setResult(RESULT_OK, result);
-                            return null;
-                        }
-                    })
-                    .continueWith(new Continuation<Object, Object>() {
-                        @Override
-                        public Object then(Task<Object> task) throws Exception {
-                            if (task.isFaulted()) {
-                                //noinspection ThrowableResultOfMethodCallIgnored
-                                final Exception exception = task.getError();
-                                // We could inspect the exception here -- should always be a subclass of a
-                                // com.android.volley.VolleyError. For example:
-                                // * AuthFailureError: Client credentials or access token was wrong
-                                // * ConnectError, TimeoutError: can be caused by a flaky connection
-                                // * NoConnectionError: (Likely) no Internet connection available
-                                LOG.debug("Upload failed:", exception);
-                                // Signal to parent activity that the uploading failed
-                                final Intent resultIntent = new Intent();
-                                resultIntent.putExtra(EXTRA_ERROR_STRING, exception.toString());
-                                setResult(RESULT_UPLOAD_ERROR, resultIntent);
-                            }
-                            LOG.debug("done");
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    finish();
-                                }
-                            });
-                            return null;
-                        }
-                    });
+     public void uploadDocument(final Bitmap document, final byte[] jpeg) {
+        // Get the doctype, if available
+        DocumentType documentType = DocumentType.INVOICE;
+        final Bundle documentTypeBundle = getIntent().getBundleExtra(UploadActivity.EXTRA_DOCTYPE_BUNDLE);
+        if (documentTypeBundle != null) {
+            DocumentType docType = documentTypeBundle.getParcelable(UploadActivity.EXTRA_DOCTYPE);
+            if (docType != null) documentType = docType;
         }
+
+        DocumentTaskManager.DocumentType docType = null;
+        switch (documentType) {
+            case INVOICE:
+                docType = DocumentTaskManager.DocumentType.INVOICE;
+                break;
+            case REMITTANCE_SLIP:
+                docType = DocumentTaskManager.DocumentType.REMITTANCE_SLIP;
+                break;
+            case INTEGRATED_REMITTANCE_SLIP:
+                docType = DocumentTaskManager.DocumentType.REMITTANCE_SLIP;
+                break;
+        }
+
+        // Upload the jpeg, if available, otherwise try to upload the Bitmap
+        Task<Document> createDocumentTask = null;
+        if (jpeg != null) {
+            createDocumentTask = documentTaskManager.createDocument(jpeg, null, docType);
+        } else if (document != null) {
+            createDocumentTask = documentTaskManager.createDocument(document, null, docType);
+        }
+
+        if (createDocumentTask == null) {
+            final Intent resultIntent = new Intent();
+            resultIntent.putExtra(EXTRA_ERROR_STRING, "No bitmap or jpeg to upload.");
+            setResult(RESULT_UPLOAD_ERROR, resultIntent);
+            finish();
+        } else {
+            createDocumentTask
+                .onSuccessTask(new Continuation<Document, Task<Document>>() {
+                    @Override
+                    public Task<Document> then(Task<Document> task) throws Exception {
+                        final Document document = task.getResult();
+                        documentId = document.getId();
+                        return documentTaskManager.pollDocument(document);
+                    }
+                })
+                .onSuccessTask(new Continuation<Document, Task<Map<String, SpecificExtraction>>>() {
+                    @Override
+                    public Task<Map<String, SpecificExtraction>> then(Task<Document> task) throws Exception {
+                        return documentTaskManager.getExtractions(task.getResult());
+                    }
+                })
+                .onSuccess(new Continuation<Map<String, SpecificExtraction>, Object>() {
+                    @Override
+                    public Object then(Task<Map<String, SpecificExtraction>> task) throws Exception {
+                        final Map<String, SpecificExtraction> extractions = task.getResult();
+                        final Bundle extractionsBundle = new Bundle();
+                        for (Map.Entry<String, SpecificExtraction> entry : extractions.entrySet()) {
+                            extractionsBundle.putParcelable(entry.getKey(), entry.getValue());
+                        }
+                        final Intent result = new Intent();
+                        result.putExtra(EXTRA_DOCUMENT_ID, documentId);
+                        result.putExtra(EXTRA_EXTRACTIONS, extractionsBundle);
+                        setResult(RESULT_OK, result);
+                        return null;
+                    }
+                })
+                .continueWith(new Continuation<Object, Object>() {
+                    @Override
+                    public Object then(Task<Object> task) throws Exception {
+                        if (task.isFaulted()) {
+                            //noinspection ThrowableResultOfMethodCallIgnored
+                            final Exception exception = task.getError();
+                            // We could inspect the exception here -- should always be a subclass of a
+                            // com.android.volley.VolleyError. For example:
+                            // * AuthFailureError: Client credentials or access token was wrong
+                            // * ConnectError, TimeoutError: can be caused by a flaky connection
+                            // * NoConnectionError: (Likely) no Internet connection available
+                            LOG.debug("Upload failed:", exception);
+                            // Signal to parent activity that the uploading failed
+                            final Intent resultIntent = new Intent();
+                            resultIntent.putExtra(EXTRA_ERROR_STRING, exception.toString());
+                            setResult(RESULT_UPLOAD_ERROR, resultIntent);
+                        }
+                        LOG.debug("done");
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                finish();
+                            }
+                        });
+                        return null;
+                    }
+                });
+        }
+     }
 
 .. seealso::
     
@@ -272,20 +352,24 @@ activity can use the rectified bitmap of the document.
         public void onActivityResult(int requestCode, int resultCode, Intent data) {
             Bundle documentBundle;
             BitmapFuture originalFuture = null;
-            
+            BitmapFuture rectifiedFuture = null;
+            BitmapFuture jpegFuture = null;
+
             // we always try to get the document to prevent memory leaks
             if (requestCode == IMAGE_REQUEST && data != null) {
                 documentBundle = data.getBundleExtra(ScannerActivity.EXTRA_DOCUMENT_BUNDLE);
                 if (documentBundle != null) {
                     originalFuture = documentBundle.getParcelable(ScannerActivity.EXTRA_ORIGINAL);
+                    rectifiedFuture = documentBundle.getParcelable(CaptureActivity.EXTRA_DOCUMENT);
+                    jpegFuture = documentBundle.getParcelable(CaptureActivity.EXTRA_DOCUMENT_JPEG); // use only if ScannerActivity.EXTRA_CREATE_JPEG_DOCUMENT_WITH_METADATA was true
                 }
             }
 
             if (requestCode == IMAGE_REQUEST && resultCode == RESULT_OK) {
                 // everything ok, do something with the document
             } else if (requestCode == IMAGE_REQUEST && resultCode == ScannerActivity.RESULT_ERROR) {
-                final ScannerActivityDelegate.Error error = data.getParcelableExtra(ScannerActivity.EXTRA_ERROR);
-                // unfortunately there was an error we must handle 
+                final ScannerActivity.Error error = data.getParcelableExtra(ScannerActivity.EXTRA_ERROR);
+                // unfortunately there was an error we must handle
             }
         }
 

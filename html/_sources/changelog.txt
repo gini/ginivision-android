@@ -2,6 +2,15 @@
 Changelog
 =========
 
+1.0.210 (2016-01-20)
+====================
+
+Features
+-------
+
+- The scanner can return a jpeg with metadata besides the Bitmap, if requested.
+- ``UploadActivity`` can show an indeterminate ``ProgressBar`` in the center of the picture instead of the sprite animation.
+
 1.0.204 (2015-12-09)
 ====================
 

@@ -100,7 +100,9 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#getting-the-results-of-the-scanner">Getting the Results of the Scanner</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#bitmapfuture"><tt class="docutils literal"><span class="pre">BitmapFuture</span></tt></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jpegfuture"><tt class="docutils literal"><span class="pre">JpegFuture</span></tt></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#scanner-activity-results-example">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jpeg-exif-tags">Jpeg Exif Tags</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#upload-the-document-to-gini-using-the-gini-api-sdk">Upload the Document to Gini using the Gini API SDK</a></li>
@@ -126,6 +128,7 @@
 <li class="toctree-l2"><a class="reference internal" href="styling.html#actionbar-back-button">ActionBar back button</a></li>
 <li class="toctree-l2"><a class="reference internal" href="styling.html#centering-the-actionbar-title">Centering the ActionBar title</a></li>
 <li class="toctree-l2"><a class="reference internal" href="styling.html#dot-page-indicator-in-the-help">Dot page indicator in the help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="styling.html#activity-indicator-during-upload">Activity indicator during upload</a></li>
 <li class="toctree-l2"><a class="reference internal" href="styling.html#customizable-dimensions">Customizable Dimensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="styling.html#debug-options">Debug Options</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="styling.html#enabling-the-framemeter">Enabling the framemeter</a></li>
@@ -138,85 +141,89 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id1">1.0.204 (2015-12-09)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#bugfixes">Bugfixes</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">1.0.200 (2015-12-07)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#bugfix">Bugfix</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id3">1.0.197 (2015-11-25)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id4">Bugfix</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id5">1.0.194 (2015-11-24)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id1">1.0.210 (2016-01-20)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../changelog.html#features">Features</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id6">1.0.190 (2015-11-13)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id7">Bugfixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">1.0.204 (2015-12-09)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#bugfixes">Bugfixes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id8">1.0.182 (2015-10-15)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id9">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id3">1.0.200 (2015-12-07)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#bugfix">Bugfix</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id10">1.0.170 (2015-09-23)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id4">1.0.197 (2015-11-25)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id5">Bugfix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id6">1.0.194 (2015-11-24)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id7">Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id8">1.0.190 (2015-11-13)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id9">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id10">1.0.182 (2015-10-15)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../changelog.html#id11">Features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id12">Bugfixes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id13">1.0.162 (2015-09-11)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id14">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id12">1.0.170 (2015-09-23)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id13">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id14">Bugfixes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id15">1.0.158 (2015-09-09)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id16">Bugfixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id15">1.0.162 (2015-09-11)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id16">Features</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id17">1.0.156 (2015-08-28)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id18">Features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id19">Bugfix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id17">1.0.158 (2015-09-09)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id18">Bugfixes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id20">1.0.153 (2015-08-21)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id21">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id19">1.0.156 (2015-08-28)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id20">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id21">Bugfix</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id22">1.0.150 (2015-08-19)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id23">Bugfix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id22">1.0.153 (2015-08-21)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id23">Features</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id24">1.0.147 (2015-08-18)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id25">Features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id26">Bugfix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id24">1.0.150 (2015-08-19)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id25">Bugfix</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id27">1.0.139 (2015-08-17)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id28">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id26">1.0.147 (2015-08-18)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id27">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id28">Bugfix</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id29">1.0.137 (2015-08-12)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id30">Bugfix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id29">1.0.139 (2015-08-17)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id30">Features</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id31">1.0.136 (2015-08-11)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id31">1.0.137 (2015-08-12)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id32">Bugfix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id33">1.0.136 (2015-08-11)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../changelog.html#fix">Fix</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id32">1.0.135 (2015-08-07)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id33">Features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id34">Bugfixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id34">1.0.135 (2015-08-07)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id35">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id36">Bugfixes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id35">1.0.132 (2015-08-05)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id36">Features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id37">Bugfixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id37">1.0.132 (2015-08-05)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id38">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id39">Bugfixes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id38">1.0.131 (2015-08-04)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id39">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id40">1.0.131 (2015-08-04)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id41">Features</a></li>
 </ul>
 </li>
 </ul>
@@ -225,6 +232,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../license.html#licenses-and-acknowledgements-for-incorporated-software">Licenses and Acknowledgements for Incorporated Software</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../license.html#opencv">OpenCV</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../license.html#slf4j">SLF4J</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../license.html#apache-commons-sanselan">Apache Commons Sanselan</a></li>
 </ul>
 </li>
 </ul>
@@ -285,7 +293,7 @@ activity more convenient.</dd>
 <tt class="docutils literal"><span class="pre">net.gini.android.vision.DocumentType</span></tt> instance. Furthermore, the document type parameter must be wrapped in
 a bundle using the key <tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_DOCTYPE</span></tt></dd>
 </dl>
-<p>You can also put three optional extras in the intent. All expect a boolean value.</p>
+<p>You can also put optional extras in the intent. All expect a boolean value.</p>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_SHOW_HELP</span></tt></dt>
 <dd>Whether the <tt class="docutils literal"><span class="pre">ScannerActivity</span></tt> should show the <tt class="docutils literal"><span class="pre">HelpActivity</span></tt> the first time it is launched during an
@@ -298,6 +306,10 @@ debugging since it increases memory usage significantly.</dd>
 <dd>Whether the ScannerActivity sets the secure flag on the window to prevent taking of screenshots. All activities started
 by the ScannerActivity (HelpActivity and UploadActivity) will also set this flag so you don&#8217;t need to set
 the flag in your UploadActivity subclass.</dd>
+<dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_CREATE_JPEG_DOCUMENT_WITH_METADATA</span></tt></dt>
+<dd>Whether the ScannerAcitivity creates a jpeg with some exif tags from the rectified and cropped document. The jpeg
+is already compressed to allow the best extraction with the smallest possible upload size. The exif tags contained
+in the jpeg are listed at <a class="reference internal" href="#jpeg-exif-tags">Jpeg Exif Tags</a>.</dd>
 </dl>
 <div class="section" id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
@@ -367,6 +379,20 @@ started with the <tt class="docutils literal"><span class="pre">ScannerActivity.
 memory leaks are possible.</p>
 </div>
 </div>
+<div class="section" id="jpegfuture">
+<h3><tt class="docutils literal"><span class="pre">JpegFuture</span></tt><a class="headerlink" href="#jpegfuture" title="Permalink to this headline">¶</a></h3>
+<p>Like the <tt class="docutils literal"><span class="pre">BitmapFuture</span></tt>, but instead of a <tt class="docutils literal"><span class="pre">Bitmap</span></tt> it contains a jpeg byte array. If the <tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_CREATE_JPEG_DOCUMENT_WITH_METADATA</span></tt> is set to <tt class="docutils literal"><span class="pre">true</span></tt> the jpeg will be returned using this object.</p>
+<p>The extra containing the <tt class="docutils literal"><span class="pre">JpegFuture</span></tt> in the result intent:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_DOCUMENT_JPEG</span></tt></dt>
+<dd>A <tt class="docutils literal"><span class="pre">JpegFuture</span></tt> that will get the rectified jpeg image of the document. Will be set only if <tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_CREATE_JPEG_DOCUMENT_WITH_METADATA</span></tt> was <tt class="docutils literal"><span class="pre">true</span></tt>.</dd>
+</dl>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">It is important that your application always extracts the
+<cite>JpegFuture</cite> instances out of the result intent, if jpeg documents were enabled. Otherwise, memory leaks are possible.</p>
+</div>
+</div>
 <div class="section" id="scanner-activity-results-example">
 <span id="id1"></span><h3>Example<a class="headerlink" href="#scanner-activity-results-example" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-java"><div class="highlight"><pre><span class="nd">@Override</span>
@@ -374,6 +400,7 @@ memory leaks are possible.</p>
     <span class="n">Bundle</span> <span class="n">documentBundle</span><span class="o">;</span>
     <span class="n">BitmapFuture</span> <span class="n">originalFuture</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
     <span class="n">BitmapFuture</span> <span class="n">rectifiedFuture</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="n">BitmapFuture</span> <span class="n">jpegFuture</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
 
     <span class="c1">// we always try to get the document to prevent memory leaks</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">IMAGE_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">data</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
@@ -381,6 +408,7 @@ memory leaks are possible.</p>
         <span class="k">if</span> <span class="o">(</span><span class="n">documentBundle</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">originalFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_ORIGINAL</span><span class="o">);</span>
             <span class="n">rectifiedFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">CaptureActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT</span><span class="o">);</span>
+            <span class="n">jpegFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">CaptureActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT_JPEG</span><span class="o">);</span> <span class="c1">// use only if ScannerActivity.EXTRA_CREATE_JPEG_DOCUMENT_WITH_METADATA was true</span>
         <span class="o">}</span>
     <span class="o">}</span>
 
@@ -394,78 +422,136 @@ memory leaks are possible.</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="jpeg-exif-tags">
+<h3>Jpeg Exif Tags<a class="headerlink" href="#jpeg-exif-tags" title="Permalink to this headline">¶</a></h3>
+<p>In order to improve our service we would like to receive a few exif tags about the circumstances in which the document was photographed.</p>
+<p>Only the following exif tags are kept in the jpeg file. No personal, geographical or otherwise sensitive information is kept.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">Make</span></tt></dt>
+<dd>The manufacturer of the device.</dd>
+<dt><tt class="docutils literal"><span class="pre">Model</span></tt></dt>
+<dd>The model name or model number of the device.</dd>
+<dt><tt class="docutils literal"><span class="pre">ISO</span></tt></dt>
+<dd>The ISO Speed and ISO Latitude of the camera as specified in ISO 12232.</dd>
+<dt><tt class="docutils literal"><span class="pre">Exposure</span> <span class="pre">Time</span></tt></dt>
+<dd>Exposure time, given in seconds.</dd>
+<dt><tt class="docutils literal"><span class="pre">Aperture</span></tt></dt>
+<dd>The lens aperture. The unit is the APEX value.</dd>
+<dt><tt class="docutils literal"><span class="pre">Flash</span></tt></dt>
+<dd>Status of flash when the image was shot.</dd>
+<dt><tt class="docutils literal"><span class="pre">Compressed</span> <span class="pre">Bits</span> <span class="pre">Per</span> <span class="pre">Pixel</span></tt></dt>
+<dd>The compression mode used for a compressed image is indicated in unit bits per pixel.</dd>
+<dt><tt class="docutils literal"><span class="pre">OS</span> <span class="pre">Version</span></tt></dt>
+<dd>Android OS version.</dd>
+<dt><tt class="docutils literal"><span class="pre">GiniVision</span> <span class="pre">Version</span></tt></dt>
+<dd>GiniVision SDK version.</dd>
+</dl>
+</div>
 </div>
 <div class="section" id="upload-the-document-to-gini-using-the-gini-api-sdk">
 <h2>Upload the Document to Gini using the Gini API SDK<a class="headerlink" href="#upload-the-document-to-gini-using-the-gini-api-sdk" title="Permalink to this headline">¶</a></h2>
 <p>First of all, we have to include the Gini API SDK as dependency in the <tt class="docutils literal"><span class="pre">build.gradle</span></tt>. Check out the Gini SDK Android
 documentation&#8217;s <a class="reference external" href="http://developer.gini.net/gini-sdk-android/guides/getting-started.html">Getting Started</a> section for details.</p>
 <p>The Gini SDK provides a <tt class="docutils literal"><span class="pre">Gini</span></tt> class which acts as a facade to the whole functionality of the Gini API. Your app must
-create a single instance of this class and hold it for its complete life cyle.</p>
-<p>Finally, the <tt class="docutils literal"><span class="pre">Gini</span></tt> instance is used in the <tt class="docutils literal"><span class="pre">uploadDocument(..)</span></tt> method of the <tt class="docutils literal"><span class="pre">MyUploadActivity</span></tt> which extends
+create a single instance of this class and hold it for its complete lifecycle.</p>
+<p>Finally, the <tt class="docutils literal"><span class="pre">Gini</span></tt> instance is used in the <tt class="docutils literal"><span class="pre">uploadDocument(Bitmap,</span> <span class="pre">byte[])</span></tt> method of the <tt class="docutils literal"><span class="pre">MyUploadActivity</span></tt> which extends
 <tt class="docutils literal"><span class="pre">net.gini.android.vision.UploadActivity</span></tt> to upload the captured document. The example below shows a possible
 implementation which puts the result extractions into a new intent for further processing.</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">uploadDocument</span><span class="o">(</span><span class="kd">final</span> <span class="n">Bitmap</span> <span class="n">document</span><span class="o">)</span> <span class="o">{</span>
-       <span class="kd">final</span> <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="n">getIntent</span><span class="o">();</span>
-       <span class="kd">final</span> <span class="n">Bundle</span> <span class="n">documentTypeBundle</span> <span class="o">=</span> <span class="n">intent</span><span class="o">.</span><span class="na">getBundleExtra</span><span class="o">(</span><span class="n">EXTRA_DOCTYPE_BUNDLE</span><span class="o">);</span>
-       <span class="kd">final</span> <span class="n">DocumentType</span> <span class="n">documentType</span> <span class="o">=</span> <span class="n">documentTypeBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">EXTRA_DOCTYPE</span><span class="o">);</span>
-       <span class="n">documentTaskManager</span><span class="o">.</span><span class="na">createDocument</span><span class="o">(</span><span class="n">document</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="n">documentType</span><span class="o">.</span><span class="na">getApiDocTypeHint</span><span class="o">(),</span> <span class="mi">50</span><span class="o">)</span>
-               <span class="o">.</span><span class="na">onSuccessTask</span><span class="o">(</span><span class="k">new</span> <span class="n">Continuation</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">,</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">&gt;&gt;()</span> <span class="o">{</span>
-                   <span class="nd">@Override</span>
-                   <span class="kd">public</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">&gt;</span> <span class="nf">then</span><span class="o">(</span><span class="n">Task</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">&gt;</span> <span class="n">task</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-                       <span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="na">getResult</span><span class="o">();</span>
-                       <span class="n">documentId</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="na">getId</span><span class="o">();</span>
-                       <span class="k">return</span> <span class="n">documentTaskManager</span><span class="o">.</span><span class="na">pollDocument</span><span class="o">(</span><span class="n">document</span><span class="o">);</span>
-                   <span class="o">}</span>
-               <span class="o">})</span>
-               <span class="o">.</span><span class="na">onSuccessTask</span><span class="o">(</span><span class="k">new</span> <span class="n">Continuation</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">,</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;&gt;&gt;()</span> <span class="o">{</span>
-                   <span class="nd">@Override</span>
-                   <span class="kd">public</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;&gt;</span> <span class="nf">then</span><span class="o">(</span><span class="n">Task</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">&gt;</span> <span class="n">task</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-                       <span class="k">return</span> <span class="n">documentTaskManager</span><span class="o">.</span><span class="na">getExtractions</span><span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">getResult</span><span class="o">());</span>
-                   <span class="o">}</span>
-               <span class="o">})</span>
-               <span class="o">.</span><span class="na">onSuccess</span><span class="o">(</span><span class="k">new</span> <span class="n">Continuation</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;,</span> <span class="n">Object</span><span class="o">&gt;()</span> <span class="o">{</span>
-                   <span class="nd">@Override</span>
-                   <span class="kd">public</span> <span class="n">Object</span> <span class="nf">then</span><span class="o">(</span><span class="n">Task</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;&gt;</span> <span class="n">task</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-                       <span class="kd">final</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;</span> <span class="n">extractions</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="na">getResult</span><span class="o">();</span>
-                       <span class="kd">final</span> <span class="n">Bundle</span> <span class="n">extractionsBundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
-                       <span class="k">for</span> <span class="o">(</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">:</span> <span class="n">extractions</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
-                           <span class="n">extractionsBundle</span><span class="o">.</span><span class="na">putParcelable</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">(),</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
-                       <span class="o">}</span>
-                       <span class="kd">final</span> <span class="n">Intent</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">();</span>
-                       <span class="n">result</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">EXTRA_DOCUMENT</span><span class="o">,</span> <span class="n">documentId</span><span class="o">);</span>
-                       <span class="n">result</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">EXTRA_EXTRACTIONS</span><span class="o">,</span> <span class="n">extractionsBundle</span><span class="o">);</span>
-                       <span class="n">setResult</span><span class="o">(</span><span class="n">RESULT_OK</span><span class="o">,</span> <span class="n">result</span><span class="o">);</span>
-                       <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-                   <span class="o">}</span>
-               <span class="o">})</span>
-               <span class="o">.</span><span class="na">continueWith</span><span class="o">(</span><span class="k">new</span> <span class="n">Continuation</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;()</span> <span class="o">{</span>
-                   <span class="nd">@Override</span>
-                   <span class="kd">public</span> <span class="n">Object</span> <span class="nf">then</span><span class="o">(</span><span class="n">Task</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">task</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-                       <span class="k">if</span> <span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">isFaulted</span><span class="o">())</span> <span class="o">{</span>
-                           <span class="c1">//noinspection ThrowableResultOfMethodCallIgnored</span>
-                           <span class="kd">final</span> <span class="n">Exception</span> <span class="n">exception</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="na">getError</span><span class="o">();</span>
-                           <span class="c1">// We could inspect the exception here -- should always be a subclass of a</span>
-                           <span class="c1">// com.android.volley.VolleyError. For example:</span>
-                           <span class="c1">// * AuthFailureError: Client credentials or access token was wrong</span>
-                           <span class="c1">// * ConnectError, TimeoutError: can be caused by a flaky connection</span>
-                           <span class="c1">// * NoConnectionError: (Likely) no Internet connection available</span>
-                           <span class="n">LOG</span><span class="o">.</span><span class="na">debug</span><span class="o">(</span><span class="s">&quot;Upload failed:&quot;</span><span class="o">,</span> <span class="n">exception</span><span class="o">);</span>
-                           <span class="c1">// Signal to parent activity that the uploading failed</span>
-                           <span class="kd">final</span> <span class="n">Intent</span> <span class="n">resultIntent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">();</span>
-                           <span class="n">resultIntent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">EXTRA_ERROR_STRING</span><span class="o">,</span> <span class="n">exception</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
-                           <span class="n">setResult</span><span class="o">(</span><span class="n">RESULT_UPLOAD_ERROR</span><span class="o">,</span> <span class="n">resultIntent</span><span class="o">);</span>
-                       <span class="o">}</span>
-                       <span class="n">LOG</span><span class="o">.</span><span class="na">debug</span><span class="o">(</span><span class="s">&quot;done&quot;</span><span class="o">);</span>
-                       <span class="n">runOnUiThread</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
-                           <span class="nd">@Override</span>
-                           <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
-                               <span class="n">finish</span><span class="o">();</span>
-                           <span class="o">}</span>
-                       <span class="o">});</span>
-                       <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-                   <span class="o">}</span>
-               <span class="o">});</span>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">uploadDocument</span><span class="o">(</span><span class="kd">final</span> <span class="n">Bitmap</span> <span class="n">document</span><span class="o">,</span> <span class="kd">final</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">jpeg</span><span class="o">)</span> <span class="o">{</span>
+   <span class="c1">// Get the doctype, if available</span>
+   <span class="n">DocumentType</span> <span class="n">documentType</span> <span class="o">=</span> <span class="n">DocumentType</span><span class="o">.</span><span class="na">INVOICE</span><span class="o">;</span>
+   <span class="kd">final</span> <span class="n">Bundle</span> <span class="n">documentTypeBundle</span> <span class="o">=</span> <span class="n">getIntent</span><span class="o">().</span><span class="na">getBundleExtra</span><span class="o">(</span><span class="n">UploadActivity</span><span class="o">.</span><span class="na">EXTRA_DOCTYPE_BUNDLE</span><span class="o">);</span>
+   <span class="k">if</span> <span class="o">(</span><span class="n">documentTypeBundle</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+       <span class="n">DocumentType</span> <span class="n">docType</span> <span class="o">=</span> <span class="n">documentTypeBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">UploadActivity</span><span class="o">.</span><span class="na">EXTRA_DOCTYPE</span><span class="o">);</span>
+       <span class="k">if</span> <span class="o">(</span><span class="n">docType</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="n">documentType</span> <span class="o">=</span> <span class="n">docType</span><span class="o">;</span>
    <span class="o">}</span>
+
+   <span class="n">DocumentTaskManager</span><span class="o">.</span><span class="na">DocumentType</span> <span class="n">docType</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+   <span class="k">switch</span> <span class="o">(</span><span class="n">documentType</span><span class="o">)</span> <span class="o">{</span>
+       <span class="k">case</span> <span class="n">INVOICE</span><span class="o">:</span>
+           <span class="n">docType</span> <span class="o">=</span> <span class="n">DocumentTaskManager</span><span class="o">.</span><span class="na">DocumentType</span><span class="o">.</span><span class="na">INVOICE</span><span class="o">;</span>
+           <span class="k">break</span><span class="o">;</span>
+       <span class="k">case</span> <span class="n">REMITTANCE_SLIP</span><span class="o">:</span>
+           <span class="n">docType</span> <span class="o">=</span> <span class="n">DocumentTaskManager</span><span class="o">.</span><span class="na">DocumentType</span><span class="o">.</span><span class="na">REMITTANCE_SLIP</span><span class="o">;</span>
+           <span class="k">break</span><span class="o">;</span>
+       <span class="k">case</span> <span class="n">INTEGRATED_REMITTANCE_SLIP</span><span class="o">:</span>
+           <span class="n">docType</span> <span class="o">=</span> <span class="n">DocumentTaskManager</span><span class="o">.</span><span class="na">DocumentType</span><span class="o">.</span><span class="na">REMITTANCE_SLIP</span><span class="o">;</span>
+           <span class="k">break</span><span class="o">;</span>
+   <span class="o">}</span>
+
+   <span class="c1">// Upload the jpeg, if available, otherwise try to upload the Bitmap</span>
+   <span class="n">Task</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">&gt;</span> <span class="n">createDocumentTask</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+   <span class="k">if</span> <span class="o">(</span><span class="n">jpeg</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+       <span class="n">createDocumentTask</span> <span class="o">=</span> <span class="n">documentTaskManager</span><span class="o">.</span><span class="na">createDocument</span><span class="o">(</span><span class="n">jpeg</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="n">docType</span><span class="o">);</span>
+   <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">document</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+       <span class="n">createDocumentTask</span> <span class="o">=</span> <span class="n">documentTaskManager</span><span class="o">.</span><span class="na">createDocument</span><span class="o">(</span><span class="n">document</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="n">docType</span><span class="o">);</span>
+   <span class="o">}</span>
+
+   <span class="k">if</span> <span class="o">(</span><span class="n">createDocumentTask</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+       <span class="kd">final</span> <span class="n">Intent</span> <span class="n">resultIntent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">();</span>
+       <span class="n">resultIntent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">EXTRA_ERROR_STRING</span><span class="o">,</span> <span class="s">&quot;No bitmap or jpeg to upload.&quot;</span><span class="o">);</span>
+       <span class="n">setResult</span><span class="o">(</span><span class="n">RESULT_UPLOAD_ERROR</span><span class="o">,</span> <span class="n">resultIntent</span><span class="o">);</span>
+       <span class="n">finish</span><span class="o">();</span>
+   <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+       <span class="n">createDocumentTask</span>
+           <span class="o">.</span><span class="na">onSuccessTask</span><span class="o">(</span><span class="k">new</span> <span class="n">Continuation</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">,</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">&gt;&gt;()</span> <span class="o">{</span>
+               <span class="nd">@Override</span>
+               <span class="kd">public</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">&gt;</span> <span class="nf">then</span><span class="o">(</span><span class="n">Task</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">&gt;</span> <span class="n">task</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+                   <span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="na">getResult</span><span class="o">();</span>
+                   <span class="n">documentId</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="na">getId</span><span class="o">();</span>
+                   <span class="k">return</span> <span class="n">documentTaskManager</span><span class="o">.</span><span class="na">pollDocument</span><span class="o">(</span><span class="n">document</span><span class="o">);</span>
+               <span class="o">}</span>
+           <span class="o">})</span>
+           <span class="o">.</span><span class="na">onSuccessTask</span><span class="o">(</span><span class="k">new</span> <span class="n">Continuation</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">,</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;&gt;&gt;()</span> <span class="o">{</span>
+               <span class="nd">@Override</span>
+               <span class="kd">public</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;&gt;</span> <span class="nf">then</span><span class="o">(</span><span class="n">Task</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">&gt;</span> <span class="n">task</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+                   <span class="k">return</span> <span class="n">documentTaskManager</span><span class="o">.</span><span class="na">getExtractions</span><span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">getResult</span><span class="o">());</span>
+               <span class="o">}</span>
+           <span class="o">})</span>
+           <span class="o">.</span><span class="na">onSuccess</span><span class="o">(</span><span class="k">new</span> <span class="n">Continuation</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;,</span> <span class="n">Object</span><span class="o">&gt;()</span> <span class="o">{</span>
+               <span class="nd">@Override</span>
+               <span class="kd">public</span> <span class="n">Object</span> <span class="nf">then</span><span class="o">(</span><span class="n">Task</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;&gt;</span> <span class="n">task</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+                   <span class="kd">final</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;</span> <span class="n">extractions</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="na">getResult</span><span class="o">();</span>
+                   <span class="kd">final</span> <span class="n">Bundle</span> <span class="n">extractionsBundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
+                   <span class="k">for</span> <span class="o">(</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">:</span> <span class="n">extractions</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
+                       <span class="n">extractionsBundle</span><span class="o">.</span><span class="na">putParcelable</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">(),</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
+                   <span class="o">}</span>
+                   <span class="kd">final</span> <span class="n">Intent</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">();</span>
+                   <span class="n">result</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">EXTRA_DOCUMENT_ID</span><span class="o">,</span> <span class="n">documentId</span><span class="o">);</span>
+                   <span class="n">result</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">EXTRA_EXTRACTIONS</span><span class="o">,</span> <span class="n">extractionsBundle</span><span class="o">);</span>
+                   <span class="n">setResult</span><span class="o">(</span><span class="n">RESULT_OK</span><span class="o">,</span> <span class="n">result</span><span class="o">);</span>
+                   <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+               <span class="o">}</span>
+           <span class="o">})</span>
+           <span class="o">.</span><span class="na">continueWith</span><span class="o">(</span><span class="k">new</span> <span class="n">Continuation</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;()</span> <span class="o">{</span>
+               <span class="nd">@Override</span>
+               <span class="kd">public</span> <span class="n">Object</span> <span class="nf">then</span><span class="o">(</span><span class="n">Task</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">task</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+                   <span class="k">if</span> <span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">isFaulted</span><span class="o">())</span> <span class="o">{</span>
+                       <span class="c1">//noinspection ThrowableResultOfMethodCallIgnored</span>
+                       <span class="kd">final</span> <span class="n">Exception</span> <span class="n">exception</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="na">getError</span><span class="o">();</span>
+                       <span class="c1">// We could inspect the exception here -- should always be a subclass of a</span>
+                       <span class="c1">// com.android.volley.VolleyError. For example:</span>
+                       <span class="c1">// * AuthFailureError: Client credentials or access token was wrong</span>
+                       <span class="c1">// * ConnectError, TimeoutError: can be caused by a flaky connection</span>
+                       <span class="c1">// * NoConnectionError: (Likely) no Internet connection available</span>
+                       <span class="n">LOG</span><span class="o">.</span><span class="na">debug</span><span class="o">(</span><span class="s">&quot;Upload failed:&quot;</span><span class="o">,</span> <span class="n">exception</span><span class="o">);</span>
+                       <span class="c1">// Signal to parent activity that the uploading failed</span>
+                       <span class="kd">final</span> <span class="n">Intent</span> <span class="n">resultIntent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">();</span>
+                       <span class="n">resultIntent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">EXTRA_ERROR_STRING</span><span class="o">,</span> <span class="n">exception</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+                       <span class="n">setResult</span><span class="o">(</span><span class="n">RESULT_UPLOAD_ERROR</span><span class="o">,</span> <span class="n">resultIntent</span><span class="o">);</span>
+                   <span class="o">}</span>
+                   <span class="n">LOG</span><span class="o">.</span><span class="na">debug</span><span class="o">(</span><span class="s">&quot;done&quot;</span><span class="o">);</span>
+                   <span class="n">runOnUiThread</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+                       <span class="nd">@Override</span>
+                       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+                           <span class="n">finish</span><span class="o">();</span>
+                       <span class="o">}</span>
+                   <span class="o">});</span>
+                   <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+               <span class="o">}</span>
+           <span class="o">});</span>
+   <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 <div class="admonition seealso">
@@ -503,19 +589,23 @@ activity can use the rectified bitmap of the document.</p>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onActivityResult</span><span class="o">(</span><span class="kt">int</span> <span class="n">requestCode</span><span class="o">,</span> <span class="kt">int</span> <span class="n">resultCode</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">Bundle</span> <span class="n">documentBundle</span><span class="o">;</span>
         <span class="n">BitmapFuture</span> <span class="n">originalFuture</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">BitmapFuture</span> <span class="n">rectifiedFuture</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">BitmapFuture</span> <span class="n">jpegFuture</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
 
         <span class="c1">// we always try to get the document to prevent memory leaks</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">IMAGE_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">data</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">documentBundle</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getBundleExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT_BUNDLE</span><span class="o">);</span>
             <span class="k">if</span> <span class="o">(</span><span class="n">documentBundle</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
                 <span class="n">originalFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_ORIGINAL</span><span class="o">);</span>
+                <span class="n">rectifiedFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">CaptureActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT</span><span class="o">);</span>
+                <span class="n">jpegFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">CaptureActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT_JPEG</span><span class="o">);</span> <span class="c1">// use only if ScannerActivity.EXTRA_CREATE_JPEG_DOCUMENT_WITH_METADATA was true</span>
             <span class="o">}</span>
         <span class="o">}</span>
 
         <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">IMAGE_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">resultCode</span> <span class="o">==</span> <span class="n">RESULT_OK</span><span class="o">)</span> <span class="o">{</span>
             <span class="c1">// everything ok, do something with the document</span>
         <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">IMAGE_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">resultCode</span> <span class="o">==</span> <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">RESULT_ERROR</span><span class="o">)</span> <span class="o">{</span>
-            <span class="kd">final</span> <span class="n">ScannerActivityDelegate</span><span class="o">.</span><span class="na">Error</span> <span class="n">error</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getParcelableExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_ERROR</span><span class="o">);</span>
+            <span class="kd">final</span> <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">Error</span> <span class="n">error</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getParcelableExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_ERROR</span><span class="o">);</span>
             <span class="c1">// unfortunately there was an error we must handle</span>
         <span class="o">}</span>
     <span class="o">}</span>

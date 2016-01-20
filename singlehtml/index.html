@@ -98,7 +98,9 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/using-the-scanneractivity#getting-the-results-of-the-scanner">Getting the Results of the Scanner</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="index.html#document-guides/using-the-scanneractivity#bitmapfuture"><tt class="docutils literal"><span class="pre">BitmapFuture</span></tt></a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-guides/using-the-scanneractivity#jpegfuture"><tt class="docutils literal"><span class="pre">JpegFuture</span></tt></a></li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#document-guides/using-the-scanneractivity#scanner-activity-results-example">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-guides/using-the-scanneractivity#jpeg-exif-tags">Jpeg Exif Tags</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/using-the-scanneractivity#upload-the-document-to-gini-using-the-gini-api-sdk">Upload the Document to Gini using the Gini API SDK</a></li>
@@ -124,6 +126,7 @@
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/styling#actionbar-back-button">ActionBar back button</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/styling#centering-the-actionbar-title">Centering the ActionBar title</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/styling#dot-page-indicator-in-the-help">Dot page indicator in the help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/styling#activity-indicator-during-upload">Activity indicator during upload</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/styling#customizable-dimensions">Customizable Dimensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-guides/styling#debug-options">Debug Options</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="index.html#document-guides/styling#enabling-the-framemeter">Enabling the framemeter</a></li>
@@ -136,85 +139,89 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-changelog">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id1">1.0.204 (2015-12-09)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#bugfixes">Bugfixes</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id2">1.0.200 (2015-12-07)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#bugfix">Bugfix</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id3">1.0.197 (2015-11-25)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id4">Bugfix</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id5">1.0.194 (2015-11-24)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id1">1.0.210 (2016-01-20)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#features">Features</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id6">1.0.190 (2015-11-13)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id7">Bugfixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id2">1.0.204 (2015-12-09)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#bugfixes">Bugfixes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id8">1.0.182 (2015-10-15)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id9">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id3">1.0.200 (2015-12-07)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#bugfix">Bugfix</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id10">1.0.170 (2015-09-23)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id4">1.0.197 (2015-11-25)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id5">Bugfix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id6">1.0.194 (2015-11-24)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id7">Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id8">1.0.190 (2015-11-13)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id9">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id10">1.0.182 (2015-10-15)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id11">Features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id12">Bugfixes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id13">1.0.162 (2015-09-11)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id14">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id12">1.0.170 (2015-09-23)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id13">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id14">Bugfixes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id15">1.0.158 (2015-09-09)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id16">Bugfixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id15">1.0.162 (2015-09-11)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id16">Features</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id17">1.0.156 (2015-08-28)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id18">Features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id19">Bugfix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id17">1.0.158 (2015-09-09)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id18">Bugfixes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id20">1.0.153 (2015-08-21)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id21">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id19">1.0.156 (2015-08-28)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id20">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id21">Bugfix</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id22">1.0.150 (2015-08-19)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id23">Bugfix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id22">1.0.153 (2015-08-21)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id23">Features</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id24">1.0.147 (2015-08-18)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id25">Features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id26">Bugfix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id24">1.0.150 (2015-08-19)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id25">Bugfix</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id27">1.0.139 (2015-08-17)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id28">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id26">1.0.147 (2015-08-18)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id27">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id28">Bugfix</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id29">1.0.137 (2015-08-12)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id30">Bugfix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id29">1.0.139 (2015-08-17)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id30">Features</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id31">1.0.136 (2015-08-11)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id31">1.0.137 (2015-08-12)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id32">Bugfix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id33">1.0.136 (2015-08-11)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#fix">Fix</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id32">1.0.135 (2015-08-07)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id33">Features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id34">Bugfixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id34">1.0.135 (2015-08-07)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id35">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id36">Bugfixes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id35">1.0.132 (2015-08-05)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id36">Features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id37">Bugfixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id37">1.0.132 (2015-08-05)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id38">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id39">Bugfixes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id38">1.0.131 (2015-08-04)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id39">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-changelog#id40">1.0.131 (2015-08-04)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-changelog#id41">Features</a></li>
 </ul>
 </li>
 </ul>
@@ -223,6 +230,7 @@
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-license#licenses-and-acknowledgements-for-incorporated-software">Licenses and Acknowledgements for Incorporated Software</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="index.html#document-license#opencv">OpenCV</a></li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#document-license#slf4j">SLF4J</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#document-license#apache-commons-sanselan">Apache Commons Sanselan</a></li>
 </ul>
 </li>
 </ul>
@@ -291,7 +299,7 @@ dependency. In order to gain access to the aar file, you have to add the Gini Ma
 <span class="o">}</span>
 
 <span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">compile</span> <span class="o">(</span><span class="s1">&#39;net.gini:ginivision-android-sdk:1.0.204@aar&#39;</span><span class="o">){</span>
+    <span class="n">compile</span> <span class="o">(</span><span class="s1">&#39;net.gini:ginivision-android-sdk:1.0.210@aar&#39;</span><span class="o">){</span>
         <span class="n">transitive</span> <span class="o">=</span> <span class="kc">true</span>
     <span class="o">}</span>
     <span class="o">...</span>
@@ -306,7 +314,7 @@ dependency. In order to gain access to the aar file, you have to add the Gini Ma
 <p>The default aar archive uses <cite>android.app.Activity</cite> as the base class for activities. If you use the <cite>v7 Support Library</cite> and
 require activities extending <cite>android.support.v7.app.AppCompatActivity</cite> you can use the compatibility build <cite>ginivision-android-sdk-compat</cite>.</p>
 <div class="highlight-groovy"><div class="highlight"><pre><span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">compile</span> <span class="o">(</span><span class="s1">&#39;net.gini:ginivision-android-sdk-compat:1.0.204@aar&#39;</span><span class="o">){</span>
+    <span class="n">compile</span> <span class="o">(</span><span class="s1">&#39;net.gini:ginivision-android-sdk-compat:1.0.210@aar&#39;</span><span class="o">){</span>
         <span class="n">transitive</span> <span class="o">=</span> <span class="kc">true</span>
     <span class="o">}</span>
     <span class="o">...</span>
@@ -474,7 +482,7 @@ activity more convenient.</dd>
 <tt class="docutils literal"><span class="pre">net.gini.android.vision.DocumentType</span></tt> instance. Furthermore, the document type parameter must be wrapped in
 a bundle using the key <tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_DOCTYPE</span></tt></dd>
 </dl>
-<p>You can also put three optional extras in the intent. All expect a boolean value.</p>
+<p>You can also put optional extras in the intent. All expect a boolean value.</p>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_SHOW_HELP</span></tt></dt>
 <dd>Whether the <tt class="docutils literal"><span class="pre">ScannerActivity</span></tt> should show the <tt class="docutils literal"><span class="pre">HelpActivity</span></tt> the first time it is launched during an
@@ -487,6 +495,10 @@ debugging since it increases memory usage significantly.</dd>
 <dd>Whether the ScannerActivity sets the secure flag on the window to prevent taking of screenshots. All activities started
 by the ScannerActivity (HelpActivity and UploadActivity) will also set this flag so you don&#8217;t need to set
 the flag in your UploadActivity subclass.</dd>
+<dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_CREATE_JPEG_DOCUMENT_WITH_METADATA</span></tt></dt>
+<dd>Whether the ScannerAcitivity creates a jpeg with some exif tags from the rectified and cropped document. The jpeg
+is already compressed to allow the best extraction with the smallest possible upload size. The exif tags contained
+in the jpeg are listed at <a class="reference internal" href="#jpeg-exif-tags">Jpeg Exif Tags</a>.</dd>
 </dl>
 <div class="section" id="example">
 <h5>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h5>
@@ -556,6 +568,20 @@ started with the <tt class="docutils literal"><span class="pre">ScannerActivity.
 memory leaks are possible.</p>
 </div>
 </div>
+<div class="section" id="jpegfuture">
+<h5><tt class="docutils literal"><span class="pre">JpegFuture</span></tt><a class="headerlink" href="#jpegfuture" title="Permalink to this headline">¶</a></h5>
+<p>Like the <tt class="docutils literal"><span class="pre">BitmapFuture</span></tt>, but instead of a <tt class="docutils literal"><span class="pre">Bitmap</span></tt> it contains a jpeg byte array. If the <tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_CREATE_JPEG_DOCUMENT_WITH_METADATA</span></tt> is set to <tt class="docutils literal"><span class="pre">true</span></tt> the jpeg will be returned using this object.</p>
+<p>The extra containing the <tt class="docutils literal"><span class="pre">JpegFuture</span></tt> in the result intent:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_DOCUMENT_JPEG</span></tt></dt>
+<dd>A <tt class="docutils literal"><span class="pre">JpegFuture</span></tt> that will get the rectified jpeg image of the document. Will be set only if <tt class="docutils literal"><span class="pre">ScannerActivity.EXTRA_CREATE_JPEG_DOCUMENT_WITH_METADATA</span></tt> was <tt class="docutils literal"><span class="pre">true</span></tt>.</dd>
+</dl>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">It is important that your application always extracts the
+<cite>JpegFuture</cite> instances out of the result intent, if jpeg documents were enabled. Otherwise, memory leaks are possible.</p>
+</div>
+</div>
 <div class="section" id="scanner-activity-results-example">
 <span id="id1"></span><h5>Example<a class="headerlink" href="#scanner-activity-results-example" title="Permalink to this headline">¶</a></h5>
 <div class="highlight-java"><div class="highlight"><pre><span class="nd">@Override</span>
@@ -563,6 +589,7 @@ memory leaks are possible.</p>
     <span class="n">Bundle</span> <span class="n">documentBundle</span><span class="o">;</span>
     <span class="n">BitmapFuture</span> <span class="n">originalFuture</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
     <span class="n">BitmapFuture</span> <span class="n">rectifiedFuture</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="n">BitmapFuture</span> <span class="n">jpegFuture</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
 
     <span class="c1">// we always try to get the document to prevent memory leaks</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">IMAGE_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">data</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
@@ -570,6 +597,7 @@ memory leaks are possible.</p>
         <span class="k">if</span> <span class="o">(</span><span class="n">documentBundle</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">originalFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_ORIGINAL</span><span class="o">);</span>
             <span class="n">rectifiedFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">CaptureActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT</span><span class="o">);</span>
+            <span class="n">jpegFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">CaptureActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT_JPEG</span><span class="o">);</span> <span class="c1">// use only if ScannerActivity.EXTRA_CREATE_JPEG_DOCUMENT_WITH_METADATA was true</span>
         <span class="o">}</span>
     <span class="o">}</span>
 
@@ -583,78 +611,136 @@ memory leaks are possible.</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="jpeg-exif-tags">
+<h5>Jpeg Exif Tags<a class="headerlink" href="#jpeg-exif-tags" title="Permalink to this headline">¶</a></h5>
+<p>In order to improve our service we would like to receive a few exif tags about the circumstances in which the document was photographed.</p>
+<p>Only the following exif tags are kept in the jpeg file. No personal, geographical or otherwise sensitive information is kept.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">Make</span></tt></dt>
+<dd>The manufacturer of the device.</dd>
+<dt><tt class="docutils literal"><span class="pre">Model</span></tt></dt>
+<dd>The model name or model number of the device.</dd>
+<dt><tt class="docutils literal"><span class="pre">ISO</span></tt></dt>
+<dd>The ISO Speed and ISO Latitude of the camera as specified in ISO 12232.</dd>
+<dt><tt class="docutils literal"><span class="pre">Exposure</span> <span class="pre">Time</span></tt></dt>
+<dd>Exposure time, given in seconds.</dd>
+<dt><tt class="docutils literal"><span class="pre">Aperture</span></tt></dt>
+<dd>The lens aperture. The unit is the APEX value.</dd>
+<dt><tt class="docutils literal"><span class="pre">Flash</span></tt></dt>
+<dd>Status of flash when the image was shot.</dd>
+<dt><tt class="docutils literal"><span class="pre">Compressed</span> <span class="pre">Bits</span> <span class="pre">Per</span> <span class="pre">Pixel</span></tt></dt>
+<dd>The compression mode used for a compressed image is indicated in unit bits per pixel.</dd>
+<dt><tt class="docutils literal"><span class="pre">OS</span> <span class="pre">Version</span></tt></dt>
+<dd>Android OS version.</dd>
+<dt><tt class="docutils literal"><span class="pre">GiniVision</span> <span class="pre">Version</span></tt></dt>
+<dd>GiniVision SDK version.</dd>
+</dl>
+</div>
 </div>
 <div class="section" id="upload-the-document-to-gini-using-the-gini-api-sdk">
 <h4>Upload the Document to Gini using the Gini API SDK<a class="headerlink" href="#upload-the-document-to-gini-using-the-gini-api-sdk" title="Permalink to this headline">¶</a></h4>
 <p>First of all, we have to include the Gini API SDK as dependency in the <tt class="docutils literal"><span class="pre">build.gradle</span></tt>. Check out the Gini SDK Android
 documentation&#8217;s <a class="reference external" href="http://developer.gini.net/gini-sdk-android/guides/getting-started.html">Getting Started</a> section for details.</p>
 <p>The Gini SDK provides a <tt class="docutils literal"><span class="pre">Gini</span></tt> class which acts as a facade to the whole functionality of the Gini API. Your app must
-create a single instance of this class and hold it for its complete life cyle.</p>
-<p>Finally, the <tt class="docutils literal"><span class="pre">Gini</span></tt> instance is used in the <tt class="docutils literal"><span class="pre">uploadDocument(..)</span></tt> method of the <tt class="docutils literal"><span class="pre">MyUploadActivity</span></tt> which extends
+create a single instance of this class and hold it for its complete lifecycle.</p>
+<p>Finally, the <tt class="docutils literal"><span class="pre">Gini</span></tt> instance is used in the <tt class="docutils literal"><span class="pre">uploadDocument(Bitmap,</span> <span class="pre">byte[])</span></tt> method of the <tt class="docutils literal"><span class="pre">MyUploadActivity</span></tt> which extends
 <tt class="docutils literal"><span class="pre">net.gini.android.vision.UploadActivity</span></tt> to upload the captured document. The example below shows a possible
 implementation which puts the result extractions into a new intent for further processing.</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">uploadDocument</span><span class="o">(</span><span class="kd">final</span> <span class="n">Bitmap</span> <span class="n">document</span><span class="o">)</span> <span class="o">{</span>
-       <span class="kd">final</span> <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="n">getIntent</span><span class="o">();</span>
-       <span class="kd">final</span> <span class="n">Bundle</span> <span class="n">documentTypeBundle</span> <span class="o">=</span> <span class="n">intent</span><span class="o">.</span><span class="na">getBundleExtra</span><span class="o">(</span><span class="n">EXTRA_DOCTYPE_BUNDLE</span><span class="o">);</span>
-       <span class="kd">final</span> <span class="n">DocumentType</span> <span class="n">documentType</span> <span class="o">=</span> <span class="n">documentTypeBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">EXTRA_DOCTYPE</span><span class="o">);</span>
-       <span class="n">documentTaskManager</span><span class="o">.</span><span class="na">createDocument</span><span class="o">(</span><span class="n">document</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="n">documentType</span><span class="o">.</span><span class="na">getApiDocTypeHint</span><span class="o">(),</span> <span class="mi">50</span><span class="o">)</span>
-               <span class="o">.</span><span class="na">onSuccessTask</span><span class="o">(</span><span class="k">new</span> <span class="n">Continuation</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">,</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">&gt;&gt;()</span> <span class="o">{</span>
-                   <span class="nd">@Override</span>
-                   <span class="kd">public</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">&gt;</span> <span class="nf">then</span><span class="o">(</span><span class="n">Task</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">&gt;</span> <span class="n">task</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-                       <span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="na">getResult</span><span class="o">();</span>
-                       <span class="n">documentId</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="na">getId</span><span class="o">();</span>
-                       <span class="k">return</span> <span class="n">documentTaskManager</span><span class="o">.</span><span class="na">pollDocument</span><span class="o">(</span><span class="n">document</span><span class="o">);</span>
-                   <span class="o">}</span>
-               <span class="o">})</span>
-               <span class="o">.</span><span class="na">onSuccessTask</span><span class="o">(</span><span class="k">new</span> <span class="n">Continuation</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">,</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;&gt;&gt;()</span> <span class="o">{</span>
-                   <span class="nd">@Override</span>
-                   <span class="kd">public</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;&gt;</span> <span class="nf">then</span><span class="o">(</span><span class="n">Task</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">&gt;</span> <span class="n">task</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-                       <span class="k">return</span> <span class="n">documentTaskManager</span><span class="o">.</span><span class="na">getExtractions</span><span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">getResult</span><span class="o">());</span>
-                   <span class="o">}</span>
-               <span class="o">})</span>
-               <span class="o">.</span><span class="na">onSuccess</span><span class="o">(</span><span class="k">new</span> <span class="n">Continuation</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;,</span> <span class="n">Object</span><span class="o">&gt;()</span> <span class="o">{</span>
-                   <span class="nd">@Override</span>
-                   <span class="kd">public</span> <span class="n">Object</span> <span class="nf">then</span><span class="o">(</span><span class="n">Task</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;&gt;</span> <span class="n">task</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-                       <span class="kd">final</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;</span> <span class="n">extractions</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="na">getResult</span><span class="o">();</span>
-                       <span class="kd">final</span> <span class="n">Bundle</span> <span class="n">extractionsBundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
-                       <span class="k">for</span> <span class="o">(</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">:</span> <span class="n">extractions</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
-                           <span class="n">extractionsBundle</span><span class="o">.</span><span class="na">putParcelable</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">(),</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
-                       <span class="o">}</span>
-                       <span class="kd">final</span> <span class="n">Intent</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">();</span>
-                       <span class="n">result</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">EXTRA_DOCUMENT</span><span class="o">,</span> <span class="n">documentId</span><span class="o">);</span>
-                       <span class="n">result</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">EXTRA_EXTRACTIONS</span><span class="o">,</span> <span class="n">extractionsBundle</span><span class="o">);</span>
-                       <span class="n">setResult</span><span class="o">(</span><span class="n">RESULT_OK</span><span class="o">,</span> <span class="n">result</span><span class="o">);</span>
-                       <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-                   <span class="o">}</span>
-               <span class="o">})</span>
-               <span class="o">.</span><span class="na">continueWith</span><span class="o">(</span><span class="k">new</span> <span class="n">Continuation</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;()</span> <span class="o">{</span>
-                   <span class="nd">@Override</span>
-                   <span class="kd">public</span> <span class="n">Object</span> <span class="nf">then</span><span class="o">(</span><span class="n">Task</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">task</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-                       <span class="k">if</span> <span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">isFaulted</span><span class="o">())</span> <span class="o">{</span>
-                           <span class="c1">//noinspection ThrowableResultOfMethodCallIgnored</span>
-                           <span class="kd">final</span> <span class="n">Exception</span> <span class="n">exception</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="na">getError</span><span class="o">();</span>
-                           <span class="c1">// We could inspect the exception here -- should always be a subclass of a</span>
-                           <span class="c1">// com.android.volley.VolleyError. For example:</span>
-                           <span class="c1">// * AuthFailureError: Client credentials or access token was wrong</span>
-                           <span class="c1">// * ConnectError, TimeoutError: can be caused by a flaky connection</span>
-                           <span class="c1">// * NoConnectionError: (Likely) no Internet connection available</span>
-                           <span class="n">LOG</span><span class="o">.</span><span class="na">debug</span><span class="o">(</span><span class="s">&quot;Upload failed:&quot;</span><span class="o">,</span> <span class="n">exception</span><span class="o">);</span>
-                           <span class="c1">// Signal to parent activity that the uploading failed</span>
-                           <span class="kd">final</span> <span class="n">Intent</span> <span class="n">resultIntent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">();</span>
-                           <span class="n">resultIntent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">EXTRA_ERROR_STRING</span><span class="o">,</span> <span class="n">exception</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
-                           <span class="n">setResult</span><span class="o">(</span><span class="n">RESULT_UPLOAD_ERROR</span><span class="o">,</span> <span class="n">resultIntent</span><span class="o">);</span>
-                       <span class="o">}</span>
-                       <span class="n">LOG</span><span class="o">.</span><span class="na">debug</span><span class="o">(</span><span class="s">&quot;done&quot;</span><span class="o">);</span>
-                       <span class="n">runOnUiThread</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
-                           <span class="nd">@Override</span>
-                           <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
-                               <span class="n">finish</span><span class="o">();</span>
-                           <span class="o">}</span>
-                       <span class="o">});</span>
-                       <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-                   <span class="o">}</span>
-               <span class="o">});</span>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">uploadDocument</span><span class="o">(</span><span class="kd">final</span> <span class="n">Bitmap</span> <span class="n">document</span><span class="o">,</span> <span class="kd">final</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">jpeg</span><span class="o">)</span> <span class="o">{</span>
+   <span class="c1">// Get the doctype, if available</span>
+   <span class="n">DocumentType</span> <span class="n">documentType</span> <span class="o">=</span> <span class="n">DocumentType</span><span class="o">.</span><span class="na">INVOICE</span><span class="o">;</span>
+   <span class="kd">final</span> <span class="n">Bundle</span> <span class="n">documentTypeBundle</span> <span class="o">=</span> <span class="n">getIntent</span><span class="o">().</span><span class="na">getBundleExtra</span><span class="o">(</span><span class="n">UploadActivity</span><span class="o">.</span><span class="na">EXTRA_DOCTYPE_BUNDLE</span><span class="o">);</span>
+   <span class="k">if</span> <span class="o">(</span><span class="n">documentTypeBundle</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+       <span class="n">DocumentType</span> <span class="n">docType</span> <span class="o">=</span> <span class="n">documentTypeBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">UploadActivity</span><span class="o">.</span><span class="na">EXTRA_DOCTYPE</span><span class="o">);</span>
+       <span class="k">if</span> <span class="o">(</span><span class="n">docType</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="n">documentType</span> <span class="o">=</span> <span class="n">docType</span><span class="o">;</span>
    <span class="o">}</span>
+
+   <span class="n">DocumentTaskManager</span><span class="o">.</span><span class="na">DocumentType</span> <span class="n">docType</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+   <span class="k">switch</span> <span class="o">(</span><span class="n">documentType</span><span class="o">)</span> <span class="o">{</span>
+       <span class="k">case</span> <span class="n">INVOICE</span><span class="o">:</span>
+           <span class="n">docType</span> <span class="o">=</span> <span class="n">DocumentTaskManager</span><span class="o">.</span><span class="na">DocumentType</span><span class="o">.</span><span class="na">INVOICE</span><span class="o">;</span>
+           <span class="k">break</span><span class="o">;</span>
+       <span class="k">case</span> <span class="n">REMITTANCE_SLIP</span><span class="o">:</span>
+           <span class="n">docType</span> <span class="o">=</span> <span class="n">DocumentTaskManager</span><span class="o">.</span><span class="na">DocumentType</span><span class="o">.</span><span class="na">REMITTANCE_SLIP</span><span class="o">;</span>
+           <span class="k">break</span><span class="o">;</span>
+       <span class="k">case</span> <span class="n">INTEGRATED_REMITTANCE_SLIP</span><span class="o">:</span>
+           <span class="n">docType</span> <span class="o">=</span> <span class="n">DocumentTaskManager</span><span class="o">.</span><span class="na">DocumentType</span><span class="o">.</span><span class="na">REMITTANCE_SLIP</span><span class="o">;</span>
+           <span class="k">break</span><span class="o">;</span>
+   <span class="o">}</span>
+
+   <span class="c1">// Upload the jpeg, if available, otherwise try to upload the Bitmap</span>
+   <span class="n">Task</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">&gt;</span> <span class="n">createDocumentTask</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+   <span class="k">if</span> <span class="o">(</span><span class="n">jpeg</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+       <span class="n">createDocumentTask</span> <span class="o">=</span> <span class="n">documentTaskManager</span><span class="o">.</span><span class="na">createDocument</span><span class="o">(</span><span class="n">jpeg</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="n">docType</span><span class="o">);</span>
+   <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">document</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+       <span class="n">createDocumentTask</span> <span class="o">=</span> <span class="n">documentTaskManager</span><span class="o">.</span><span class="na">createDocument</span><span class="o">(</span><span class="n">document</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="n">docType</span><span class="o">);</span>
+   <span class="o">}</span>
+
+   <span class="k">if</span> <span class="o">(</span><span class="n">createDocumentTask</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+       <span class="kd">final</span> <span class="n">Intent</span> <span class="n">resultIntent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">();</span>
+       <span class="n">resultIntent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">EXTRA_ERROR_STRING</span><span class="o">,</span> <span class="s">&quot;No bitmap or jpeg to upload.&quot;</span><span class="o">);</span>
+       <span class="n">setResult</span><span class="o">(</span><span class="n">RESULT_UPLOAD_ERROR</span><span class="o">,</span> <span class="n">resultIntent</span><span class="o">);</span>
+       <span class="n">finish</span><span class="o">();</span>
+   <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+       <span class="n">createDocumentTask</span>
+           <span class="o">.</span><span class="na">onSuccessTask</span><span class="o">(</span><span class="k">new</span> <span class="n">Continuation</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">,</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">&gt;&gt;()</span> <span class="o">{</span>
+               <span class="nd">@Override</span>
+               <span class="kd">public</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">&gt;</span> <span class="nf">then</span><span class="o">(</span><span class="n">Task</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">&gt;</span> <span class="n">task</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+                   <span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="na">getResult</span><span class="o">();</span>
+                   <span class="n">documentId</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="na">getId</span><span class="o">();</span>
+                   <span class="k">return</span> <span class="n">documentTaskManager</span><span class="o">.</span><span class="na">pollDocument</span><span class="o">(</span><span class="n">document</span><span class="o">);</span>
+               <span class="o">}</span>
+           <span class="o">})</span>
+           <span class="o">.</span><span class="na">onSuccessTask</span><span class="o">(</span><span class="k">new</span> <span class="n">Continuation</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">,</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;&gt;&gt;()</span> <span class="o">{</span>
+               <span class="nd">@Override</span>
+               <span class="kd">public</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;&gt;</span> <span class="nf">then</span><span class="o">(</span><span class="n">Task</span><span class="o">&lt;</span><span class="n">Document</span><span class="o">&gt;</span> <span class="n">task</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+                   <span class="k">return</span> <span class="n">documentTaskManager</span><span class="o">.</span><span class="na">getExtractions</span><span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">getResult</span><span class="o">());</span>
+               <span class="o">}</span>
+           <span class="o">})</span>
+           <span class="o">.</span><span class="na">onSuccess</span><span class="o">(</span><span class="k">new</span> <span class="n">Continuation</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;,</span> <span class="n">Object</span><span class="o">&gt;()</span> <span class="o">{</span>
+               <span class="nd">@Override</span>
+               <span class="kd">public</span> <span class="n">Object</span> <span class="nf">then</span><span class="o">(</span><span class="n">Task</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;&gt;</span> <span class="n">task</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+                   <span class="kd">final</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;</span> <span class="n">extractions</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="na">getResult</span><span class="o">();</span>
+                   <span class="kd">final</span> <span class="n">Bundle</span> <span class="n">extractionsBundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
+                   <span class="k">for</span> <span class="o">(</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">SpecificExtraction</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">:</span> <span class="n">extractions</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
+                       <span class="n">extractionsBundle</span><span class="o">.</span><span class="na">putParcelable</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">(),</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
+                   <span class="o">}</span>
+                   <span class="kd">final</span> <span class="n">Intent</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">();</span>
+                   <span class="n">result</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">EXTRA_DOCUMENT_ID</span><span class="o">,</span> <span class="n">documentId</span><span class="o">);</span>
+                   <span class="n">result</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">EXTRA_EXTRACTIONS</span><span class="o">,</span> <span class="n">extractionsBundle</span><span class="o">);</span>
+                   <span class="n">setResult</span><span class="o">(</span><span class="n">RESULT_OK</span><span class="o">,</span> <span class="n">result</span><span class="o">);</span>
+                   <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+               <span class="o">}</span>
+           <span class="o">})</span>
+           <span class="o">.</span><span class="na">continueWith</span><span class="o">(</span><span class="k">new</span> <span class="n">Continuation</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;()</span> <span class="o">{</span>
+               <span class="nd">@Override</span>
+               <span class="kd">public</span> <span class="n">Object</span> <span class="nf">then</span><span class="o">(</span><span class="n">Task</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">task</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+                   <span class="k">if</span> <span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">isFaulted</span><span class="o">())</span> <span class="o">{</span>
+                       <span class="c1">//noinspection ThrowableResultOfMethodCallIgnored</span>
+                       <span class="kd">final</span> <span class="n">Exception</span> <span class="n">exception</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="na">getError</span><span class="o">();</span>
+                       <span class="c1">// We could inspect the exception here -- should always be a subclass of a</span>
+                       <span class="c1">// com.android.volley.VolleyError. For example:</span>
+                       <span class="c1">// * AuthFailureError: Client credentials or access token was wrong</span>
+                       <span class="c1">// * ConnectError, TimeoutError: can be caused by a flaky connection</span>
+                       <span class="c1">// * NoConnectionError: (Likely) no Internet connection available</span>
+                       <span class="n">LOG</span><span class="o">.</span><span class="na">debug</span><span class="o">(</span><span class="s">&quot;Upload failed:&quot;</span><span class="o">,</span> <span class="n">exception</span><span class="o">);</span>
+                       <span class="c1">// Signal to parent activity that the uploading failed</span>
+                       <span class="kd">final</span> <span class="n">Intent</span> <span class="n">resultIntent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">();</span>
+                       <span class="n">resultIntent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">EXTRA_ERROR_STRING</span><span class="o">,</span> <span class="n">exception</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+                       <span class="n">setResult</span><span class="o">(</span><span class="n">RESULT_UPLOAD_ERROR</span><span class="o">,</span> <span class="n">resultIntent</span><span class="o">);</span>
+                   <span class="o">}</span>
+                   <span class="n">LOG</span><span class="o">.</span><span class="na">debug</span><span class="o">(</span><span class="s">&quot;done&quot;</span><span class="o">);</span>
+                   <span class="n">runOnUiThread</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+                       <span class="nd">@Override</span>
+                       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+                           <span class="n">finish</span><span class="o">();</span>
+                       <span class="o">}</span>
+                   <span class="o">});</span>
+                   <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+               <span class="o">}</span>
+           <span class="o">});</span>
+   <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 <div class="admonition seealso">
@@ -692,19 +778,23 @@ activity can use the rectified bitmap of the document.</p>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onActivityResult</span><span class="o">(</span><span class="kt">int</span> <span class="n">requestCode</span><span class="o">,</span> <span class="kt">int</span> <span class="n">resultCode</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">Bundle</span> <span class="n">documentBundle</span><span class="o">;</span>
         <span class="n">BitmapFuture</span> <span class="n">originalFuture</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">BitmapFuture</span> <span class="n">rectifiedFuture</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">BitmapFuture</span> <span class="n">jpegFuture</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
 
         <span class="c1">// we always try to get the document to prevent memory leaks</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">IMAGE_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">data</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">documentBundle</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getBundleExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT_BUNDLE</span><span class="o">);</span>
             <span class="k">if</span> <span class="o">(</span><span class="n">documentBundle</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
                 <span class="n">originalFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_ORIGINAL</span><span class="o">);</span>
+                <span class="n">rectifiedFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">CaptureActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT</span><span class="o">);</span>
+                <span class="n">jpegFuture</span> <span class="o">=</span> <span class="n">documentBundle</span><span class="o">.</span><span class="na">getParcelable</span><span class="o">(</span><span class="n">CaptureActivity</span><span class="o">.</span><span class="na">EXTRA_DOCUMENT_JPEG</span><span class="o">);</span> <span class="c1">// use only if ScannerActivity.EXTRA_CREATE_JPEG_DOCUMENT_WITH_METADATA was true</span>
             <span class="o">}</span>
         <span class="o">}</span>
 
         <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">IMAGE_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">resultCode</span> <span class="o">==</span> <span class="n">RESULT_OK</span><span class="o">)</span> <span class="o">{</span>
             <span class="c1">// everything ok, do something with the document</span>
         <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">IMAGE_REQUEST</span> <span class="o">&amp;&amp;</span> <span class="n">resultCode</span> <span class="o">==</span> <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">RESULT_ERROR</span><span class="o">)</span> <span class="o">{</span>
-            <span class="kd">final</span> <span class="n">ScannerActivityDelegate</span><span class="o">.</span><span class="na">Error</span> <span class="n">error</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getParcelableExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_ERROR</span><span class="o">);</span>
+            <span class="kd">final</span> <span class="n">ScannerActivity</span><span class="o">.</span><span class="na">Error</span> <span class="n">error</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getParcelableExtra</span><span class="o">(</span><span class="n">ScannerActivity</span><span class="o">.</span><span class="na">EXTRA_ERROR</span><span class="o">);</span>
             <span class="c1">// unfortunately there was an error we must handle</span>
         <span class="o">}</span>
     <span class="o">}</span>
@@ -839,6 +929,9 @@ which text ressources are used on which screen. The color scheme is as follows: 
 <dd>The background color for the root views of all activities except the <tt class="docutils literal"><span class="pre">Help</span> <span class="pre">Activity</span></tt>.</dd>
 <dt><tt class="docutils literal"><span class="pre">net.gini.android.vision.theme.helpBackgroundColor</span></tt></dt>
 <dd>The background color for the <tt class="docutils literal"><span class="pre">HelpActivity</span></tt>&#8216;s root view.</dd>
+<dt><tt class="docutils literal"><span class="pre">net.gini.android.vision.theme.colorAccent</span></tt></dt>
+<dd>The accent color for UI widgets on Android 5.0 and newer or when using the compatibility build <cite>ginivision-android-sdk-compat</cite>.
+If you use the activity indicator in the <tt class="docutils literal"><span class="pre">UploadActivity</span></tt> (see <a class="reference internal" href="#activity-indicator-during-upload">Activity indicator during upload</a>), it sets the color of the indicator on Android 5.0 or newer.</dd>
 </dl>
 <p>Listed below is an example file which would go into the application&#8217;s <cite>res/styles/style.xml`</cite> file.</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
@@ -849,6 +942,7 @@ which text ressources are used on which screen. The color scheme is as follows: 
     <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.outlineColor&quot;</span><span class="nt">&gt;</span>#1ae2ae<span class="nt">&lt;/color&gt;</span>
     <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.backgroundColor&quot;</span><span class="nt">&gt;</span>#ffffff<span class="nt">&lt;/color&gt;</span>
     <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.helpBackgroundColor&quot;</span><span class="nt">&gt;</span>#ffffff<span class="nt">&lt;/color&gt;</span>
+    <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;net.gini.android.vision.theme.colorAccent&quot;</span><span class="nt">&gt;</span>#009edc<span class="nt">&lt;/color&gt;</span>
 <span class="nt">&lt;/resources&gt;</span>
 </pre></div>
 </div>
@@ -961,6 +1055,12 @@ new items and selection handlers in your subclass.</dd>
 </pre></div>
 </div>
 </div>
+<div class="section" id="activity-indicator-during-upload">
+<h4>Activity indicator during upload<a class="headerlink" href="#activity-indicator-during-upload" title="Permalink to this headline">¶</a></h4>
+<p>By setting the <tt class="docutils literal"><span class="pre">net.gini.android.vision.upload_activity_indicator</span></tt> boolean resource to <tt class="docutils literal"><span class="pre">true</span></tt> the animation is
+disabled and replaced with a native indeterminate <tt class="docutils literal"><span class="pre">ProgressBar</span></tt> in the <tt class="docutils literal"><span class="pre">UploadActivity</span></tt>.</p>
+<p>The color of the <tt class="docutils literal"><span class="pre">ProgressBar</span></tt> on Android 5.0 or newer is set by the <tt class="docutils literal"><span class="pre">net.gini.android.vision.theme.colorAccent</span></tt> color resource.</p>
+</div>
 <div class="section" id="customizable-dimensions">
 <h4>Customizable Dimensions<a class="headerlink" href="#customizable-dimensions" title="Permalink to this headline">¶</a></h4>
 <dl class="docutils">
@@ -1042,7 +1142,17 @@ frameworks (e.g. java.util.logging, logback, log4j) allowing the end user to plu
 <span id="document-changelog"></span><div class="section" id="changelog">
 <h3>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id1">
-<h4>1.0.204 (2015-12-09)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<h4>1.0.210 (2016-01-20)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="features">
+<h5>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>The scanner can return a jpeg with metadata besides the Bitmap, if requested.</li>
+<li><tt class="docutils literal"><span class="pre">UploadActivity</span></tt> can show an indeterminate <tt class="docutils literal"><span class="pre">ProgressBar</span></tt> in the center of the picture instead of the sprite animation.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id2">
+<h4>1.0.204 (2015-12-09)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="bugfixes">
 <h5>Bugfixes<a class="headerlink" href="#bugfixes" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
@@ -1051,8 +1161,8 @@ frameworks (e.g. java.util.logging, logback, log4j) allowing the end user to plu
 </ul>
 </div>
 </div>
-<div class="section" id="id2">
-<h4>1.0.200 (2015-12-07)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h4>1.0.200 (2015-12-07)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="bugfix">
 <h5>Bugfix<a class="headerlink" href="#bugfix" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
@@ -1060,29 +1170,29 @@ frameworks (e.g. java.util.logging, logback, log4j) allowing the end user to plu
 </ul>
 </div>
 </div>
-<div class="section" id="id3">
-<h4>1.0.197 (2015-11-25)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="id4">
-<h5>Bugfix<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<h4>1.0.197 (2015-11-25)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id5">
+<h5>Bugfix<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Broken public API fixed. ScannerActivity.Error works again.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id5">
-<h4>1.0.194 (2015-11-24)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="features">
-<h5>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id6">
+<h4>1.0.194 (2015-11-24)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id7">
+<h5>Features<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Taking of screenshots can be prevented by setting the <tt class="docutils literal"><span class="pre">EXTRA_SET_WINDOW_FLAG_SECURE</span></tt> to <tt class="docutils literal"><span class="pre">true</span></tt> for the <tt class="docutils literal"><span class="pre">ScannerActivity</span></tt> or <tt class="docutils literal"><span class="pre">CaptureActivity</span></tt>.
 <tt class="docutils literal"><span class="pre">HelpActivity</span></tt> and <tt class="docutils literal"><span class="pre">UploadActivity</span></tt> will also prevent taking of screenshots.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id6">
-<h4>1.0.190 (2015-11-13)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id7">
-<h5>Bugfixes<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id8">
+<h4>1.0.190 (2015-11-13)<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id9">
+<h5>Bugfixes<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Scanner dynamic titles used only if set. No need to set all the scanner titles, if a static custom title is required.</li>
 <li>Missing doctype extra crash fixed. If no doctype extra, invoice doctype is assumed.</li>
@@ -1090,10 +1200,10 @@ frameworks (e.g. java.util.logging, logback, log4j) allowing the end user to plu
 </ul>
 </div>
 </div>
-<div class="section" id="id8">
-<h4>1.0.182 (2015-10-15)<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id9">
-<h5>Features<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id10">
+<h4>1.0.182 (2015-10-15)<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id11">
+<h5>Features<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Back button can be enabled in the ActionBar.</li>
 <li>Title can be centered in the ActionBar.</li>
@@ -1101,16 +1211,16 @@ frameworks (e.g. java.util.logging, logback, log4j) allowing the end user to plu
 </ul>
 </div>
 </div>
-<div class="section" id="id10">
-<h4>1.0.170 (2015-09-23)<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id11">
-<h5>Features<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id12">
+<h4>1.0.170 (2015-09-23)<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id13">
+<h5>Features<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Changelog is public in the documentation.</li>
 </ul>
 </div>
-<div class="section" id="id12">
-<h5>Bugfixes<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id14">
+<h5>Bugfixes<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Memory check reliability improved.</li>
 <li>Images in the help screens dynamically scaled to fit the screen.</li>
@@ -1119,10 +1229,10 @@ frameworks (e.g. java.util.logging, logback, log4j) allowing the end user to plu
 </ul>
 </div>
 </div>
-<div class="section" id="id13">
-<h4>1.0.162 (2015-09-11)<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id14">
-<h5>Features<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id15">
+<h4>1.0.162 (2015-09-11)<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id16">
+<h5>Features<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Camera viewfinder is centered.</li>
 <li>ActionBar title font and size customizable.</li>
@@ -1134,10 +1244,10 @@ frameworks (e.g. java.util.logging, logback, log4j) allowing the end user to plu
 </ul>
 </div>
 </div>
-<div class="section" id="id15">
-<h4>1.0.158 (2015-09-09)<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id16">
-<h5>Bugfixes<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id17">
+<h4>1.0.158 (2015-09-09)<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id18">
+<h5>Bugfixes<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Camera is closed independently of the scannerlib image processing and
 therefore is closed quicker after exiting the ScannerActivity</li>
@@ -1146,10 +1256,10 @@ right time after a picture was taken.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id17">
-<h4>1.0.156 (2015-08-28)<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id18">
-<h5>Features<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id19">
+<h4>1.0.156 (2015-08-28)<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id20">
+<h5>Features<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Perspective message, if the phone is held at a too high angle
 relative to the document</li>
@@ -1157,36 +1267,36 @@ relative to the document</li>
 camera view finder edges)</li>
 </ul>
 </div>
-<div class="section" id="id19">
-<h5>Bugfix<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id21">
+<h5>Bugfix<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Continuous focus mode removed, caused unexpected behaviours</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id20">
-<h4>1.0.153 (2015-08-21)<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id21">
-<h5>Features<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id22">
+<h4>1.0.153 (2015-08-21)<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id23">
+<h5>Features<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Custom activity can be set for the help, can also be a HelpActivity
 subclass.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id22">
-<h4>1.0.150 (2015-08-19)<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id23">
-<h5>Bugfix<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id24">
+<h4>1.0.150 (2015-08-19)<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id25">
+<h5>Bugfix<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Crash fixed when focusing requested and camera not yet ready.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id24">
-<h4>1.0.147 (2015-08-18)<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id25">
-<h5>Features<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id26">
+<h4>1.0.147 (2015-08-18)<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id27">
+<h5>Features<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Continuous auto-focus with an auto-focus cycle before taking a
 picture, if not in focus.</li>
@@ -1194,36 +1304,36 @@ picture, if not in focus.</li>
 compatRelease/compatDebug library configuration.</li>
 </ul>
 </div>
-<div class="section" id="id26">
-<h5>Bugfix<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id28">
+<h5>Bugfix<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Flash is not started when the onboarding is shown on launch in the
 ScannerActivity.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id27">
-<h4>1.0.139 (2015-08-17)<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id28">
-<h5>Features<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id29">
+<h4>1.0.139 (2015-08-17)<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id30">
+<h5>Features<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Help text font can be customized to use a system font or a custom
 font.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id29">
-<h4>1.0.137 (2015-08-12)<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id30">
-<h5>Bugfix<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id31">
+<h4>1.0.137 (2015-08-12)<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id32">
+<h5>Bugfix<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Memory leak related to the upload animation which happened on some
 devices (Samsung, Sony) fixed.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id31">
-<h4>1.0.136 (2015-08-11)<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id33">
+<h4>1.0.136 (2015-08-11)<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="fix">
 <h5>Fix<a class="headerlink" href="#fix" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
@@ -1231,42 +1341,42 @@ devices (Samsung, Sony) fixed.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id32">
-<h4>1.0.135 (2015-08-07)<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id33">
-<h5>Features<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id34">
+<h4>1.0.135 (2015-08-07)<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id35">
+<h5>Features<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Customizable background colors for the activities.</li>
 </ul>
 </div>
-<div class="section" id="id34">
-<h5>Bugfixes<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id36">
+<h5>Bugfixes<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Accelerometer handling sensitivity was too high, reverted it to
 version 1.0.131 sensitivity.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id35">
-<h4>1.0.132 (2015-08-05)<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id36">
-<h5>Features<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id37">
+<h4>1.0.132 (2015-08-05)<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id38">
+<h5>Features<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Accelerometer handling improved.</li>
 </ul>
 </div>
-<div class="section" id="id37">
-<h5>Bugfixes<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id39">
+<h5>Bugfixes<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>White overlay shutter is removed, if document was not good enough
 after taking a picture.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id38">
-<h4>1.0.131 (2015-08-04)<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id39">
-<h5>Features<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id40">
+<h4>1.0.131 (2015-08-04)<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id41">
+<h5>Features<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li>Configurable outline for camera overlay.</li>
 <li>Help screen can be shown the first time the ginivision library is
@@ -1360,6 +1470,266 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE,  ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</pre></div>
+</div>
+</div>
+<div class="section" id="apache-commons-sanselan">
+<h5>Apache Commons Sanselan<a class="headerlink" href="#apache-commons-sanselan" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-python"><div class="highlight"><pre>                              Apache License
+                        Version 2.0, January 2004
+                     http://www.apache.org/licenses/
+
+TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+1. Definitions.
+
+   &quot;License&quot; shall mean the terms and conditions for use, reproduction,
+   and distribution as defined by Sections 1 through 9 of this document.
+
+   &quot;Licensor&quot; shall mean the copyright owner or entity authorized by
+   the copyright owner that is granting the License.
+
+   &quot;Legal Entity&quot; shall mean the union of the acting entity and all
+   other entities that control, are controlled by, or are under common
+   control with that entity. For the purposes of this definition,
+   &quot;control&quot; means (i) the power, direct or indirect, to cause the
+   direction or management of such entity, whether by contract or
+   otherwise, or (ii) ownership of fifty percent (50%) or more of the
+   outstanding shares, or (iii) beneficial ownership of such entity.
+
+   &quot;You&quot; (or &quot;Your&quot;) shall mean an individual or Legal Entity
+   exercising permissions granted by this License.
+
+   &quot;Source&quot; form shall mean the preferred form for making modifications,
+   including but not limited to software source code, documentation
+   source, and configuration files.
+
+   &quot;Object&quot; form shall mean any form resulting from mechanical
+   transformation or translation of a Source form, including but
+   not limited to compiled object code, generated documentation,
+   and conversions to other media types.
+
+   &quot;Work&quot; shall mean the work of authorship, whether in Source or
+   Object form, made available under the License, as indicated by a
+   copyright notice that is included in or attached to the work
+   (an example is provided in the Appendix below).
+
+   &quot;Derivative Works&quot; shall mean any work, whether in Source or Object
+   form, that is based on (or derived from) the Work and for which the
+   editorial revisions, annotations, elaborations, or other modifications
+   represent, as a whole, an original work of authorship. For the purposes
+   of this License, Derivative Works shall not include works that remain
+   separable from, or merely link (or bind by name) to the interfaces of,
+   the Work and Derivative Works thereof.
+
+   &quot;Contribution&quot; shall mean any work of authorship, including
+   the original version of the Work and any modifications or additions
+   to that Work or Derivative Works thereof, that is intentionally
+   submitted to Licensor for inclusion in the Work by the copyright owner
+   or by an individual or Legal Entity authorized to submit on behalf of
+   the copyright owner. For the purposes of this definition, &quot;submitted&quot;
+   means any form of electronic, verbal, or written communication sent
+   to the Licensor or its representatives, including but not limited to
+   communication on electronic mailing lists, source code control systems,
+   and issue tracking systems that are managed by, or on behalf of, the
+   Licensor for the purpose of discussing and improving the Work, but
+   excluding communication that is conspicuously marked or otherwise
+   designated in writing by the copyright owner as &quot;Not a Contribution.&quot;
+
+   &quot;Contributor&quot; shall mean Licensor and any individual or Legal Entity
+   on behalf of whom a Contribution has been received by Licensor and
+   subsequently incorporated within the Work.
+
+2. Grant of Copyright License. Subject to the terms and conditions of
+   this License, each Contributor hereby grants to You a perpetual,
+   worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+   copyright license to reproduce, prepare Derivative Works of,
+   publicly display, publicly perform, sublicense, and distribute the
+   Work and such Derivative Works in Source or Object form.
+
+3. Grant of Patent License. Subject to the terms and conditions of
+   this License, each Contributor hereby grants to You a perpetual,
+   worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+   (except as stated in this section) patent license to make, have made,
+   use, offer to sell, sell, import, and otherwise transfer the Work,
+   where such license applies only to those patent claims licensable
+   by such Contributor that are necessarily infringed by their
+   Contribution(s) alone or by combination of their Contribution(s)
+   with the Work to which such Contribution(s) was submitted. If You
+   institute patent litigation against any entity (including a
+   cross-claim or counterclaim in a lawsuit) alleging that the Work
+   or a Contribution incorporated within the Work constitutes direct
+   or contributory patent infringement, then any patent licenses
+   granted to You under this License for that Work shall terminate
+   as of the date such litigation is filed.
+
+4. Redistribution. You may reproduce and distribute copies of the
+   Work or Derivative Works thereof in any medium, with or without
+   modifications, and in Source or Object form, provided that You
+   meet the following conditions:
+
+   (a) You must give any other recipients of the Work or
+       Derivative Works a copy of this License; and
+
+   (b) You must cause any modified files to carry prominent notices
+       stating that You changed the files; and
+
+   (c) You must retain, in the Source form of any Derivative Works
+       that You distribute, all copyright, patent, trademark, and
+       attribution notices from the Source form of the Work,
+       excluding those notices that do not pertain to any part of
+       the Derivative Works; and
+
+   (d) If the Work includes a &quot;NOTICE&quot; text file as part of its
+       distribution, then any Derivative Works that You distribute must
+       include a readable copy of the attribution notices contained
+       within such NOTICE file, excluding those notices that do not
+       pertain to any part of the Derivative Works, in at least one
+       of the following places: within a NOTICE text file distributed
+       as part of the Derivative Works; within the Source form or
+       documentation, if provided along with the Derivative Works; or,
+       within a display generated by the Derivative Works, if and
+       wherever such third-party notices normally appear. The contents
+       of the NOTICE file are for informational purposes only and
+       do not modify the License. You may add Your own attribution
+       notices within Derivative Works that You distribute, alongside
+       or as an addendum to the NOTICE text from the Work, provided
+       that such additional attribution notices cannot be construed
+       as modifying the License.
+
+   You may add Your own copyright statement to Your modifications and
+   may provide additional or different license terms and conditions
+   for use, reproduction, or distribution of Your modifications, or
+   for any such Derivative Works as a whole, provided Your use,
+   reproduction, and distribution of the Work otherwise complies with
+   the conditions stated in this License.
+
+5. Submission of Contributions. Unless You explicitly state otherwise,
+   any Contribution intentionally submitted for inclusion in the Work
+   by You to the Licensor shall be under the terms and conditions of
+   this License, without any additional terms or conditions.
+   Notwithstanding the above, nothing herein shall supersede or modify
+   the terms of any separate license agreement you may have executed
+   with Licensor regarding such Contributions.
+
+6. Trademarks. This License does not grant permission to use the trade
+   names, trademarks, service marks, or product names of the Licensor,
+   except as required for reasonable and customary use in describing the
+   origin of the Work and reproducing the content of the NOTICE file.
+
+7. Disclaimer of Warranty. Unless required by applicable law or
+   agreed to in writing, Licensor provides the Work (and each
+   Contributor provides its Contributions) on an &quot;AS IS&quot; BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+   implied, including, without limitation, any warranties or conditions
+   of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+   PARTICULAR PURPOSE. You are solely responsible for determining the
+   appropriateness of using or redistributing the Work and assume any
+   risks associated with Your exercise of permissions under this License.
+
+8. Limitation of Liability. In no event and under no legal theory,
+   whether in tort (including negligence), contract, or otherwise,
+   unless required by applicable law (such as deliberate and grossly
+   negligent acts) or agreed to in writing, shall any Contributor be
+   liable to You for damages, including any direct, indirect, special,
+   incidental, or consequential damages of any character arising as a
+   result of this License or out of the use or inability to use the
+   Work (including but not limited to damages for loss of goodwill,
+   work stoppage, computer failure or malfunction, or any and all
+   other commercial damages or losses), even if such Contributor
+   has been advised of the possibility of such damages.
+
+9. Accepting Warranty or Additional Liability. While redistributing
+   the Work or Derivative Works thereof, You may choose to offer,
+   and charge a fee for, acceptance of support, warranty, indemnity,
+   or other liability obligations and/or rights consistent with this
+   License. However, in accepting such obligations, You may act only
+   on Your own behalf and on Your sole responsibility, not on behalf
+   of any other Contributor, and only if You agree to indemnify,
+   defend, and hold each Contributor harmless for any liability
+   incurred by, or claims asserted against, such Contributor by reason
+   of your accepting any such warranty or additional liability.
+
+END OF TERMS AND CONDITIONS
+
+APPENDIX: How to apply the Apache License to your work.
+
+   To apply the Apache License to your work, attach the following
+   boilerplate notice, with the fields enclosed by brackets &quot;[]&quot;
+   replaced with your own identifying information. (Don&#39;t include
+   the brackets!)  The text should be enclosed in the appropriate
+   comment syntax for the file format. We also recommend that a
+   file or class name and description of purpose be included on the
+   same &quot;printed page&quot; as the copyright notice for easier
+   identification within third-party archives.
+
+Copyright [yyyy] [name of copyright owner]
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+
+ EXTERNAL COMPONENTS
+
+ Apache Commons Sanselan includes a number of components with separate copyright
+ notices and license terms. Your use of these components is subject to the terms
+ and conditions of the following licenses.
+
+ rgb.txt comes from the X.org project and is under the following licenses:
+
+    Copyright 1985, 1989, 1998  The Open Group
+
+    Permission to use, copy, modify, distribute, and sell this software and its
+    documentation for any purpose is hereby granted without fee, provided that
+    the above copyright notice appear in all copies and that both that
+    copyright notice and this permission notice appear in supporting
+    documentation.
+
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE OPEN GROUP BE LIABLE FOR ANY CLAIM, DAMAGES OR
+    OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+    ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+    OTHER DEALINGS IN THE SOFTWARE.
+
+    Except as contained in this notice, the name of The Open Group shall
+    not be used in advertising or otherwise to promote the sale, use or
+    other dealings in this Software without prior written authorization
+    from The Open Group.
+
+    Copyright (c) 1994, 2008, Oracle and/or its affiliates. All rights reserved.
+
+    Permission is hereby granted, free of charge, to any person obtaining a
+    copy of this software and associated documentation files (the &quot;Software&quot;),
+    to deal in the Software without restriction, including without limitation
+    the rights to use, copy, modify, merge, publish, distribute, sublicense,
+    and/or sell copies of the Software, and to permit persons to whom the
+    Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice (including the next
+    paragraph) shall be included in all copies or substantial portions of the
+    Software.
+
+    THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+    THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+    DEALINGS IN THE SOFTWARE.
 </pre></div>
 </div>
 </div>
