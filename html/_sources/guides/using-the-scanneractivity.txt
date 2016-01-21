@@ -216,6 +216,9 @@ Finally, the ``Gini`` instance is used in the ``uploadDocument(Bitmap, byte[])``
 ``net.gini.android.vision.UploadActivity`` to upload the captured document. The example below shows a possible
 implementation which puts the result extractions into a new intent for further processing.
 
+.. note:: The abstract method ``uploadDocument(Bitmap)`` in ``net.gini.android.vision.UploadActivity`` was deprecated. You should move 
+          the method body to the new ``uploadDocument(Bitmap, byte[])`` method and leave the old one empty.
+
 .. code-block:: java
 
      public void uploadDocument(final Bitmap document, final byte[] jpeg) {

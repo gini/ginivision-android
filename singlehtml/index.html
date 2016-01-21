@@ -650,6 +650,11 @@ create a single instance of this class and hold it for its complete lifecycle.</
 <p>Finally, the <tt class="docutils literal"><span class="pre">Gini</span></tt> instance is used in the <tt class="docutils literal"><span class="pre">uploadDocument(Bitmap,</span> <span class="pre">byte[])</span></tt> method of the <tt class="docutils literal"><span class="pre">MyUploadActivity</span></tt> which extends
 <tt class="docutils literal"><span class="pre">net.gini.android.vision.UploadActivity</span></tt> to upload the captured document. The example below shows a possible
 implementation which puts the result extractions into a new intent for further processing.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The abstract method <tt class="docutils literal"><span class="pre">uploadDocument(Bitmap)</span></tt> in <tt class="docutils literal"><span class="pre">net.gini.android.vision.UploadActivity</span></tt> was deprecated. You should move
+the method body to the new <tt class="docutils literal"><span class="pre">uploadDocument(Bitmap,</span> <span class="pre">byte[])</span></tt> method and leave the old one empty.</p>
+</div>
 <div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">uploadDocument</span><span class="o">(</span><span class="kd">final</span> <span class="n">Bitmap</span> <span class="n">document</span><span class="o">,</span> <span class="kd">final</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">jpeg</span><span class="o">)</span> <span class="o">{</span>
    <span class="c1">// Get the doctype, if available</span>
    <span class="n">DocumentType</span> <span class="n">documentType</span> <span class="o">=</span> <span class="n">DocumentType</span><span class="o">.</span><span class="na">INVOICE</span><span class="o">;</span>
