@@ -2,6 +2,14 @@
 Changelog
 =========
 
+1.0.216 (2016-02-25)
+====================
+
+Features
+--------
+
+- Jpeg metadata extended to contain the orientation of the picture derived from the device orientation.
+
 1.0.212 (2016-01-20)
 ====================
 

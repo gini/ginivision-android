@@ -196,6 +196,10 @@ Only the following exif tags are kept in the jpeg file. No personal, geographica
     Status of flash when the image was shot.
 ``Compressed Bits Per Pixel``
     The compression mode used for a compressed image is indicated in unit bits per pixel.
+``Orientation``
+    The image orientation derived from the device orientation.
+``Platform``
+    Android.
 ``OS Version``
     Android OS version.
 ``GiniVision Version``
