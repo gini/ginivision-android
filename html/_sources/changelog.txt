@@ -2,6 +2,14 @@
 Changelog
 =========
 
+1.0.220 (2016-03-01)
+====================
+
+Bugfix
+------
+
+- Does not crash anymore when the document outline view is not ready and a document was already detected. 
+
 1.0.216 (2016-02-25)
 ====================
 
