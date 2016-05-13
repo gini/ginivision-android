@@ -276,6 +276,17 @@ disabled and replaced with a native indeterminate ``ProgressBar`` in the ``Uploa
 
 The color of the ``ProgressBar`` on Android 5.0 or newer is set by the ``net.gini.android.vision.theme.colorAccent`` color resource.
 
+Custom Animation during upload
+==============================
+
+The ``UploadActivity`` class has two methods for starting and stopping a custom animation: ``startScanAnimation()`` and a ``stopScanAnimation()``. You can override these methods to start and stop your own animation.
+
+    .. note::  Don't call ``super.startScanAnimation()`` or ``super.stopScanAnimation`` to prevent the use of the default animation.
+
+In order to override the layout for the ``UploadActivity`` and add the views for your animation you can copy the ``res/layout/upload_activity.xml`` from the library and modify it (but don't rename it).
+
+    .. note:: Don't delete the ImageView with the id "document". It is used by the ``UploadActivity`` to show the image of the document. 
+
 Customizable Dimensions
 =======================
 

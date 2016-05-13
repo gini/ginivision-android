@@ -129,6 +129,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#centering-the-actionbar-title">Centering the ActionBar title</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dot-page-indicator-in-the-help">Dot page indicator in the help</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#activity-indicator-during-upload">Activity indicator during upload</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-animation-during-upload">Custom Animation during upload</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#customizable-dimensions">Customizable Dimensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#debug-options">Debug Options</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#enabling-the-framemeter">Enabling the framemeter</a></li>
@@ -519,6 +520,23 @@ new items and selection handlers in your subclass.</dd>
 <p>By setting the <tt class="docutils literal"><span class="pre">net.gini.android.vision.upload_activity_indicator</span></tt> boolean resource to <tt class="docutils literal"><span class="pre">true</span></tt> the animation is
 disabled and replaced with a native indeterminate <tt class="docutils literal"><span class="pre">ProgressBar</span></tt> in the <tt class="docutils literal"><span class="pre">UploadActivity</span></tt>.</p>
 <p>The color of the <tt class="docutils literal"><span class="pre">ProgressBar</span></tt> on Android 5.0 or newer is set by the <tt class="docutils literal"><span class="pre">net.gini.android.vision.theme.colorAccent</span></tt> color resource.</p>
+</div>
+<div class="section" id="custom-animation-during-upload">
+<h2>Custom Animation during upload<a class="headerlink" href="#custom-animation-during-upload" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">UploadActivity</span></tt> class has two methods for starting and stopping a custom animation: <tt class="docutils literal"><span class="pre">startScanAnimation()</span></tt> and a <tt class="docutils literal"><span class="pre">stopScanAnimation()</span></tt>. You can override these methods to start and stop your own animation.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Don&#8217;t call <tt class="docutils literal"><span class="pre">super.startScanAnimation()</span></tt> or <tt class="docutils literal"><span class="pre">super.stopScanAnimation</span></tt> to prevent the use of the default animation.</p>
+</div>
+</div></blockquote>
+<p>In order to override the layout for the <tt class="docutils literal"><span class="pre">UploadActivity</span></tt> and add the views for your animation you can copy the <tt class="docutils literal"><span class="pre">res/layout/upload_activity.xml</span></tt> from the library and modify it (but don&#8217;t rename it).</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Don&#8217;t delete the ImageView with the id &#8220;document&#8221;. It is used by the <tt class="docutils literal"><span class="pre">UploadActivity</span></tt> to show the image of the document.</p>
+</div>
+</div></blockquote>
 </div>
 <div class="section" id="customizable-dimensions">
 <h2>Customizable Dimensions<a class="headerlink" href="#customizable-dimensions" title="Permalink to this headline">¶</a></h2>
