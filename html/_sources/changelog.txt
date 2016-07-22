@@ -8,7 +8,7 @@ Changelog
 Features
 --------
 
-- Updated OpenCV to version 3.1.0.
+- Updated OpenCV to version 3.1.0 (with libpng 1.6.19).
 
 Bugfix
 ------
