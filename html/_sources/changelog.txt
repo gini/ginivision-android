@@ -2,6 +2,16 @@
 Changelog
 =========
 
+1.0.300 (2019-01-03)
+====================
+
+Features
+--------
+
+- Updated library to API Level 27.
+- Renamed custom `font` attribute to `typeface`.
+
+
 1.0.231 (2016-07-22)
 ====================
 
@@ -21,7 +31,7 @@ Bugfix
 Bugfix
 ------
 
-- Does not crash anymore when the document outline view is not ready and a document was already detected. 
+- Does not crash anymore when the document outline view is not ready and a document was already detected.
 
 1.0.216 (2016-02-25)
 ====================
